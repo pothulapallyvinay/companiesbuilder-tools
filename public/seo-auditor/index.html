@@ -2057,8 +2057,8 @@
           }
           
           const [speedRes, auditRes] = await Promise.all([
-             fetch(`/api/speed?url=${encodeURIComponent(finalUrl)}&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo`),
-             fetch(`/api/audit?url=${encodeURIComponent(finalUrl)}`)
+             fetch(`/tools/api/speed?url=${encodeURIComponent(finalUrl)}&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo`),
+             fetch(`/tools/api/audit?url=${encodeURIComponent(finalUrl)}`)
           ]);
           
           const speedData = await speedRes.json();

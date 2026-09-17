@@ -214,7 +214,7 @@
       const strategy = document.getElementById('strategy').value;
 
       try {
-        const response = await fetch(`/api/speed?url=${encodeURIComponent(url)}&strategy=${strategy}`);
+        const response = await fetch(`/tools/api/speed?url=${encodeURIComponent(url)}&strategy=${strategy}`);
         
         if (!response.ok) {
           const errData = await response.json().catch(() => ({}));

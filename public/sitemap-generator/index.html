@@ -209,7 +209,7 @@
       statusText.style.display = "block";
 
       try {
-        const res = await fetch('/api/sitemap?url=' + encodeURIComponent(url));
+        const res = await fetch('/tools/api/sitemap?url=' + encodeURIComponent(url));
         const data = await res.json();
         
         if (data.error) throw new Error(data.error);

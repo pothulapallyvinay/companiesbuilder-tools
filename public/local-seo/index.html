@@ -215,7 +215,7 @@
       resultsArea.style.display = "none";
 
       try {
-        const res = await fetch('/api/local-seo?url=' + encodeURIComponent(url));
+        const res = await fetch('/tools/api/local-seo?url=' + encodeURIComponent(url));
         const data = await res.json();
         
         if (data.error) throw new Error(data.error);
