@@ -115,7 +115,7 @@ function showCrossPromotion(issueType, containerId, currentToolId = null) {
           <div style="font-weight: 600; margin-bottom: 0.25rem;">We detected slow loading times.</div>
           <div style="font-size: 0.9rem; margin-bottom: 0.75rem;">A slow site kills rankings and user experience. Let our technical SEO experts optimize it for you.</div>
           <div style="display: flex; gap: 1rem;">
-            <a href="/seo-auditor/" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Run Full SEO Audit</a>
+            <a href="/tools/seo-auditor/" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Run Full SEO Audit</a>
             <a href="https://companiesbuilder.com/services/" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">View SEO Services</a>
           </div>
         `;
@@ -124,7 +124,7 @@ function showCrossPromotion(issueType, containerId, currentToolId = null) {
           <div style="font-weight: 600; margin-bottom: 0.25rem;">We detected slow loading times.</div>
           <div style="font-size: 0.9rem; margin-bottom: 0.75rem;">A slow site kills rankings. Use our dedicated Speed Checker for a deep dive, or let our experts fix it.</div>
           <div style="display: flex; gap: 1rem;">
-            <a href="/speed-checker/" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Run Speed Check</a>
+            <a href="/tools/speed-checker/" class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">Run Speed Check</a>
             <a href="https://companiesbuilder.com/services/" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">View SEO Services</a>
           </div>
         `;
