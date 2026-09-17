@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schema Generator | SEO Tools</title>
+  <meta name="description" content="Generate valid JSON-LD structured data to win Rich Snippets in Google search results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .split-layout { grid-template-columns: 1fr; }
+    }
+    
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      min-height: 300px;
+    }
+
+    .schema-fields { display: none; }
+    .schema-fields.active { display: block; }
+  </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/shared.css">
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="https://companiesbuilder.com/" aria-label="Companies Builder home">
+        <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
+        <span>Companies Builder</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/about/">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i
+                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i
+                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i
+                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i
+                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li>
+                <hr class="dropdown-divider my-1">
+              </li>
+              <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/"><i class="bi bi-grid me-2 opacity-75"></i>All
+                  Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources</a>
+            <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/resources/checklists/"><i
+                    class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="https://companiesbuilder.com/tools/seo-auditor/">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/contact/">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="https://companiesbuilder.com/pricing">Pricing</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button"
+              aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars"
+                aria-hidden="true"></i></button></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2rem;">
+      <a href="/" style="font-size: 0.9rem;">&larr; Back to Tools</a>
+      <h1 class="mt-4">Schema Generator</h1>
+      <p>Generate perfectly formatted JSON-LD structured data to help search engines understand your content.</p>
+    </div>
+
+    <div class="split-layout">
+      <!-- Form Column -->
+      <div class="glass-panel">
+        <div class="form-group">
+          <label class="form-label">Schema Type</label>
+          <select id="schemaType" class="form-control" onchange="changeSchemaType()">
+            <option value="Organization">Organization</option>
+            <option value="LocalBusiness">Local Business</option>
+            <option value="Article">Article</option>
+            <option value="FAQPage">FAQ Page</option>
+          </select>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+
+        <!-- Organization Fields -->
+        <div id="fieldsOrganization" class="schema-fields active">
+          <div class="form-group">
+            <label class="form-label">Organization Name</label>
+            <input type="text" id="orgName" class="form-control" placeholder="Companies Builder" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Alternate Name</label>
+            <input type="text" id="orgAltName" class="form-control" placeholder="" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">URL</label>
+            <input type="url" id="orgUrl" class="form-control" placeholder="https://companiesbuilder.com" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Logo URL</label>
+            <input type="url" id="orgLogo" class="form-control" placeholder="https://companiesbuilder.com/logo.png" oninput="generateSchema()">
+          </div>
+        </div>
+
+        <!-- Local Business Fields -->
+        <div id="fieldsLocalBusiness" class="schema-fields">
+          <div class="form-group">
+            <label class="form-label">Business Name</label>
+            <input type="text" id="lbName" class="form-control" placeholder="Acme Corp" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image URL</label>
+            <input type="url" id="lbImage" class="form-control" placeholder="https://example.com/image.jpg" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="text" id="lbPhone" class="form-control" placeholder="+1-800-555-1212" oninput="generateSchema()">
+          </div>
+          <h4 class="mt-4">Address</h4>
+          <div class="form-group">
+            <label class="form-label">Street Address</label>
+            <input type="text" id="lbStreet" class="form-control" placeholder="123 Main St" oninput="generateSchema()">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">City</label>
+              <input type="text" id="lbCity" class="form-control" placeholder="New York" oninput="generateSchema()">
+            </div>
+            <div class="form-group">
+              <label class="form-label">State/Region</label>
+              <input type="text" id="lbRegion" class="form-control" placeholder="NY" oninput="generateSchema()">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Postal Code</label>
+            <input type="text" id="lbPostal" class="form-control" placeholder="10001" oninput="generateSchema()">
+          </div>
+        </div>
+
+        <!-- Article Fields -->
+        <div id="fieldsArticle" class="schema-fields">
+          <div class="form-group">
+            <label class="form-label">Article Headline</label>
+            <input type="text" id="artHeadline" class="form-control" placeholder="How to do SEO in 2024" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Author Name</label>
+            <input type="text" id="artAuthor" class="form-control" placeholder="John Doe" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Publisher Name</label>
+            <input type="text" id="artPublisher" class="form-control" placeholder="Companies Builder" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Publisher Logo URL</label>
+            <input type="url" id="artLogo" class="form-control" placeholder="https://example.com/logo.png" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image URL</label>
+            <input type="url" id="artImage" class="form-control" placeholder="https://example.com/hero.jpg" oninput="generateSchema()">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Date Published</label>
+            <input type="date" id="artDate" class="form-control" oninput="generateSchema()">
+          </div>
+        </div>
+
+        <!-- FAQ Page Fields -->
+        <div id="fieldsFAQPage" class="schema-fields">
+          <p style="font-size: 0.9rem; margin-bottom: 1rem;">Add Q&A pairs for your FAQ section.</p>
+          <div id="faqContainer">
+            <div class="faq-item glass-card mb-4" style="padding: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Question</label>
+                <input type="text" class="form-control faq-q" placeholder="What is SEO?" oninput="generateSchema()">
+              </div>
+              <div class="form-group mb-0">
+                <label class="form-label">Answer</label>
+                <textarea class="form-control faq-a" rows="2" placeholder="SEO stands for Search Engine Optimization..." oninput="generateSchema()"></textarea>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary" style="width: 100%;" onclick="addFaq()">+ Add Another Question</button>
+        </div>
+
+      </div>
+
+      <!-- Preview & Output Column -->
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem;">
+          <h3 style="margin: 0;">JSON-LD Output</h3>
+          <button class="btn btn-primary" style="padding: 0.4rem 1rem;" onclick="copyCode()">Copy Code</button>
+        </div>
+        <pre class="code-block" id="codeOutput"></pre>
+
+        <div class="mt-4 glass-card" style="padding: 1.5rem;">
+          <h4 style="margin-bottom: 0.5rem;">Validate Your Schema</h4>
+          <p style="font-size: 0.9rem; margin-bottom: 1rem;">Always test your structured data to ensure it's eligible for rich results.</p>
+          <a href="https://search.google.com/test/rich-results" target="_blank" class="btn btn-secondary">Google Rich Results Test &nearr;</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/shared.js"></script>
+  <script>
+    function changeSchemaType() {
+      // Hide all fields
+      document.querySelectorAll('.schema-fields').forEach(el => el.classList.remove('active'));
+      
+      // Show selected fields
+      const type = document.getElementById('schemaType').value;
+      document.getElementById('fields' + type).classList.add('active');
+      
+      generateSchema();
+    }
+
+    function addFaq() {
+      const container = document.getElementById('faqContainer');
+      const div = document.createElement('div');
+      div.className = 'faq-item glass-card mb-4';
+      div.style.padding = '1rem';
+      div.innerHTML = `
+        <div class="form-group">
+          <label class="form-label">Question</label>
+          <input type="text" class="form-control faq-q" placeholder="Next question?" oninput="generateSchema()">
+        </div>
+        <div class="form-group mb-0">
+          <label class="form-label">Answer</label>
+          <textarea class="form-control faq-a" rows="2" placeholder="Answer..." oninput="generateSchema()"></textarea>
+        </div>
+      `;
+      container.appendChild(div);
+      generateSchema();
+    }
+
+    function generateSchema() {
+      const type = document.getElementById('schemaType').value;
+      let schema = {
+        "@context": "https://schema.org",
+        "@type": type
+      };
+
+      if (type === 'Organization') {
+        if(document.getElementById('orgName').value) schema.name = document.getElementById('orgName').value;
+        if(document.getElementById('orgAltName').value) schema.alternateName = document.getElementById('orgAltName').value;
+        if(document.getElementById('orgUrl').value) schema.url = document.getElementById('orgUrl').value;
+        if(document.getElementById('orgLogo').value) schema.logo = document.getElementById('orgLogo').value;
+      } 
+      else if (type === 'LocalBusiness') {
+        if(document.getElementById('lbName').value) schema.name = document.getElementById('lbName').value;
+        if(document.getElementById('lbImage').value) schema.image = document.getElementById('lbImage').value;
+        if(document.getElementById('lbPhone').value) schema.telephone = document.getElementById('lbPhone').value;
+        
+        schema.address = {
+          "@type": "PostalAddress",
+          "streetAddress": document.getElementById('lbStreet').value,
+          "addressLocality": document.getElementById('lbCity').value,
+          "addressRegion": document.getElementById('lbRegion').value,
+          "postalCode": document.getElementById('lbPostal').value
+        };
+      }
+      else if (type === 'Article') {
+        if(document.getElementById('artHeadline').value) schema.headline = document.getElementById('artHeadline').value;
+        if(document.getElementById('artImage').value) schema.image = document.getElementById('artImage').value;
+        if(document.getElementById('artDate').value) schema.datePublished = document.getElementById('artDate').value;
+        
+        schema.author = {
+          "@type": "Person",
+          "name": document.getElementById('artAuthor').value
+        };
+        schema.publisher = {
+          "@type": "Organization",
+          "name": document.getElementById('artPublisher').value,
+          "logo": {
+            "@type": "ImageObject",
+            "url": document.getElementById('artLogo').value
+          }
+        };
+      }
+      else if (type === 'FAQPage') {
+        schema.mainEntity = [];
+        const items = document.querySelectorAll('.faq-item');
+        items.forEach(item => {
+          const q = item.querySelector('.faq-q').value;
+          const a = item.querySelector('.faq-a').value;
+          if (q || a) {
+            schema.mainEntity.push({
+              "@type": "Question",
+              "name": q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": a
+              }
+            });
+          }
+        });
+      }
+
+      const scriptTag = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
+      document.getElementById('codeOutput').innerText = scriptTag;
+    }
+
+    function copyCode() {
+      const code = document.getElementById('codeOutput').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('Code copied to clipboard!');
+      });
+    }
+
+    // Initialize
+    generateSchema();
+  </script>
+<!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-4 col-lg-3">
+          <a href="https://companiesbuilder.com/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
+            <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
+              style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
+              Builder</span>
+          </a>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
+            startups and SMBs across India.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Twitter / X"><i
+                class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://companiesbuilder.com/">Home</a></li>
+            <li><a href="https://companiesbuilder.com/about/">About Us</a></li>
+            <li><a href="https://companiesbuilder.com/services/">Services</a></li>
+            <li><a href="https://companiesbuilder.com/pricing">Pricing</a></li>
+            <li><a href="https://companiesbuilder.com/resources/checklists/">Checklists</a></li>
+            <li><a href="https://companiesbuilder.com/tools/seo-auditor/" aria-current="page">SEO Auditor</a></li>
+            <li><a href="https://companiesbuilder.com/blogs/">Blog</a></li>
+            <li><a href="https://companiesbuilder.com/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h3>Services</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://companiesbuilder.com/services/web-development-and-designing/">Web Development &amp; Design</a></li>
+            <li><a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a></li>
+            <li><a href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+            <li><a href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/">B2B Digital Marketing</a></li>
+            <li><a href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-lg-3">
+          <h3>Get in Touch</h3>
+          <ul class="list-unstyled">
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
+                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
+                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="https://companiesbuilder.com/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
+                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Companies Builder. All rights reserved.</span>
+        <span class="footer-badge">Hyderabad, India</span>
+        <span><a href="https://companiesbuilder.com/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
+            href="https://companiesbuilder.com/sitemap.xml">Sitemap</a></span>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script>
+// Navbar scroll effect
+(function () {
+  var nav = document.getElementById('siteNav');
+  if(!nav) return;
+  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>

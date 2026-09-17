@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meta Tag Generator | SEO Tools</title>
+  <meta name="description" content="Generate perfect Meta Tags, Open Graph, and Twitter Cards with live SERP previews.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .split-layout { grid-template-columns: 1fr; }
+    }
+    
+    .preview-card {
+      background: white;
+      color: #3c4043;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-family: Arial, sans-serif;
+    }
+    
+    .serp-url { color: #202124; font-size: 14px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .serp-title { color: #1a0dab; font-size: 20px; line-height: 1.3; font-weight: normal; margin-bottom: 3px; cursor: pointer; }
+    .serp-title:hover { text-decoration: underline; }
+    .serp-desc { color: #4d5156; font-size: 14px; line-height: 1.58; word-wrap: break-word; }
+    
+    .char-count {
+      float: right;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .char-count.warn { color: var(--warning-color); }
+    .char-count.error { color: var(--error-color); }
+    
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/shared.css">
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="https://companiesbuilder.com/" aria-label="Companies Builder home">
+        <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
+        <span>Companies Builder</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/about/">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDrop">
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i
+                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i
+                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i
+                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i
+                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li>
+                <hr class="dropdown-divider my-1">
+              </li>
+              <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/"><i class="bi bi-grid me-2 opacity-75"></i>All
+                  Services</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">Resources</a>
+            <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/resources/checklists/"><i
+                    class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="https://companiesbuilder.com/tools/seo-auditor/">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/blogs/">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/contact/">Contact</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="https://companiesbuilder.com/pricing">Pricing</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button"
+              aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars"
+                aria-hidden="true"></i></button></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container" style="padding-top: 3rem; padding-bottom: 4rem;">
+    <div style="margin-bottom: 2rem;">
+      <a href="/" style="font-size: 0.9rem;">&larr; Back to Tools</a>
+      <h1 class="mt-4">Meta Tag Generator</h1>
+      <p>Generate perfectly formatted HTML meta tags and preview exactly how your page will look on Google.</p>
+    </div>
+
+    <div class="split-layout">
+      <!-- Form Column -->
+      <div class="glass-panel">
+        <h3 style="margin-bottom: 1.5rem;">Page Details</h3>
+        
+        <div class="form-group">
+          <label class="form-label">
+            Site Name (Optional)
+          </label>
+          <input type="text" id="siteName" class="form-control" placeholder="e.g. Companies Builder" oninput="updatePreview()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Page Title
+            <span class="char-count" id="titleCount">0 / 60</span>
+          </label>
+          <input type="text" id="pageTitle" class="form-control" placeholder="Best SEO Services for Startups" oninput="updatePreview()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Meta Description
+            <span class="char-count" id="descCount">0 / 160</span>
+          </label>
+          <textarea id="pageDesc" class="form-control" rows="3" placeholder="Write a compelling description that encourages clicks..." oninput="updatePreview()"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Canonical URL</label>
+          <input type="url" id="pageUrl" class="form-control" placeholder="https://companiesbuilder.com/services" value="https://example.com/page" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Keywords (Comma separated)</label>
+          <input type="text" id="keywords" class="form-control" placeholder="seo, services, b2b" oninput="updatePreview()">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Open Graph Image URL</label>
+          <input type="url" id="ogImage" class="form-control" placeholder="https://example.com/image.jpg" oninput="updatePreview()">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">Robots Indexing</label>
+          <select id="robots" class="form-control" onchange="updatePreview()">
+            <option value="index, follow">Index, Follow (Recommended)</option>
+            <option value="noindex, follow">No-Index, Follow</option>
+            <option value="index, nofollow">Index, No-Follow</option>
+            <option value="noindex, nofollow">No-Index, No-Follow</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Preview & Output Column -->
+      <div>
+        <!-- Google SERP Preview -->
+        <h3 style="margin-bottom: 1rem;">Google Search Preview</h3>
+        <div class="preview-card">
+          <div class="serp-url">
+            <span style="background: #f1f3f4; border-radius: 50%; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px;">🌐</span>
+            <div>
+              <div style="font-size: 12px; color: #202124;" id="previewSiteName">example.com</div>
+              <div id="previewUrl" style="color: #4d5156; font-size: 12px; margin-top: 1px;">https://example.com/page</div>
+            </div>
+          </div>
+          <div class="serp-title" id="previewTitle">Your Page Title Will Appear Here</div>
+          <div class="serp-desc" id="previewDesc">Provide a compelling meta description to encourage users to click through to your page from search engine results.</div>
+        </div>
+
+        <!-- Code Output -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; margin-top: 2rem;">
+          <h3 style="margin: 0;">Generated HTML</h3>
+          <button class="btn btn-primary" style="padding: 0.4rem 1rem;" onclick="copyCode()">Copy Code</button>
+        </div>
+        <pre class="code-block" id="codeOutput">&lt;!-- Meta tags will generate here --&gt;</pre>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/shared.js"></script>
+  <script>
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function updatePreview() {
+      const siteName = document.getElementById('siteName').value;
+      const title = document.getElementById('pageTitle').value;
+      const desc = document.getElementById('pageDesc').value;
+      const url = document.getElementById('pageUrl').value;
+      const keywords = document.getElementById('keywords').value;
+      const ogImage = document.getElementById('ogImage').value;
+      const robots = document.getElementById('robots').value;
+
+      // Update Char Counts
+      const titleCount = document.getElementById('titleCount');
+      titleCount.innerText = `${title.length} / 60`;
+      titleCount.className = `char-count ${title.length > 60 ? 'error' : title.length > 50 ? 'warn' : ''}`;
+
+      const descCount = document.getElementById('descCount');
+      descCount.innerText = `${desc.length} / 160`;
+      descCount.className = `char-count ${desc.length > 160 ? 'error' : desc.length > 150 ? 'warn' : ''}`;
+
+      // Update SERP Preview
+      try {
+        const urlObj = new URL(url || 'https://example.com');
+        document.getElementById('previewSiteName').innerText = siteName || urlObj.hostname;
+        document.getElementById('previewUrl').innerText = url;
+      } catch (e) {
+        document.getElementById('previewUrl').innerText = url || 'https://example.com';
+      }
+      
+      document.getElementById('previewTitle').innerText = title || 'Your Page Title Will Appear Here';
+      
+      // Truncate desc for preview like Google does
+      let previewDescStr = desc || 'Provide a compelling meta description to encourage users to click through to your page from search engine results.';
+      if (previewDescStr.length > 160) previewDescStr = previewDescStr.substring(0, 157) + '...';
+      document.getElementById('previewDesc').innerText = previewDescStr;
+
+      // Generate Code
+      let code = `<!-- Primary Meta Tags -->\n`;
+      code += `<title>${escapeHtml(title)}</title>\n`;
+      code += `<meta name="title" content="${escapeHtml(title)}">\n`;
+      code += `<meta name="description" content="${escapeHtml(desc)}">\n`;
+      
+      if (keywords) {
+        code += `<meta name="keywords" content="${escapeHtml(keywords)}">\n`;
+      }
+      
+      code += `<meta name="robots" content="${escapeHtml(robots)}">\n`;
+      code += `<link rel="canonical" href="${escapeHtml(url)}">\n\n`;
+
+      code += `<!-- Open Graph / Facebook -->\n`;
+      code += `<meta property="og:type" content="website">\n`;
+      code += `<meta property="og:url" content="${escapeHtml(url)}">\n`;
+      code += `<meta property="og:title" content="${escapeHtml(title)}">\n`;
+      code += `<meta property="og:description" content="${escapeHtml(desc)}">\n`;
+      if (siteName) code += `<meta property="og:site_name" content="${escapeHtml(siteName)}">\n`;
+      if (ogImage) code += `<meta property="og:image" content="${escapeHtml(ogImage)}">\n`;
+
+      code += `\n<!-- Twitter -->\n`;
+      code += `<meta property="twitter:card" content="summary_large_image">\n`;
+      code += `<meta property="twitter:url" content="${escapeHtml(url)}">\n`;
+      code += `<meta property="twitter:title" content="${escapeHtml(title)}">\n`;
+      code += `<meta property="twitter:description" content="${escapeHtml(desc)}">\n`;
+      if (ogImage) code += `<meta property="twitter:image" content="${escapeHtml(ogImage)}">\n`;
+
+      document.getElementById('codeOutput').innerText = code;
+    }
+
+    function copyCode() {
+      const code = document.getElementById('codeOutput').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('Code copied to clipboard!');
+      });
+    }
+
+    // Initialize
+    updatePreview();
+  </script>
+<!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-md-4 col-lg-3">
+          <a href="https://companiesbuilder.com/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
+            <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
+              style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
+              Builder</span>
+          </a>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
+            startups and SMBs across India.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Facebook"><i
+                class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
+              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://twitter.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Twitter / X"><i
+                class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://companiesbuilder.com/">Home</a></li>
+            <li><a href="https://companiesbuilder.com/about/">About Us</a></li>
+            <li><a href="https://companiesbuilder.com/services/">Services</a></li>
+            <li><a href="https://companiesbuilder.com/pricing">Pricing</a></li>
+            <li><a href="https://companiesbuilder.com/resources/checklists/">Checklists</a></li>
+            <li><a href="https://companiesbuilder.com/tools/seo-auditor/" aria-current="page">SEO Auditor</a></li>
+            <li><a href="https://companiesbuilder.com/blogs/">Blog</a></li>
+            <li><a href="https://companiesbuilder.com/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <h3>Services</h3>
+          <ul class="list-unstyled">
+            <li><a href="https://companiesbuilder.com/services/web-development-and-designing/">Web Development &amp; Design</a></li>
+            <li><a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a></li>
+            <li><a href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
+            <li><a href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/">B2B Digital Marketing</a></li>
+            <li><a href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-lg-3">
+          <h3>Get in Touch</h3>
+          <ul class="list-unstyled">
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
+                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953"
+                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
+                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="https://companiesbuilder.com/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
+                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Companies Builder. All rights reserved.</span>
+        <span class="footer-badge">Hyderabad, India</span>
+        <span><a href="https://companiesbuilder.com/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
+            href="https://companiesbuilder.com/sitemap.xml">Sitemap</a></span>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script>
+// Navbar scroll effect
+(function () {
+  var nav = document.getElementById('siteNav');
+  if(!nav) return;
+  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>

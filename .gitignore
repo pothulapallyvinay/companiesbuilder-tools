@@ -1,0 +1,6 @@
+.wrangler/
+.dev.vars
+temp.js
+*.py
+node_modules/
+.DS_Store
