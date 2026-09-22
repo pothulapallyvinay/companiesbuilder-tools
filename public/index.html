@@ -3,28 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <title>Free SEO Tools | Website SEO Tools | Companies Builder</title>
+  <meta name="description" content="Free SEO tools to audit websites, check page speed, generate sitemaps, review local SEO, create meta tags and build structured data. No sign-up required.">
+  <link rel="canonical" href="https://companiesbuilder.com/tools/">
+  <link rel="icon" href="https://companiesbuilder.com/assets/images/CB-logo.png">
+  <meta name="author" content="Companies Builder">
+  <meta property="og:site_name" content="Companies Builder">
+  <meta property="og:title" content="Free SEO Tools | Website SEO Tools | Companies Builder">
+  <meta property="og:description" content="Free SEO tools to audit websites, check page speed, generate sitemaps, review local SEO signals, create meta tags and build structured data.">
+  <meta property="og:url" content="https://companiesbuilder.com/tools/">
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/CB-logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free SEO Tools | Website SEO Tools | Companies Builder">
+  <meta name="twitter:description" content="Free SEO tools to audit websites, check page speed, generate sitemaps, review local SEO, create meta tags and build structured data.">
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/CB-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/tools/assets/shared.css">
-
-  <title>Free SEO Tools Suite | Companies Builder</title>
-  <meta name="description" content="Access our suite of professional-grade free SEO tools. Identify technical issues, generate critical meta tags, and optimize your site for maximum visibility.">
-  <link rel="canonical" href="https://companiesbuilder.com/tools/">
-  <link rel="icon" href="https://companiesbuilder.com/assets/images/CB-logo.png" />
-  <meta property="og:site_name" content="Companies Builder" />
-  <meta property="og:title" content="Free SEO Tools Suite | Companies Builder" />
-  <meta property="og:description" content="Access our suite of professional-grade free SEO tools. Identify technical issues, generate critical meta tags, and optimize your site for maximum visibility." />
-  <meta property="og:url" content="https://companiesbuilder.com/tools/" />
-  <meta property="og:image" content="https://companiesbuilder.com/assets/images/CB-logo.png" />
-  <meta property="og:type" content="website" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/tools/assets/shared.css">
+  <style>
+    :root {
+      --accent-primary-rgb: 99, 102, 241;
+      --hub-card-bg: rgba(20, 20, 35, 0.65);
+      --hub-border: rgba(255, 255, 255, 0.08);
+      --hub-radius: 14px;
+      --hub-section-gap: 5rem;
+    }
+    .cb-breadcrumb { display:flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--text-muted);margin-bottom:2.5rem;padding-top:.5rem; }
+    .cb-breadcrumb a { color:var(--text-muted);text-decoration:none;transition:color .2s; }
+    .cb-breadcrumb a:hover { color:#fff; }
+    .cb-breadcrumb .sep { opacity:.45; }
+    .hub-hero { text-align:center;max-width:780px;margin:0 auto 4.5rem; }
+    .hub-hero .eyebrow { display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-primary);background:rgba(var(--accent-primary-rgb),.12);border:1px solid rgba(var(--accent-primary-rgb),.25);border-radius:100px;padding:.3rem .9rem;margin-bottom:1.4rem; }
+    .hub-hero h1 { font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:1.2rem; }
+    .hub-hero .lead { font-size:1.05rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem; }
+    .hub-hero .audience-tags { display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.4rem; }
+    .audience-tag { font-size:.78rem;font-weight:500;color:rgba(255,255,255,.6);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:.25rem .75rem; }
+    .hub-section { margin-bottom:var(--hub-section-gap); }
+    .hub-section-header { margin-bottom:2rem; }
+    .hub-section-header h2 { font-size:clamp(1.4rem,3.5vw,2rem);font-weight:700;color:#fff;margin-bottom:.6rem; }
+    .hub-section-header p { font-size:.97rem;color:var(--text-muted);max-width:680px;margin-bottom:0; }
+    .tools-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem; }
+    .tool-card { background:var(--hub-card-bg);border:1px solid var(--hub-border);border-radius:var(--hub-radius);padding:1.6rem;display:flex;flex-direction:column;gap:.8rem;text-decoration:none;color:inherit;transition:transform .25s cubic-bezier(.4,0,.2,1),border-color .25s,box-shadow .25s;position:relative;overflow:hidden; }
+    .tool-card::before { content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(var(--accent-primary-rgb),.06),transparent 60%);opacity:0;transition:opacity .25s; }
+    .tool-card:hover { transform:translateY(-4px);border-color:rgba(var(--accent-primary-rgb),.5);box-shadow:0 12px 40px rgba(var(--accent-primary-rgb),.18);text-decoration:none;color:inherit; }
+    .tool-card:hover::before { opacity:1; }
+    .tool-card-top { display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem; }
+    .tool-card-icon { width:42px;height:42px;border-radius:10px;background:rgba(var(--accent-primary-rgb),.15);border:1px solid rgba(var(--accent-primary-rgb),.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--accent-primary);flex-shrink:0; }
+    .tool-card-badge { font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .55rem;border-radius:100px; }
+    .badge-audit { background:rgba(99,102,241,.15);color:#a5b4fc;border:1px solid rgba(99,102,241,.25); }
+    .badge-generator { background:rgba(34,211,160,.12);color:var(--green);border:1px solid rgba(34,211,160,.22); }
+    .tool-card h3 { font-size:1.05rem;font-weight:700;color:#fff;margin:0; }
+    .tool-card p { font-size:.9rem;color:var(--text-muted);line-height:1.6;margin:0;flex:1; }
+    .tool-card-cta { display:inline-flex;align-items:center;gap:.35rem;font-size:.875rem;font-weight:600;color:var(--accent-primary);margin-top:auto;transition:gap .2s; }
+    .tool-card:hover .tool-card-cta { gap:.55rem; }
+    .category-group { background:var(--hub-card-bg);border:1px solid var(--hub-border);border-radius:var(--hub-radius);padding:1.6rem 1.8rem;height:100%; }
+    .category-group-title { font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-primary);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem; }
+    .category-tool-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.6rem; }
+    .category-tool-list li a { display:flex;align-items:center;gap:.7rem;padding:.65rem .85rem;border-radius:9px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:#e2e8f0;text-decoration:none;font-size:.9rem;font-weight:500;transition:background .2s,border-color .2s,color .2s; }
+    .category-tool-list li a:hover { background:rgba(var(--accent-primary-rgb),.12);border-color:rgba(var(--accent-primary-rgb),.3);color:#fff; }
+    .category-tool-list li a .cat-icon { width:28px;height:28px;border-radius:7px;background:rgba(var(--accent-primary-rgb),.12);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:var(--accent-primary);flex-shrink:0; }
+    .category-tool-list li a .cat-desc { font-size:.75rem;color:var(--text-muted);display:block;line-height:1.3; }
+    .cat-info { flex:1; }
+    .cat-arrow { color:var(--text-muted);font-size:.8rem; }
+    .workflow-steps { display:flex;flex-direction:column;gap:0; }
+    .workflow-step { display:flex;gap:1.2rem;position:relative; }
+    .workflow-step:not(:last-child)::after { content:"";position:absolute;left:19px;top:44px;width:2px;height:calc(100% - 20px);background:linear-gradient(to bottom,rgba(var(--accent-primary-rgb),.35),transparent); }
+    .step-num { width:40px;height:40px;border-radius:50%;background:rgba(var(--accent-primary-rgb),.15);border:1.5px solid rgba(var(--accent-primary-rgb),.35);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:var(--accent-primary);flex-shrink:0;z-index:1; }
+    .step-content { padding-bottom:2rem;flex:1; }
+    .step-content h3 { font-size:1rem;font-weight:700;color:#fff;margin-bottom:.35rem; }
+    .step-content p { font-size:.9rem;color:var(--text-muted);line-height:1.65;margin:0; }
+    .step-content a { color:var(--accent-primary);font-weight:500;text-decoration:none; }
+    .step-content a:hover { color:#a5b4fc;text-decoration:underline; }
+    .topic-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem; }
+    .topic-block { background:var(--hub-card-bg);border:1px solid var(--hub-border);border-radius:var(--hub-radius);padding:1.4rem 1.5rem; }
+    .topic-block-head { display:flex;align-items:center;gap:.65rem;margin-bottom:.65rem; }
+    .topic-icon { width:34px;height:34px;border-radius:8px;background:rgba(var(--accent-primary-rgb),.14);display:flex;align-items:center;justify-content:center;font-size:.95rem;color:var(--accent-primary);flex-shrink:0; }
+    .topic-block h3 { font-size:.95rem;font-weight:700;color:#fff;margin:0; }
+    .topic-block p { font-size:.875rem;color:var(--text-muted);line-height:1.65;margin:0; }
+    .topic-block a { color:var(--accent-primary);font-weight:500;text-decoration:none; }
+    .topic-block a:hover { color:#a5b4fc;text-decoration:underline; }
+    .decision-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem; }
+    .decision-item { background:var(--hub-card-bg);border:1px solid var(--hub-border);border-radius:11px;padding:1.1rem 1.3rem;display:flex;flex-direction:column;gap:.5rem; }
+    .decision-need { font-size:.82rem;color:var(--text-muted);font-weight:500; }
+    .decision-tool a { font-size:.95rem;font-weight:700;color:var(--accent-primary);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem; }
+    .decision-tool a:hover { color:#a5b4fc; }
+    .prose-section { background:var(--hub-card-bg);border:1px solid var(--hub-border);border-radius:var(--hub-radius);padding:2rem 2.2rem; }
+    .prose-section p { font-size:.93rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem; }
+    .prose-section p:last-child { margin-bottom:0; }
+    .prose-section a { color:var(--accent-primary);font-weight:500;text-decoration:none; }
+    .prose-section a:hover { color:#a5b4fc;text-decoration:underline; }
+    .prose-bullets { list-style:none;padding:0;margin:1rem 0 0;display:flex;flex-direction:column;gap:.5rem; }
+    .prose-bullets li { display:flex;align-items:flex-start;gap:.6rem;font-size:.9rem;color:var(--text-muted);line-height:1.6; }
+    .prose-bullets li::before { content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-primary);margin-top:.55rem;flex-shrink:0; }
+    .faq-list { display:flex;flex-direction:column;gap:.6rem; }
+    .faq-item { background:var(--hub-card-bg);border:1px solid var(--hub-border);border-radius:11px;overflow:hidden;transition:border-color .2s; }
+    .faq-item.show-open { border-color:rgba(var(--accent-primary-rgb),.35); }
+    .faq-btn { width:100%;background:transparent;border:none;padding:1.1rem 1.4rem;text-align:left;color:#fff;font-size:.93rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .2s; }
+    .faq-btn:hover { background:rgba(255,255,255,.03); }
+    .faq-btn[aria-expanded="true"] { color:var(--accent-primary); }
+    .faq-btn .faq-chevron { font-size:.8rem;transition:transform .25s cubic-bezier(.4,0,.2,1);flex-shrink:0;color:var(--text-muted); }
+    .faq-btn[aria-expanded="true"] .faq-chevron { transform:rotate(180deg);color:var(--accent-primary); }
+    .faq-body { font-size:.88rem;color:var(--text-muted);line-height:1.72;padding:0 1.4rem 1.2rem; }
+    .faq-body a { color:var(--accent-primary);font-weight:500;text-decoration:none; }
+    .faq-body a:hover { text-decoration:underline; }
+    .cta-section { background:linear-gradient(135deg,rgba(99,102,241,.12) 0%,rgba(168,85,247,.08) 100%);border:1px solid rgba(var(--accent-primary-rgb),.2);border-radius:var(--hub-radius);padding:2.6rem 2.4rem;text-align:center; }
+    .cta-section h2 { font-size:clamp(1.3rem,3vw,1.75rem);color:#fff;margin-bottom:.8rem; }
+    .cta-section p { font-size:.95rem;color:var(--text-muted);max-width:580px;margin:0 auto 1.6rem;line-height:1.7; }
+    .cta-btns { display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap; }
+    .cta-btn-primary { display:inline-flex;align-items:center;gap:.4rem;padding:.72rem 1.5rem;border-radius:9px;font-weight:700;font-size:.9rem;text-decoration:none;background:linear-gradient(135deg,#6c63ff,#3d8bff);color:#fff;box-shadow:0 6px 20px rgba(108,99,255,.3);transition:transform .18s ease,box-shadow .18s ease; }
+    .cta-btn-primary:hover { transform:translateY(-2px);box-shadow:0 10px 28px rgba(108,99,255,.4);color:#fff;text-decoration:none; }
+    .cta-btn-outline { display:inline-flex;align-items:center;gap:.4rem;padding:.72rem 1.5rem;border-radius:9px;font-weight:600;font-size:.9rem;text-decoration:none;border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.8);background:rgba(255,255,255,.04);transition:border-color .2s,background .2s,color .2s; }
+    .cta-btn-outline:hover { border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;text-decoration:none; }
+    .hub-divider { border:none;border-top:1px solid rgba(255,255,255,.06);margin:0 0 var(--hub-section-gap); }
+    @media (max-width:767px) { :root { --hub-section-gap:3.5rem; } .prose-section { padding:1.4rem 1.2rem; } .cta-section { padding:2rem 1.3rem; } }
+    @media (max-width:480px) { .tools-grid,.topic-grid,.decision-grid { grid-template-columns:1fr; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://companiesbuilder.com/" }, { "@type": "ListItem", "position": 2, "name": "SEO Tools", "item": "https://companiesbuilder.com/tools/" } ] },
+      { "@type": ["CollectionPage", "WebPage"], "@id": "https://companiesbuilder.com/tools/", "url": "https://companiesbuilder.com/tools/", "name": "Free SEO Tools | Website SEO Tools | Companies Builder", "description": "Free SEO tools to audit websites, check page speed, generate sitemaps, review local SEO signals, create meta tags and build structured data.", "inLanguage": "en", "publisher": { "@type": "Organization", "name": "Companies Builder", "url": "https://companiesbuilder.com/" }, "hasPart": [ { "@type": "WebPage", "name": "SEO Auditor", "url": "https://companiesbuilder.com/tools/seo-auditor/" }, { "@type": "WebPage", "name": "Speed Checker", "url": "https://companiesbuilder.com/tools/speed-checker/" }, { "@type": "WebPage", "name": "Sitemap Generator", "url": "https://companiesbuilder.com/tools/sitemap-generator/" }, { "@type": "WebPage", "name": "Local SEO Checker", "url": "https://companiesbuilder.com/tools/local-seo/" }, { "@type": "WebPage", "name": "Meta Tag Generator", "url": "https://companiesbuilder.com/tools/meta-tag-generator/" }, { "@type": "WebPage", "name": "Schema Generator", "url": "https://companiesbuilder.com/tools/schema-generator/" } ] }
+    ]
+  }
+  </script>
 </head>
 <body>
-
-  <!-- Shared Header -->
-  <!-- NAVBAR -->
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
@@ -32,8 +141,7 @@
         <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
         <span>Companies Builder</span>
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
@@ -41,154 +149,301 @@
           <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/about/">About</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i
-                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i
-                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i
-                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i
-                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
-              <li>
-                <hr class="dropdown-divider my-1">
-              </li>
-              <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/"><i class="bi bi-grid me-2 opacity-75"></i>All
-                  Services</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/"><i class="bi bi-grid me-2 opacity-75"></i>All Services</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Resources</a>
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
             <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/resources/checklists/"><i
-                    class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/resources/checklists/"><i class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link active" href="https://companiesbuilder.com/tools/">Tools</a></li>
+          <li class="nav-item"><a class="nav-link active" href="https://companiesbuilder.com/tools/" aria-current="page">Tools</a></li>
           <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/blogs/">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/contact/">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="https://companiesbuilder.com/pricing">Pricing</a></li>
-          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button"
-              aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars"
-                aria-hidden="true"></i></button></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="container" style="padding-top: 4rem; padding-bottom: 4rem;">
-    <div class="text-center" style="max-width: 800px; margin: 0 auto 4rem auto;">
-      <span class="badge badge-premium" style="margin-bottom: 1rem;">Free SEO Suite</span>
-      <h1>Rank Higher. Grow Faster.</h1>
-      <p style="font-size: 1.1rem;">
-        Access our suite of professional-grade SEO tools. Identify technical issues, generate critical meta tags, and optimize your site for maximum visibility.
-      </p>
-    </div>
+  <main>
+    <div class="container" style="padding-top:3.5rem;padding-bottom:5rem;">
 
-    <div class="tools-grid">
-      <!-- SEO Auditor -->
-      <a href="/tools/seo-auditor/" class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>SEO Auditor</h3>
-          <span class="badge" style="background: rgba(var(--accent-primary-rgb), 0.2); color: var(--accent-primary); border: 1px solid var(--accent-primary);">5 Free Audits</span>
-        </div>
-        <p>Comprehensive technical and on-page SEO analysis. Identify exactly what's holding your rankings back.</p>
-        <div style="margin-top: auto; color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">
-          Launch Tool &rarr;
-        </div>
-      </a>
+      <!-- Breadcrumb -->
+      <nav class="cb-breadcrumb" aria-label="Breadcrumb">
+        <a href="https://companiesbuilder.com/"><i class="bi bi-house" aria-hidden="true"></i> Home</a>
+        <span class="sep" aria-hidden="true"><i class="bi bi-chevron-right"></i></span>
+        <span aria-current="page">SEO Tools</span>
+      </nav>
 
-      <!-- Speed Checker -->
-      <a href="/tools/speed-checker/" class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>Speed Checker</h3>
-          <span class="badge" style="background: rgba(var(--accent-primary-rgb), 0.2); color: var(--accent-primary); border: 1px solid var(--accent-primary);">5 Free Checks</span>
+      <!-- Hero -->
+      <div class="hub-hero">
+        <div class="eyebrow"><i class="bi bi-tools" aria-hidden="true"></i> Free &amp; No Sign-up Required</div>
+        <h1>Free SEO Tools for Websites</h1>
+        <p class="lead">Use free SEO tools to audit, analyze and improve important parts of your website&#8217;s SEO, performance, metadata, structured data and search visibility. Each tool focuses on a specific area so you can identify and act on issues without needing a full-service platform.</p>
+        <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:0;">Useful for:</p>
+        <div class="audience-tags">
+          <span class="audience-tag"><i class="bi bi-building" aria-hidden="true"></i> Business owners</span>
+          <span class="audience-tag"><i class="bi bi-megaphone" aria-hidden="true"></i> Marketers</span>
+          <span class="audience-tag"><i class="bi bi-bar-chart-line" aria-hidden="true"></i> SEO professionals</span>
+          <span class="audience-tag"><i class="bi bi-code-slash" aria-hidden="true"></i> Web developers</span>
+          <span class="audience-tag"><i class="bi bi-shop" aria-hidden="true"></i> Small businesses</span>
         </div>
-        <p>Test Core Web Vitals and load times using direct Google PageSpeed Insights data.</p>
-        <div style="margin-top: auto; color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">
-          Launch Tool &rarr;
-        </div>
-      </a>
+      </div>
 
-      <!-- Sitemap Generator -->
-      <a href="/tools/sitemap-generator/" class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>Sitemap Generator</h3>
-          <span class="badge" style="background: rgba(var(--accent-primary-rgb), 0.2); color: var(--accent-primary); border: 1px solid var(--accent-primary);">5 Free Scans</span>
+      <!-- Section 1: Tool Directory -->
+      <section class="hub-section" aria-labelledby="tools-heading">
+        <div class="hub-section-header">
+          <h2 id="tools-heading">Free SEO Tools</h2>
+          <p>A practical collection of website SEO tools covering audits, performance checks, local SEO signals, sitemap generation, metadata creation and structured data markup.</p>
         </div>
-        <p>Instantly crawl your website and generate a perfectly formatted XML sitemap for search engines.</p>
-        <div style="margin-top: auto; color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">
-          Launch Tool &rarr;
+        <div class="tools-grid" role="list">
+          <a href="https://companiesbuilder.com/tools/seo-auditor/" class="tool-card" role="listitem">
+            <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-search-heart" aria-hidden="true"></i></div><span class="tool-card-badge badge-audit">Audit</span></div>
+            <h3>SEO Auditor</h3>
+            <p>Run a website audit that checks important technical and on-page signals &#8212; including metadata, headings, image attributes, performance indicators and crawlability factors. Useful for identifying areas that may need attention.</p>
+            <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
+          </a>
+          <a href="https://companiesbuilder.com/tools/speed-checker/" class="tool-card" role="listitem">
+            <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div><span class="tool-card-badge badge-audit">Audit</span></div>
+            <h3>Speed Checker</h3>
+            <p>Check how quickly a page loads and review Core Web Vitals scores &#8212; including Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint &#8212; using real page speed data.</p>
+            <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
+          </a>
+          <a href="https://companiesbuilder.com/tools/sitemap-generator/" class="tool-card" role="listitem">
+            <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></div><span class="tool-card-badge badge-generator">Generator</span></div>
+            <h3>Sitemap Generator</h3>
+            <p>Crawl a website and generate a ready-to-submit XML sitemap. A properly formatted sitemap helps search engines locate the URLs on your site more efficiently.</p>
+            <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
+          </a>
+          <a href="https://companiesbuilder.com/tools/local-seo/" class="tool-card" role="listitem">
+            <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div><span class="tool-card-badge badge-audit">Audit</span></div>
+            <h3>Local SEO Checker</h3>
+            <p>Review the website-side signals relevant to local business search visibility &#8212; including NAP consistency, LocalBusiness structured data, and other on-page local SEO indicators.</p>
+            <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
+          </a>
+          <a href="https://companiesbuilder.com/tools/meta-tag-generator/" class="tool-card" role="listitem">
+            <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-tags" aria-hidden="true"></i></div><span class="tool-card-badge badge-generator">Generator</span></div>
+            <h3>Meta Tag Generator</h3>
+            <p>Build SEO title tags, meta descriptions, canonical links, and Open Graph or Twitter Card metadata with a live preview &#8212; so you can see how a page may appear in search results and on social platforms.</p>
+            <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
+          </a>
+          <a href="https://companiesbuilder.com/tools/schema-generator/" class="tool-card" role="listitem">
+            <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-code-square" aria-hidden="true"></i></div><span class="tool-card-badge badge-generator">Generator</span></div>
+            <h3>Schema Generator</h3>
+            <p>Generate valid JSON-LD structured data for supported Schema.org types. Adding structured data helps search engines understand the content and entities on a page, which may support richer search result appearances.</p>
+            <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
+          </a>
         </div>
-      </a>
+      </section>
 
-      <!-- Local SEO Checker -->
-      <a href="/tools/local-seo/" class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>Local SEO Checker</h3>
-          <span class="badge" style="background: rgba(var(--accent-primary-rgb), 0.2); color: var(--accent-primary); border: 1px solid var(--accent-primary);">5 Free Checks</span>
-        </div>
-        <p>Ensure your business is perfectly optimized for local search and Google Maps rankings.</p>
-        <div style="margin-top: auto; color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">
-          Launch Tool &rarr;
-        </div>
-      </a>
+      <hr class="hub-divider">
 
-      <!-- Meta Tag Generator -->
-      <a href="/tools/meta-tag-generator/" class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>Meta Tag Generator</h3>
-          <span class="badge badge-free">Unlimited Free</span>
+      <!-- Section 2: Categories -->
+      <section class="hub-section" aria-labelledby="categories-heading">
+        <div class="hub-section-header">
+          <h2 id="categories-heading">Choose the Right SEO Tool</h2>
+          <p>Not sure where to start? The tools fall into two main groups depending on what you need to do.</p>
         </div>
-        <p>Create perfect Title, Description, and Open Graph tags with live SERP previews.</p>
-        <div style="margin-top: auto; color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">
-          Launch Tool &rarr;
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="category-group">
+              <div class="category-group-title"><i class="bi bi-clipboard2-pulse" aria-hidden="true"></i> SEO Audit &amp; Website Checks</div>
+              <ul class="category-tool-list">
+                <li><a href="https://companiesbuilder.com/tools/seo-auditor/"><span class="cat-icon"><i class="bi bi-search-heart" aria-hidden="true"></i></span><span class="cat-info"><span>SEO Auditor</span><span class="cat-desc">Technical &amp; on-page SEO analysis</span></span><i class="bi bi-chevron-right cat-arrow" aria-hidden="true"></i></a></li>
+                <li><a href="https://companiesbuilder.com/tools/speed-checker/"><span class="cat-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span><span class="cat-info"><span>Speed Checker</span><span class="cat-desc">Page speed &amp; Core Web Vitals</span></span><i class="bi bi-chevron-right cat-arrow" aria-hidden="true"></i></a></li>
+                <li><a href="https://companiesbuilder.com/tools/local-seo/"><span class="cat-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span><span class="cat-info"><span>Local SEO Checker</span><span class="cat-desc">Local business visibility signals</span></span><i class="bi bi-chevron-right cat-arrow" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="category-group">
+              <div class="category-group-title"><i class="bi bi-file-earmark-code" aria-hidden="true"></i> SEO Generation &amp; Markup</div>
+              <ul class="category-tool-list">
+                <li><a href="https://companiesbuilder.com/tools/sitemap-generator/"><span class="cat-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><span class="cat-info"><span>Sitemap Generator</span><span class="cat-desc">XML sitemap creation</span></span><i class="bi bi-chevron-right cat-arrow" aria-hidden="true"></i></a></li>
+                <li><a href="https://companiesbuilder.com/tools/meta-tag-generator/"><span class="cat-icon"><i class="bi bi-tags" aria-hidden="true"></i></span><span class="cat-info"><span>Meta Tag Generator</span><span class="cat-desc">Titles, descriptions &amp; social tags</span></span><i class="bi bi-chevron-right cat-arrow" aria-hidden="true"></i></a></li>
+                <li><a href="https://companiesbuilder.com/tools/schema-generator/"><span class="cat-icon"><i class="bi bi-code-square" aria-hidden="true"></i></span><span class="cat-info"><span>Schema Generator</span><span class="cat-desc">JSON-LD structured data</span></span><i class="bi bi-chevron-right cat-arrow" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </a>
+      </section>
 
-      <!-- Schema Generator -->
-      <a href="/tools/schema-generator/" class="glass-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>Schema Generator</h3>
-          <span class="badge badge-free">Unlimited Free</span>
+      <hr class="hub-divider">
+
+      <!-- Section 3: Workflow -->
+      <section class="hub-section" aria-labelledby="workflow-heading">
+        <div class="hub-section-header">
+          <h2 id="workflow-heading">SEO Tools to Check Your Website</h2>
+          <p>Each tool examines a different part of a website. Used together, they give you a broader picture of where a site stands technically and on-page. Here is a practical sequence to follow:</p>
         </div>
-        <p>Generate valid JSON-LD structured data to win Rich Snippets in Google search results.</p>
-        <div style="margin-top: auto; color: var(--accent-primary); font-weight: 500; font-size: 0.9rem;">
-          Launch Tool &rarr;
+        <div class="workflow-steps">
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">1</div><div class="step-content"><h3>Start with the SEO Auditor</h3><p>The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> gives you a broad overview of technical and on-page issues &#8212; missing meta tags, heading structure problems, image attributes and more. It is the best starting point because it covers the widest range of signals in a single check.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">2</div><div class="step-content"><h3>Check Page Speed and Core Web Vitals</h3><p>Use the <a href="https://companiesbuilder.com/tools/speed-checker/">website speed checker</a> to review loading performance. Page speed affects user experience, and Core Web Vitals are signals Google considers in its ranking systems. Understanding where a page stands helps prioritize performance work.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">3</div><div class="step-content"><h3>Review Your Page Metadata</h3><p>If the audit flags issues with titles or descriptions, use the <a href="https://companiesbuilder.com/tools/meta-tag-generator/">meta tag generator</a> to create properly formatted SEO metadata and Open Graph tags. A clear, accurate title and description help search engines understand what a page is about.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">4</div><div class="step-content"><h3>Check Local SEO Signals (if relevant)</h3><p>For businesses with a physical location or local service area, the <a href="https://companiesbuilder.com/tools/local-seo/">local SEO checker</a> reviews website-side signals like NAP data and LocalBusiness structured data &#8212; focused purely on what is on the website itself.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">5</div><div class="step-content"><h3>Generate or Review Your XML Sitemap</h3><p>The <a href="https://companiesbuilder.com/tools/sitemap-generator/">XML sitemap generator</a> crawls a website and produces a formatted sitemap file. Submitting a sitemap to Google Search Console can help ensure important pages are discovered and reviewed for indexing.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">6</div><div class="step-content"><h3>Add or Review Structured Data</h3><p>Use the <a href="https://companiesbuilder.com/tools/schema-generator/">schema markup generator</a> to create JSON-LD for supported Schema.org types. Structured data helps search engines understand the entities and content on a page. Add it where the content genuinely matches the schema type.</p></div></div>
         </div>
-      </a>
+        <div style="margin-top:1.5rem;padding:1rem 1.3rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.85rem;color:var(--text-muted);line-height:1.65;">
+          <i class="bi bi-info-circle me-2" style="color:var(--accent-primary);" aria-hidden="true"></i>
+          Completing these steps can help identify and address technical issues, but search performance also depends on content quality, site authority, competition, and many other factors. These tools provide a starting point, not a guaranteed outcome.
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 4: What tools help you check -->
+      <section class="hub-section" aria-labelledby="topics-heading">
+        <div class="hub-section-header">
+          <h2 id="topics-heading">What Can These SEO Tools Help You Check?</h2>
+          <p>The tools cover several distinct areas of website SEO. Here is a brief overview of each.</p>
+        </div>
+        <div class="topic-grid">
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-gear" aria-hidden="true"></i></div><h3>Technical SEO</h3></div><p>Technical SEO covers how a site is built and configured &#8212; crawlability, indexability, canonical tags, redirect chains, robots meta tags and page structure. The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> checks several of these signals and surfaces potential issues for review.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div><h3>Website Performance</h3></div><p>Page speed and Core Web Vitals measure how fast and stable a page feels to a real user &#8212; Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint. The <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> surfaces these scores for any URL.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></div><h3>On-Page SEO</h3></div><p>On-page SEO covers the elements that help search engines understand a page &#8212; title tags, meta descriptions, heading structure, image alt attributes and internal linking. The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> and <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> both address on-page elements.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div><h3>Local SEO</h3></div><p>For local businesses, website-side signals include consistent NAP (name, address, phone) information, LocalBusiness structured data, and location-specific page content. The <a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker</a> reviews these signals directly on the page.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></div><h3>XML Sitemaps</h3></div><p>An XML sitemap lists the important URLs on a website. Submitting one to Google Search Console helps ensure pages are found and reviewed for indexing &#8212; useful on larger sites or recently launched websites. The <a href="https://companiesbuilder.com/tools/sitemap-generator/">Sitemap Generator</a> creates a correctly formatted file ready for submission.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-code-square" aria-hidden="true"></i></div><h3>Structured Data</h3></div><p>Structured data uses the Schema.org vocabulary to describe content in a machine-readable way &#8212; articles, products, local businesses, FAQs and more. The <a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator</a> produces valid JSON-LD markup for supported types.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-share" aria-hidden="true"></i></div><h3>Social &amp; Open Graph Metadata</h3></div><p>Open Graph and Twitter Card tags control how a page appears when shared on social media. The <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> covers both standard and social metadata so your pages look correct in search results and social previews.</p></div>
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 5: Which Tool -->
+      <section class="hub-section" aria-labelledby="which-tool-heading">
+        <div class="hub-section-header">
+          <h2 id="which-tool-heading">Which SEO Tool Should I Use?</h2>
+          <p>Match your immediate need to the right tool.</p>
+        </div>
+        <div class="decision-grid">
+          <div class="decision-item"><div class="decision-need"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> I want to audit my website for SEO issues</div><div class="decision-tool"><a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></div>
+          <div class="decision-item"><div class="decision-need"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> I want to check page loading speed</div><div class="decision-tool"><a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></div>
+          <div class="decision-item"><div class="decision-need"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> I need to generate an XML sitemap</div><div class="decision-tool"><a href="https://companiesbuilder.com/tools/sitemap-generator/">Sitemap Generator <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></div>
+          <div class="decision-item"><div class="decision-need"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> I want to check local SEO signals on my site</div><div class="decision-tool"><a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></div>
+          <div class="decision-item"><div class="decision-need"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> I need SEO and social meta tags</div><div class="decision-tool"><a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></div>
+          <div class="decision-item"><div class="decision-need"><i class="bi bi-question-circle me-1" aria-hidden="true"></i> I need JSON-LD structured data markup</div><div class="decision-tool"><a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div></div>
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 6: How to Use -->
+      <section class="hub-section" aria-labelledby="how-to-heading">
+        <div class="hub-section-header"><h2 id="how-to-heading">How to Use These Free SEO Tools</h2></div>
+        <div class="prose-section">
+          <p>Each tool is designed to be straightforward: enter a URL or fill in a form, and the tool returns results or generates output. No account or payment is required for the free usage tier.</p>
+          <p>A few things worth keeping in mind when using any automated SEO tool:</p>
+          <ul class="prose-bullets">
+            <li>Automated checks surface potential issues &#8212; they do not always know the full context of your site. Some findings will need manual review before you decide whether to act on them.</li>
+            <li>A clean audit report means fewer detectable issues, not a guarantee of search performance. Rankings depend on many factors including content quality, site authority, user signals and competition.</li>
+            <li>Tools are most useful when used regularly. A check run once is a snapshot; periodic checks help you track whether changes have had the intended effect.</li>
+            <li>If a tool flags something you are not sure about, refer to Google&#8217;s official Search documentation, or consult with an SEO professional before making significant changes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 7: Why Use -->
+      <section class="hub-section" aria-labelledby="why-heading">
+        <div class="hub-section-header"><h2 id="why-heading">Why Use These SEO Tools?</h2></div>
+        <div class="prose-section">
+          <p>These tools were built to give website owners and marketing teams a practical way to check and improve specific parts of their site&#8217;s SEO without needing an enterprise subscription or specialist software for every task.</p>
+          <p>They are designed to be:</p>
+          <ul class="prose-bullets">
+            <li><strong style="color:#e2e8f0;">Free to use</strong> &#8212; no credit card or account needed to get started</li>
+            <li><strong style="color:#e2e8f0;">Focused</strong> &#8212; each tool does one thing well rather than trying to do everything at once</li>
+            <li><strong style="color:#e2e8f0;">Readable</strong> &#8212; results are explained clearly rather than buried in technical jargon</li>
+            <li><strong style="color:#e2e8f0;">Practical</strong> &#8212; outputs like sitemaps and schema markup are ready to use directly on your site</li>
+            <li><strong style="color:#e2e8f0;">Honest</strong> &#8212; results reflect actual checks, not inflated scores or arbitrary grades</li>
+          </ul>
+          <p style="margin-top:1rem;">They will not replace a full SEO audit by an experienced professional, and they are not intended to. But for routine website checks, generating SEO assets and getting a baseline understanding of how a site looks from a technical perspective, they cover a lot of ground without any cost.</p>
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 8: Small Businesses -->
+      <section class="hub-section" aria-labelledby="small-biz-heading">
+        <div class="hub-section-header"><h2 id="small-biz-heading">Free SEO Tools for Small Businesses</h2></div>
+        <div class="prose-section">
+          <p>Small businesses often cannot justify the cost of full SEO platforms &#8212; particularly when the task at hand is checking a single website, generating a sitemap or reviewing metadata. These tools fill that gap by handling specific, common website checks without any subscription required.</p>
+          <p>For a small business website, a useful starting routine might look like this:</p>
+          <ul class="prose-bullets">
+            <li>Use the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> to get an overview of technical and on-page issues on your main business pages</li>
+            <li>Run the <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> to see whether load times could be improved &#8212; slow pages affect both visitors and search performance</li>
+            <li>Use the <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> to write or review your title tags and meta descriptions before publishing new pages</li>
+            <li>If you serve a local area, the <a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker</a> reviews the website-side signals that matter for local search</li>
+            <li>Generate a clean XML sitemap with the <a href="https://companiesbuilder.com/tools/sitemap-generator/">Sitemap Generator</a> and submit it to Google Search Console</li>
+            <li>Add basic structured data with the <a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator</a> &#8212; particularly LocalBusiness or Organization markup, which is straightforward and commonly applicable</li>
+          </ul>
+          <p style="margin-top:1rem;">None of these steps is complicated, and most can be completed in under an hour. Together they help ensure your website is technically accessible, clearly described and properly set up for search engine discovery.</p>
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 9: FAQ -->
+      <section class="hub-section" aria-labelledby="faq-heading">
+        <div class="hub-section-header"><h2 id="faq-heading">Frequently Asked Questions About SEO Tools</h2></div>
+        <div class="faq-list" id="faqAccordion">
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">What are SEO tools? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-1" class="faq-body collapse">SEO tools are utilities that help website owners and marketers review, analyze and improve different aspects of a website&#8217;s search engine optimization. They can check technical elements, analyze on-page content, generate SEO assets like sitemaps and metadata, and surface issues that may affect how a site appears in search results.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">What are SEO tools used for? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-2" class="faq-body collapse">They are used for a range of tasks: auditing a website for technical and on-page issues, checking page loading speed, reviewing metadata, generating sitemaps, checking local SEO signals, creating structured data and producing social metadata. Different tools focus on different parts of the SEO picture.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Can I use these SEO tools for free? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-3" class="faq-body collapse">Yes. All six tools are free to use with no account or sign-up required. Some tools &#8212; the SEO Auditor, Speed Checker, Sitemap Generator and Local SEO Checker &#8212; have a limit on free usage per device. The Meta Tag Generator and Schema Generator are unlimited. You can see the free tier details on each individual tool page.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">Which SEO tool should I use first? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-4" class="faq-body collapse">The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> is usually the best starting point because it provides a broad overview of technical and on-page issues across an entire page in a single check. From there you can decide which other tools &#8212; Speed Checker, Meta Tag Generator, Local SEO Checker and so on &#8212; are most relevant to what you found.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">What SEO tools can I use to check my website? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-5" class="faq-body collapse">For checking a website, the most relevant tools here are the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> (technical and on-page SEO), the <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> (page loading performance) and the <a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker</a> (local business signals). Together they cover most of the common areas worth reviewing on a website.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-6" aria-expanded="false" aria-controls="faq-6">Do SEO tools guarantee higher Google rankings? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-6" class="faq-body collapse">No &#8212; and anyone claiming otherwise should be treated with caution. SEO tools help identify potential issues and generate useful assets, but search rankings depend on many factors including content relevance, site authority, backlinks, user engagement and competition. These tools provide a starting point for improving technical implementation, not a guaranteed ranking outcome.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-7" aria-expanded="false" aria-controls="faq-7">Can small businesses use these tools? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-7" class="faq-body collapse">Yes. These tools were designed with small businesses in mind. They cover practical, common website tasks &#8212; checking SEO, reviewing speed, generating a sitemap, creating metadata &#8212; without requiring an enterprise platform or technical background. Most checks take a few minutes and the results include clear explanations.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-8" aria-expanded="false" aria-controls="faq-8">When should I use an SEO audit tool? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-8" class="faq-body collapse">An <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO audit tool</a> is useful when you want a baseline check of a page before it goes live, after a website redesign or platform migration, when you notice a traffic drop and want to rule out technical issues, or simply as a periodic check to catch anything that may have changed or broken over time.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-9" aria-expanded="false" aria-controls="faq-9">What is the difference between an SEO audit and a speed test? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-9" class="faq-body collapse">An SEO audit checks a broad range of on-page and technical factors &#8212; metadata, heading structure, image attributes, canonical tags and more. A speed test focuses specifically on how quickly a page loads and how it performs against Core Web Vitals metrics. Both are useful: the audit gives you a wider picture, while the speed test gives specific performance data. Use the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> and <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> independently or in combination.</div></div>
+        </div>
+      </section>
+
+      <hr class="hub-divider">
+
+      <!-- Section 10: CTA -->
+      <section class="hub-section" aria-labelledby="cta-heading">
+        <div class="cta-section">
+          <h2 id="cta-heading">Need Help Fixing Your Website?</h2>
+          <p>These tools identify issues &#8212; but resolving them effectively often requires a specialist. Companies Builder helps businesses with website development, technical SEO and digital marketing from our base in Hyderabad. If you have found issues you would like help addressing, or you are looking for ongoing SEO support, we would be glad to talk.</p>
+          <div class="cta-btns">
+            <a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" class="cta-btn-primary"><i class="bi bi-bar-chart-line" aria-hidden="true"></i> Explore SEO Services</a>
+            <a href="https://companiesbuilder.com/contact/" class="cta-btn-outline"><i class="bi bi-chat-dots" aria-hidden="true"></i> Get in Touch</a>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
-  <!-- Shared Footer -->
-  <!-- FOOTER -->
   <!-- FOOTER -->
   <footer class="site-footer py-5">
     <div class="container">
       <div class="row g-4 pb-4">
         <div class="col-md-4 col-lg-3">
           <a href="https://companiesbuilder.com/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
-            <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36"
-              style="height:36px;width:auto;display:inline-block">
-            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies
-              Builder</span>
+            <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36" style="height:36px;width:auto;display:inline-block">
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies Builder</span>
           </a>
-          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving
-            startups and SMBs across India.</p>
+          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving startups and SMBs across India.</p>
           <div class="footer-social">
-            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook"><i
-                class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener"
-              aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener"
-              aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X"><i
-                class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
           </div>
         </div>
         <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
@@ -217,37 +472,39 @@
         <div class="col-md-3 col-lg-3">
           <h3>Get in Touch</h3>
           <ul class="list-unstyled">
-            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com"
-                style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope"
-                  style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
-            <li style="margin-bottom:10px"><a href="tel:+916302787953"
-                style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone"
-                  style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
-            <li><a href="https://companiesbuilder.com/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check"
-                  style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com" style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope" style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
+            <li style="margin-bottom:10px"><a href="tel:+916302787953" style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone" style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
+            <li><a href="https://companiesbuilder.com/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check" style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 Companies Builder. All rights reserved.</span>
         <span class="footer-badge">Hyderabad, India</span>
-        <span><a href="https://companiesbuilder.com/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a
-            href="https://companiesbuilder.com/sitemap.xml">Sitemap</a></span>
+        <span><a href="https://companiesbuilder.com/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a href="https://companiesbuilder.com/sitemap.xml">Sitemap</a></span>
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script src="/tools/assets/shared.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-<script>
-// Navbar scroll effect
-(function () {
-  var nav = document.getElementById('siteNav');
-  if(!nav) return;
-  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
-  document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-</script>
+  <script>
+  (function () {
+    var nav = document.getElementById('siteNav');
+    if (nav) {
+      var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10); };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+    document.addEventListener('show.bs.collapse', function (e) {
+      var item = e.target.closest('.faq-item');
+      if (item) item.classList.add('show-open');
+    });
+    document.addEventListener('hide.bs.collapse', function (e) {
+      var item = e.target.closest('.faq-item');
+      if (item) item.classList.remove('show-open');
+    });
+  })();
+  </script>
 </body>
 </html>
