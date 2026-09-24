@@ -13,6 +13,7 @@
   <link rel="canonical" href="https://companiesbuilder.com/tools/seo-auditor/" />
   <meta name="geo.region" content="IN-TG" />
   <meta name="geo.placename" content="Hyderabad" />
+  <link rel="icon" type="image/x-icon" href="https://companiesbuilder.com/favicon.ico" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Companies Builder" />
@@ -2393,7 +2394,9 @@
         const url = urlInput.value.trim();
         if (!url) return;
 
-        
+        if (!CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer')) {
+          return;
+        }
 
         resultsSection.style.display = 'none';
         btnAnalyze.disabled = true;
