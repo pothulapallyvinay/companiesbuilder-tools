@@ -2449,6 +2449,7 @@
           generateActionPlan(combinedAudits, customActionPlan);
 
           CompaniesBuilderTools.incrementUsage(TOOL_ID);
+          CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
 
           loadingIndicator.style.display = 'none';
           resultsSection.style.display = 'block';
@@ -2467,8 +2468,12 @@
           loadingText.textContent = `Error: ${error.message}`;
           loadingIndicator.querySelector('.loading-dots').style.display = 'none';
         } finally {
-          btnAnalyze.disabled = false;
-          btnAnalyze.innerHTML = '<i class="bi bi-magic me-2"></i>Analyze';
+          // Only re-enable if the limit hasn't been reached
+          if (CompaniesBuilderTools.getUsageCount(TOOL_ID) < CompaniesBuilderTools.MAX_FREE_ATTEMPTS) {
+            btnAnalyze.disabled = false;
+            btnAnalyze.innerHTML = '<i class="bi bi-magic me-2"></i>Analyze';
+          }
+          CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
         }
       });
 
