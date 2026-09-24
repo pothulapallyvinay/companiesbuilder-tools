@@ -70,18 +70,6 @@
   </script>
 
   <style>
-    :root {
-      --text-color: #333;
-      --bg-color: #fff;
-      --text-muted: #666;
-    }
-    
-    body.dark-mode {
-      --text-color: #d1d5db;
-      --bg-color: #0e1424;
-      --text-muted: #9aa3be;
-    }
-
     .score-circle {
       width: 120px;
       height: 120px;
@@ -94,138 +82,199 @@
       margin: 0 auto 1.5rem auto;
       border: 8px solid;
     }
-    .score-good { border-color: var(--success-color, #22d3a0); color: var(--success-color, #22d3a0); }
-    .score-needs-improvement { border-color: var(--warning-color, #ffb020); color: var(--warning-color, #ffb020); }
-    .score-poor { border-color: var(--error-color, #ff4b4b); color: var(--error-color, #ff4b4b); }
+    .score-good { border-color: var(--success-color, #10b981); color: var(--success-color, #10b981); }
+    .score-needs-improvement { border-color: var(--warning-color, #f59e0b); color: var(--warning-color, #f59e0b); }
+    .score-poor { border-color: var(--error-color, #ef4444); color: var(--error-color, #ef4444); }
 
     .metric-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
     }
     
     .metric-card {
-      background: rgba(0,0,0,0.05);
-      border: 1px solid var(--border-color, #e5e7eb);
-      padding: 1rem;
-      border-radius: 8px;
+      background: var(--bg-secondary, rgba(25, 25, 35, 0.6));
+      border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+      padding: 1.5rem;
+      border-radius: 16px;
       text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    body.dark-mode .metric-card {
-      background: rgba(0,0,0,0.2);
-      border-color: rgba(255,255,255,0.1);
+    .metric-card:hover {
+      border-color: var(--accent-primary, #6366f1);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
     }
     
     .metric-value {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.75rem;
+      font-weight: 800;
       margin: 0.5rem 0;
+      color: var(--text-main, #f0f0f5);
     }
     
     .loading-spinner {
       display: none;
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(0,0,0,0.1);
-      border-left-color: var(--accent-primary, #3d8bff);
+      width: 48px;
+      height: 48px;
+      border: 4px solid rgba(255,255,255,0.05);
+      border-left-color: var(--accent-primary, #6366f1);
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin: 2rem auto;
     }
     
-    body.dark-mode .loading-spinner {
-      border: 4px solid rgba(255,255,255,0.1);
-      border-left-color: var(--accent-primary, #6c63ff);
-    }
-    
     @keyframes spin { 100% { transform: rotate(360deg); } }
 
     #resultsArea { display: none; }
-    #crossPromoArea { margin-top: 2rem; }
+    #crossPromoArea { margin-top: 2.5rem; }
     
     /* Content Formatting */
     .edu-content {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-color, #e5e7eb);
-    }
-    
-    body.dark-mode .edu-content {
-      border-top-color: rgba(255,255,255,0.1);
+      margin-top: 5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border-color, rgba(255,255,255,0.08));
     }
 
     .edu-content h2 {
-      margin-top: 2.5rem;
-      margin-bottom: 1.25rem;
-      font-weight: 700;
-      font-size: 1.75rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 800;
+      font-size: 2.2rem;
+      color: var(--text-main, #f0f0f5);
+      background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
     }
 
     .edu-content h3 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-      font-size: 1.35rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-main, #f0f0f5);
     }
 
     .edu-content p {
       line-height: 1.8;
-      margin-bottom: 1.25rem;
-      font-size: 1.05rem;
-      color: var(--text-color);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--text-muted, #a0a0b0);
     }
 
     .edu-content ul, .edu-content ol {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
       padding-left: 1.5rem;
+      color: var(--text-muted, #a0a0b0);
     }
 
     .edu-content li {
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       line-height: 1.7;
-      font-size: 1.05rem;
-      color: var(--text-color);
+      font-size: 1.1rem;
     }
     
     .edu-content strong {
+      color: var(--text-main, #f0f0f5);
       font-weight: 600;
     }
     
-    .checklist-item {
-      list-style-type: none;
-      margin-bottom: 0.75rem;
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin: 2.5rem 0;
     }
-    .checklist-item input[type="checkbox"] {
-      margin-right: 10px;
+    
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      background: var(--bg-secondary, rgba(25, 25, 35, 0.6));
+      border: 1px solid var(--border-color, rgba(255,255,255,0.08));
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      color: var(--text-main, #f0f0f5);
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .checklist-item:hover {
+      border-color: var(--accent-primary, #6366f1);
+      background: rgba(99, 102, 241, 0.05);
+      transform: translateY(-2px);
+    }
+    
+    .checklist-item i {
+      color: var(--success-color, #10b981);
+      font-size: 1.35rem;
+      margin-right: 14px;
     }
     
     .breadcrumb-nav {
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+      color: var(--text-muted, #a0a0b0);
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
       justify-content: center;
     }
     
     .breadcrumb-nav a {
-      color: var(--accent-primary, #3d8bff);
+      color: var(--accent-primary, #6366f1);
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
     }
     
     .breadcrumb-nav a:hover {
-      text-decoration: underline;
-    }
-    
-    .accordion-button {
-      font-weight: 600;
+      color: var(--accent-secondary, #a855f7);
     }
     
     .tool-hero {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 3.5rem;
+    }
+    
+    .accordion-button {
+      font-weight: 600;
+      color: #f0f0f5 !important;
+      background: rgba(25, 25, 35, 0.6) !important;
+      padding: 1.25rem 1.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .accordion-button:not(.collapsed) {
+      background: rgba(99, 102, 241, 0.1) !important;
+      color: #8b83ff !important;
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+    }
+    
+    .accordion-button::after {
+      filter: invert(1) brightness(200%);
+    }
+    
+    .accordion-button:not(.collapsed)::after {
+      filter: invert(0.5) sepia(1) saturate(5) hue-rotate(220deg);
+    }
+    
+    .accordion-item {
+      background: var(--bg-secondary, rgba(25, 25, 35, 0.6)) !important;
+      border: 1px solid var(--border-color, rgba(255,255,255,0.08)) !important;
+      margin-bottom: 1.25rem;
+      border-radius: 12px !important;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .accordion-body {
+      color: var(--text-muted, #a0a0b0);
+      line-height: 1.8;
+      padding: 1.5rem;
+      font-size: 1.05rem;
     }
   </style>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -298,8 +347,8 @@
 
     <div class="tool-hero">
       <h1>Free Website Speed Checker</h1>
-      <p class="lead">Check Website Speed, Performance & Core Web Vitals</p>
-      <p class="text-muted" style="max-width: 600px; margin: 0 auto 1.5rem auto;">Check how a webpage performs and review important speed metrics including Core Web Vitals. Enter a public URL to run a performance test and see the results.</p>
+      <p class="lead" style="color: #f0f0f5;">Check Website Speed, Performance & Core Web Vitals</p>
+      <p style="color: #a0a0b0; max-width: 600px; margin: 0 auto 1.5rem auto;">Check how a webpage performs and review important speed metrics including Core Web Vitals. Enter a public URL to run a performance test and see the results.</p>
     </div>
 
     <!-- Usage Limit Banner Container -->
@@ -460,22 +509,22 @@
 
       <h2>Website Speed Optimization Checklist</h2>
       <p>Use this concise, practical starting checklist to guide your performance improvements. Remember that this checklist covers foundational elements and does not guarantee that every possible performance problem has been addressed.</p>
-      <ul style="list-style-type: none; padding-left: 0;">
-        <li class="checklist-item"><input type="checkbox" disabled> Test important pages individually</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Check mobile performance</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Check desktop performance</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Review LCP (Largest Contentful Paint)</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Review INP (Interaction to Next Paint)</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Review CLS (Cumulative Layout Shift)</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Optimize large images</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Reduce unnecessary JavaScript</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Review third-party scripts</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Review caching rules</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Check server response time</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Review custom fonts loading behavior</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Reduce layout shifts by specifying image dimensions</li>
-        <li class="checklist-item"><input type="checkbox" disabled> Re-test the page after making changes</li>
-      </ul>
+      <div class="checklist-grid">
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Test important pages individually</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check mobile performance</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check desktop performance</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review LCP (Largest Contentful Paint)</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review INP (Interaction to Next Paint)</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review CLS (Cumulative Layout Shift)</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Optimize large images</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Reduce unnecessary JavaScript</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review third-party scripts</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review caching rules</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check server response time</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review custom fonts loading behavior</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Reduce layout shifts by specifying image dimensions</div>
+        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Re-test the page after making changes</div>
+      </div>
 
       <h2>When Should You Run a Website Speed Test?</h2>
       <p>Testing website speed should not be a one-time event. There are several useful situations where running a performance test is highly recommended:</p>
