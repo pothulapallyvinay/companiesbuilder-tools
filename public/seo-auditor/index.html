@@ -1030,6 +1030,177 @@
       margin-bottom: 0
     }
 
+    /* Download Report */
+    .download-report-section {
+      text-align: center;
+      margin: 40px 0;
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(34, 211, 160, .08), rgba(61, 139, 255, .08));
+      border: 1px solid rgba(34, 211, 160, .2);
+      border-radius: var(--radius);
+    }
+
+    .download-report-section h3 {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .download-report-section p {
+      color: var(--ink-dim);
+      font-size: .95rem;
+      margin-bottom: 20px;
+    }
+
+    .btn-download-report {
+      background: var(--grad-brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 12px 40px rgba(108, 99, 255, .35);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn-download-report:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(108, 99, 255, .5);
+    }
+
+    /* Report Gate Modal */
+    .report-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .7);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .report-modal-overlay.active {
+      display: flex;
+    }
+
+    .report-modal {
+      background: var(--navy-900);
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, .6);
+    }
+
+    .report-modal h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .report-modal .modal-subtitle {
+      color: var(--ink-dim);
+      font-size: .9rem;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .report-modal .form-group {
+      margin-bottom: 18px;
+    }
+
+    .report-modal label {
+      display: block;
+      color: var(--ink);
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .report-modal input {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--navy-950);
+      border: 1px solid var(--line-dark);
+      border-radius: 10px;
+      color: #fff;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .report-modal input:focus {
+      border-color: var(--violet);
+    }
+
+    .report-modal input::placeholder {
+      color: var(--ink-dim);
+    }
+
+    .report-modal .btn-submit-report {
+      width: 100%;
+      background: var(--grad-brand);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px;
+      border: none;
+      border-radius: var(--radius-btn);
+      cursor: pointer;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 8px 30px rgba(108, 99, 255, .3);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .report-modal .btn-submit-report:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 40px rgba(108, 99, 255, .45);
+    }
+
+    .report-modal .btn-close-modal {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--ink-dim);
+      font-size: 1.4rem;
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    .report-modal .btn-close-modal:hover {
+      color: #fff;
+    }
+
+    .report-modal .form-note {
+      color: var(--ink-dim);
+      font-size: .75rem;
+      text-align: center;
+      margin-top: 14px;
+    }
+
+    @media(max-width: 575px) {
+      .report-modal {
+        margin: 20px;
+        padding: 32px 24px;
+      }
+    }
+
     .results-cta-inner {
       display: flex;
       align-items: center;
@@ -1625,6 +1796,8 @@
             <span id="attempt-text">5 free audits remaining</span>
           </div>
 
+          <div id="limitBannerContainer"></div>
+
           <form class="auditor-form" id="auditor-form" role="search" aria-label="Website URL audit form">
             <div class="auditor-form-inner">
               <i class="bi bi-globe2 auditor-icon" aria-hidden="true"></i>
@@ -1733,6 +1906,15 @@
         </div>
       </div>
 
+      <!-- Download Full Report Section -->
+      <div class="download-report-section" id="downloadReportSection">
+        <h3><i class="bi bi-file-earmark-pdf me-2"></i>Want the Full SEO Report?</h3>
+        <p>Get a comprehensive, downloadable PDF report with all scores, issues, and AI recommendations for this audit.</p>
+        <button class="btn-download-report" id="btnDownloadReport">
+          <i class="bi bi-download"></i> Download Full Report
+        </button>
+      </div>
+
       <div class="results-cta" id="contact-cta">
         <div class="results-cta-inner">
           <div class="results-cta-icon"><i class="bi bi-headset" aria-hidden="true"></i></div>
@@ -1746,6 +1928,33 @@
           </a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Report Gate Modal -->
+  <div class="report-modal-overlay" id="reportModalOverlay">
+    <div class="report-modal">
+      <button class="btn-close-modal" id="btnCloseReportModal" aria-label="Close">&times;</button>
+      <h3><i class="bi bi-file-earmark-pdf me-2" style="color: var(--violet-light);"></i>Download Your Report</h3>
+      <p class="modal-subtitle">Enter your details below and we will generate your personalized SEO audit report.</p>
+      <form id="reportLeadForm">
+        <div class="form-group">
+          <label for="reportName">Full Name *</label>
+          <input type="text" id="reportName" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="reportEmail">Business Email *</label>
+          <input type="email" id="reportEmail" placeholder="you@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="reportPhone">Phone Number</label>
+          <input type="tel" id="reportPhone" placeholder="+91 XXXXX XXXXX" />
+        </div>
+        <button type="submit" class="btn-submit-report" id="btnSubmitReport">
+          <i class="bi bi-download"></i> Generate & Download Report
+        </button>
+      </form>
+      <p class="form-note">We respect your privacy. Your information is used only to deliver the report.</p>
     </div>
   </div>
 
@@ -2354,10 +2563,27 @@
     /* ── SEO AUDITOR APP ─────────────────────────────── */
     const API_KEY = 'AIzaSyBDBrBTAY0g1ftPaZkaJYqPV-DInrDFGP8';
     const TOOL_ID = 'seo-auditor';
+    let lastAuditData = null; // Store audit results for report generation
 
+    function updateAttemptText() {
+      const count = CompaniesBuilderTools.getUsageCount(TOOL_ID);
+      const remaining = CompaniesBuilderTools.MAX_FREE_ATTEMPTS - count;
+      const attemptText = document.getElementById('attempt-text');
+      const attemptBar = document.getElementById('attempt-bar');
+      if (attemptText) {
+        if (remaining <= 0) {
+          attemptText.textContent = 'Free limit reached';
+          if (attemptBar) attemptBar.style.background = 'rgba(255,75,75,0.15)';
+          if (attemptBar) attemptBar.style.borderColor = 'rgba(255,75,75,0.4)';
+        } else {
+          attemptText.textContent = remaining + ' free audit' + (remaining !== 1 ? 's' : '') + ' remaining';
+        }
+      }
+      CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
+    }
     
     document.addEventListener('DOMContentLoaded', () => {
-      CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
+      updateAttemptText();
 
       const form = document.getElementById('auditor-form');
       const urlInput = document.getElementById('url-input');
@@ -2449,7 +2675,24 @@
           generateActionPlan(combinedAudits, customActionPlan);
 
           CompaniesBuilderTools.incrementUsage(TOOL_ID);
-          CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
+          updateAttemptText();
+
+          // Store data for report generation
+          lastAuditData = {
+            url: urlInput.value.trim(),
+            date: new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' }),
+            scores: {
+              performance: Math.round((lh.categories.performance?.score || 0) * 100),
+              accessibility: Math.round((lh.categories.accessibility?.score || 0) * 100),
+              bestPractices: Math.round((lh.categories['best-practices']?.score || 0) * 100),
+              seo: auditData.seoScore !== undefined ? auditData.seoScore : Math.round((lh.categories.seo?.score || 0) * 100)
+            },
+            issues: Array.from(actionPlanList.querySelectorAll('.issue-item')).map(item => ({
+              title: item.querySelector('h4')?.textContent || '',
+              description: item.querySelector('p')?.textContent || '',
+              recommendation: item.querySelector('.ai-fix')?.textContent?.replace('AI Recommendation:', '').trim() || ''
+            }))
+          };
 
           loadingIndicator.style.display = 'none';
           resultsSection.style.display = 'block';
@@ -2474,6 +2717,7 @@
             btnAnalyze.innerHTML = '<i class="bi bi-magic me-2"></i>Analyze';
           }
           CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'btn-analyze', 'limitBannerContainer');
+          updateAttemptText();
         }
       });
 
@@ -2570,6 +2814,177 @@
     })();
   </script>
   <script src="/tools/assets/shared.js" defer></script>
+  <script>
+    // Report Download Logic
+    (function() {
+      const btnDownload = document.getElementById('btnDownloadReport');
+      const overlay = document.getElementById('reportModalOverlay');
+      const btnClose = document.getElementById('btnCloseReportModal');
+      const form = document.getElementById('reportLeadForm');
+
+      if (!btnDownload || !overlay || !form) return;
+
+      btnDownload.addEventListener('click', () => {
+        overlay.classList.add('active');
+      });
+
+      btnClose.addEventListener('click', () => {
+        overlay.classList.remove('active');
+      });
+
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.classList.remove('active');
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('reportName').value.trim();
+        const email = document.getElementById('reportEmail').value.trim();
+        const phone = document.getElementById('reportPhone').value.trim();
+
+        if (!name || !email) return;
+
+        // Store lead data in localStorage for future reference
+        const leads = JSON.parse(localStorage.getItem('cb_report_leads') || '[]');
+        leads.push({ name, email, phone, url: lastAuditData?.url, date: new Date().toISOString() });
+        localStorage.setItem('cb_report_leads', JSON.stringify(leads));
+
+        // Generate the PDF report
+        generatePDFReport(name, email);
+        overlay.classList.remove('active');
+      });
+
+      function getScoreColor(score) {
+        if (score >= 90) return '#22d3a0';
+        if (score >= 50) return '#ffb020';
+        return '#ff4b4b';
+      }
+
+      function getScoreLabel(score) {
+        if (score >= 90) return 'Good';
+        if (score >= 50) return 'Needs Work';
+        return 'Poor';
+      }
+
+      function generatePDFReport(userName, userEmail) {
+        if (!lastAuditData) {
+          alert('No audit data available. Please run an audit first.');
+          return;
+        }
+
+        const d = lastAuditData;
+        const issuesHTML = d.issues.map((issue, i) => `
+          <div style="margin-bottom:20px; padding:16px; background:#f8f9fa; border-left:4px solid #6c63ff; border-radius:0 8px 8px 0;">
+            <h4 style="margin:0 0 6px; font-size:14px; color:#1a1a2e;">${i+1}. ${issue.title}</h4>
+            <p style="margin:0 0 8px; font-size:13px; color:#555;">${issue.description}</p>
+            <div style="background:#eef0ff; padding:10px 14px; border-radius:6px; font-size:13px; color:#4a4a6a;">
+              <strong style="color:#6c63ff;">Recommendation:</strong> ${issue.recommendation}
+            </div>
+          </div>
+        `).join('');
+
+        const reportHTML = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SEO Audit Report - ${d.url}</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color:#1a1a2e; line-height:1.6; }
+    .page { padding:48px; max-width:800px; margin:0 auto; }
+    .header { text-align:center; margin-bottom:40px; padding-bottom:24px; border-bottom:3px solid #6c63ff; }
+    .header img { height:40px; margin-bottom:12px; }
+    .header h1 { font-size:28px; color:#1a1a2e; margin-bottom:4px; }
+    .header p { color:#666; font-size:14px; }
+    .meta-info { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:32px; padding:16px; background:#f5f6ff; border-radius:10px; font-size:13px; }
+    .meta-info span { color:#555; }
+    .meta-info strong { color:#1a1a2e; }
+    .scores-row { display:flex; justify-content:space-around; flex-wrap:wrap; gap:16px; margin-bottom:40px; }
+    .score-box { text-align:center; flex:1; min-width:120px; padding:20px 12px; border-radius:12px; background:#fff; border:2px solid #eee; }
+    .score-box .score-num { font-size:36px; font-weight:800; margin-bottom:4px; }
+    .score-box .score-name { font-size:12px; color:#888; text-transform:uppercase; letter-spacing:.5px; font-weight:600; }
+    .score-box .score-status { font-size:11px; font-weight:700; margin-top:4px; }
+    .section-title { font-size:20px; color:#1a1a2e; margin:32px 0 16px; padding-bottom:8px; border-bottom:2px solid #eee; }
+    .footer { margin-top:48px; padding-top:20px; border-top:2px solid #eee; text-align:center; font-size:12px; color:#999; }
+    .footer a { color:#6c63ff; text-decoration:none; }
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { padding:24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="header">
+      <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder" style="height:40px;">
+      <h1>SEO Audit Report</h1>
+      <p>Generated by Companies Builder Free SEO Auditor</p>
+    </div>
+
+    <div class="meta-info">
+      <span><strong>URL:</strong> ${d.url}</span>
+      <span><strong>Date:</strong> ${d.date}</span>
+      <span><strong>Prepared for:</strong> ${userName}</span>
+    </div>
+
+    <h2 class="section-title">Performance Scores</h2>
+    <div class="scores-row">
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.performance)}">${d.scores.performance}</div>
+        <div class="score-name">Performance</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.performance)}">${getScoreLabel(d.scores.performance)}</div>
+      </div>
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.accessibility)}">${d.scores.accessibility}</div>
+        <div class="score-name">Accessibility</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.accessibility)}">${getScoreLabel(d.scores.accessibility)}</div>
+      </div>
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.bestPractices)}">${d.scores.bestPractices}</div>
+        <div class="score-name">Best Practices</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.bestPractices)}">${getScoreLabel(d.scores.bestPractices)}</div>
+      </div>
+      <div class="score-box">
+        <div class="score-num" style="color:${getScoreColor(d.scores.seo)}">${d.scores.seo}</div>
+        <div class="score-name">SEO</div>
+        <div class="score-status" style="color:${getScoreColor(d.scores.seo)}">${getScoreLabel(d.scores.seo)}</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Issues Found & AI Recommendations</h2>
+    ${issuesHTML || '<p style="color:#22d3a0; font-weight:600;">No major issues found. Your website looks great!</p>'}
+
+    <h2 class="section-title">Next Steps</h2>
+    <div style="padding:20px; background:#f5f6ff; border-radius:10px; margin-bottom:20px;">
+      <p style="font-size:14px; margin-bottom:12px;">Based on this audit, we recommend the following next steps:</p>
+      <ol style="padding-left:20px; font-size:13px; color:#555;">
+        <li style="margin-bottom:8px;">Address the critical issues identified above, starting with the highest-impact items.</li>
+        <li style="margin-bottom:8px;">Re-run this audit after making changes to verify improvements.</li>
+        <li style="margin-bottom:8px;">Test your site on both mobile and desktop using our <a href="https://companiesbuilder.com/tools/speed-checker/" style="color:#6c63ff;">Speed Checker</a>.</li>
+        <li style="margin-bottom:8px;">For a comprehensive, professional SEO strategy, contact Companies Builder.</li>
+      </ol>
+    </div>
+
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} Companies Builder. All rights reserved.</p>
+      <p><a href="https://companiesbuilder.com">companiesbuilder.com</a> | <a href="mailto:info@companiesbuilder.com">info@companiesbuilder.com</a> | +91 63027 87953</p>
+      <p style="margin-top:8px; font-size:11px;">This report was generated using automated analysis tools. Results may vary. For a comprehensive professional audit, please contact us.</p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+        // Open in new window and trigger print
+        const reportWindow = window.open('', '_blank');
+        reportWindow.document.write(reportHTML);
+        reportWindow.document.close();
+        reportWindow.onload = function() {
+          reportWindow.print();
+        };
+      }
+    })();
+  </script>
 </body>
 
 </html>
