@@ -1936,15 +1936,15 @@
       <form id="reportLeadForm">
         <div class="form-group">
           <label for="reportName">Full Name *</label>
-          <input type="text" id="reportName" placeholder="Your name" required />
+          <input type="text" id="reportName" name="your-name" placeholder="Your name" required />
         </div>
         <div class="form-group">
           <label for="reportEmail">Business Email *</label>
-          <input type="email" id="reportEmail" placeholder="you@company.com" required />
+          <input type="email" id="reportEmail" name="your-email" placeholder="you@company.com" required />
         </div>
         <div class="form-group">
           <label for="reportPhone">Phone Number</label>
-          <input type="tel" id="reportPhone" placeholder="+91 XXXXX XXXXX" />
+          <input type="tel" id="reportPhone" name="your-number" placeholder="+91 XXXXX XXXXX" />
         </div>
         <button type="submit" class="btn-submit-report" id="btnSubmitReport">
           <i class="bi bi-download"></i> Generate & Download Report
@@ -2828,14 +2828,65 @@
 
         if (!name || !email) return;
 
-        // Store lead data in localStorage for future reference
-        const leads = JSON.parse(localStorage.getItem('cb_report_leads') || '[]');
-        leads.push({ name, email, phone, url: lastAuditData?.url, date: new Date().toISOString() });
-        localStorage.setItem('cb_report_leads', JSON.stringify(leads));
+        const btnSubmit = document.getElementById('btnSubmitReport');
+        const origBtnText = btnSubmit ? btnSubmit.innerHTML : 'Generate & Download Report';
+        if (btnSubmit) {
+          btnSubmit.disabled = true;
+          btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Processing...';
+        }
 
-        // Generate the PDF report
+        // Store lead data in localStorage for client backup
+        try {
+          const leads = JSON.parse(localStorage.getItem('cb_report_leads') || '[]');
+          leads.push({ name, email, phone, url: lastAuditData?.url, date: new Date().toISOString() });
+          localStorage.setItem('cb_report_leads', JSON.stringify(leads));
+        } catch (storageErr) {
+          console.warn('Storage error:', storageErr);
+        }
+
+        // Send lead capture to centralized Google Apps Script endpoint
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwWbLk3F6G2jPgi1XhT2a956tZt_RsndGG2nHDGj2chfTLVLqTKzddSHbXaXq3IQLbk/exec';
+        const leadData = new FormData();
+        leadData.append('timestamp', new Date().toISOString());
+        leadData.append('source', 'SEO Auditor - Report Download');
+        leadData.append('your-name', name);
+        leadData.append('name', name);
+        leadData.append('your-email', email);
+        leadData.append('email', email);
+        leadData.append('your-number', phone || 'Not provided');
+        leadData.append('phone', phone || 'Not provided');
+        leadData.append('interest', 'Full SEO Report Download');
+        leadData.append('message', `Downloaded SEO Audit Report for: ${lastAuditData?.url || 'N/A'} | Scores: Performance ${lastAuditData?.scores?.performance ?? 'N/A'}, Accessibility ${lastAuditData?.scores?.accessibility ?? 'N/A'}, Best Practices ${lastAuditData?.scores?.bestPractices ?? 'N/A'}, SEO ${lastAuditData?.scores?.seo ?? 'N/A'}`);
+        leadData.append('page', window.location.href);
+
+        fetch(scriptURL, { method: 'POST', body: leadData })
+          .then(r => r.text())
+          .then(res => { console.log('Lead capture response:', res); })
+          .catch(err => { console.warn('Lead capture network error:', err); });
+
+        // Trigger Google Analytics lead event if configured
+        if (window.gtag) {
+          try {
+            gtag('event', 'generate_lead', {
+              event_category: 'SEO Auditor',
+              event_label: 'Full Report Download',
+              value: 1
+            });
+          } catch (gtagErr) {}
+        }
+
+        // Generate and prompt PDF report download
         generatePDFReport(name, email);
-        overlay.classList.remove('active');
+
+        // Reset and close modal
+        setTimeout(() => {
+          form.reset();
+          if (btnSubmit) {
+            btnSubmit.disabled = false;
+            btnSubmit.innerHTML = origBtnText;
+          }
+          overlay.classList.remove('active');
+        }, 600);
       });
 
       function getScoreColor(score) {
