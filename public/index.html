@@ -134,40 +134,50 @@
   </script>
 </head>
 <body>
-  <!-- NAVBAR -->
+    <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="https://companiesbuilder.com/" aria-label="Companies Builder home">
         <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
         <span>Companies Builder</span>
       </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/about/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/" data-nav="home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/about/" data-nav="about">About</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+            <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" data-nav="services">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i
+                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i
+                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i
+                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i
+                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
               <li><hr class="dropdown-divider my-1"></li>
               <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/"><i class="bi bi-grid me-2 opacity-75"></i>All Services</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
+            <a class="nav-link dropdown-toggle" href="#" id="resourcesDrop" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" data-nav="resources">Resources</a>
             <ul class="dropdown-menu" aria-labelledby="resourcesDrop">
               <li><a class="dropdown-item" href="https://companiesbuilder.com/resources/checklists/"><i class="bi bi-ui-checks me-2 opacity-75"></i>Checklists</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/write-for-us/"><i class="bi bi-pencil-square me-2 opacity-75"></i>Write for Us</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/careers/"><i class="bi bi-briefcase me-2 opacity-75"></i>Careers</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link active" href="https://companiesbuilder.com/tools/" aria-current="page">Tools</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/blogs/">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/contact/">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/careers/" data-nav="careers">Careers</a></li>
+          <li class="nav-item"><a class="nav-link active" href="https://companiesbuilder.com/tools/" data-nav="tools" aria-current="page">Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/blogs/" data-nav="blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://companiesbuilder.com/contact/" data-nav="contact">Contact</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-pricing" href="https://companiesbuilder.com/pricing">Pricing</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light and dark mode"><i class="bi bi-moon-stars" aria-hidden="true"></i></button></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="nav-btn nav-demo" href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
@@ -211,13 +221,13 @@
           <a href="https://companiesbuilder.com/tools/seo-auditor/" class="tool-card" role="listitem">
             <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-search-heart" aria-hidden="true"></i></div><span class="tool-card-badge badge-audit">Audit</span></div>
             <h3>SEO Auditor</h3>
-            <p>Run a website audit that checks important technical and on-page signals &#8212; including metadata, headings, image attributes, performance indicators and crawlability factors. Useful for identifying areas that may need attention.</p>
+            <p>Run a website audit that checks important technical and on-page signals - including metadata, headings, image attributes, performance indicators and crawlability factors. Useful for identifying areas that may need attention.</p>
             <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
           </a>
           <a href="https://companiesbuilder.com/tools/speed-checker/" class="tool-card" role="listitem">
             <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div><span class="tool-card-badge badge-audit">Audit</span></div>
             <h3>Speed Checker</h3>
-            <p>Check how quickly a page loads and review Core Web Vitals scores &#8212; including Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint &#8212; using real page speed data.</p>
+            <p>Check how quickly a page loads and review Core Web Vitals scores - including Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint - using real page speed data.</p>
             <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
           </a>
           <a href="https://companiesbuilder.com/tools/sitemap-generator/" class="tool-card" role="listitem">
@@ -229,13 +239,13 @@
           <a href="https://companiesbuilder.com/tools/local-seo/" class="tool-card" role="listitem">
             <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div><span class="tool-card-badge badge-audit">Audit</span></div>
             <h3>Local SEO Checker</h3>
-            <p>Review the website-side signals relevant to local business search visibility &#8212; including NAP consistency, LocalBusiness structured data, and other on-page local SEO indicators.</p>
+            <p>Review the website-side signals relevant to local business search visibility - including NAP consistency, LocalBusiness structured data, and other on-page local SEO indicators.</p>
             <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
           </a>
           <a href="https://companiesbuilder.com/tools/meta-tag-generator/" class="tool-card" role="listitem">
             <div class="tool-card-top"><div class="tool-card-icon"><i class="bi bi-tags" aria-hidden="true"></i></div><span class="tool-card-badge badge-generator">Generator</span></div>
             <h3>Meta Tag Generator</h3>
-            <p>Build SEO title tags, meta descriptions, canonical links, and Open Graph or Twitter Card metadata with a live preview &#8212; so you can see how a page may appear in search results and on social platforms.</p>
+            <p>Build SEO title tags, meta descriptions, canonical links, and Open Graph or Twitter Card metadata with a live preview - so you can see how a page may appear in search results and on social platforms.</p>
             <div class="tool-card-cta">Open Tool <i class="bi bi-arrow-right" aria-hidden="true"></i></div>
           </a>
           <a href="https://companiesbuilder.com/tools/schema-generator/" class="tool-card" role="listitem">
@@ -288,10 +298,10 @@
           <p>Each tool examines a different part of a website. Used together, they give you a broader picture of where a site stands technically and on-page. Here is a practical sequence to follow:</p>
         </div>
         <div class="workflow-steps">
-          <div class="workflow-step"><div class="step-num" aria-hidden="true">1</div><div class="step-content"><h3>Start with the SEO Auditor</h3><p>The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> gives you a broad overview of technical and on-page issues &#8212; missing meta tags, heading structure problems, image attributes and more. It is the best starting point because it covers the widest range of signals in a single check.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">1</div><div class="step-content"><h3>Start with the SEO Auditor</h3><p>The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> gives you a broad overview of technical and on-page issues - missing meta tags, heading structure problems, image attributes and more. It is the best starting point because it covers the widest range of signals in a single check.</p></div></div>
           <div class="workflow-step"><div class="step-num" aria-hidden="true">2</div><div class="step-content"><h3>Check Page Speed and Core Web Vitals</h3><p>Use the <a href="https://companiesbuilder.com/tools/speed-checker/">website speed checker</a> to review loading performance. Page speed affects user experience, and Core Web Vitals are signals Google considers in its ranking systems. Understanding where a page stands helps prioritize performance work.</p></div></div>
           <div class="workflow-step"><div class="step-num" aria-hidden="true">3</div><div class="step-content"><h3>Review Your Page Metadata</h3><p>If the audit flags issues with titles or descriptions, use the <a href="https://companiesbuilder.com/tools/meta-tag-generator/">meta tag generator</a> to create properly formatted SEO metadata and Open Graph tags. A clear, accurate title and description help search engines understand what a page is about.</p></div></div>
-          <div class="workflow-step"><div class="step-num" aria-hidden="true">4</div><div class="step-content"><h3>Check Local SEO Signals (if relevant)</h3><p>For businesses with a physical location or local service area, the <a href="https://companiesbuilder.com/tools/local-seo/">local SEO checker</a> reviews website-side signals like NAP data and LocalBusiness structured data &#8212; focused purely on what is on the website itself.</p></div></div>
+          <div class="workflow-step"><div class="step-num" aria-hidden="true">4</div><div class="step-content"><h3>Check Local SEO Signals (if relevant)</h3><p>For businesses with a physical location or local service area, the <a href="https://companiesbuilder.com/tools/local-seo/">local SEO checker</a> reviews website-side signals like NAP data and LocalBusiness structured data - focused purely on what is on the website itself.</p></div></div>
           <div class="workflow-step"><div class="step-num" aria-hidden="true">5</div><div class="step-content"><h3>Generate or Review Your XML Sitemap</h3><p>The <a href="https://companiesbuilder.com/tools/sitemap-generator/">XML sitemap generator</a> crawls a website and produces a formatted sitemap file. Submitting a sitemap to Google Search Console can help ensure important pages are discovered and reviewed for indexing.</p></div></div>
           <div class="workflow-step"><div class="step-num" aria-hidden="true">6</div><div class="step-content"><h3>Add or Review Structured Data</h3><p>Use the <a href="https://companiesbuilder.com/tools/schema-generator/">schema markup generator</a> to create JSON-LD for supported Schema.org types. Structured data helps search engines understand the entities and content on a page. Add it where the content genuinely matches the schema type.</p></div></div>
         </div>
@@ -310,12 +320,12 @@
           <p>The tools cover several distinct areas of website SEO. Here is a brief overview of each.</p>
         </div>
         <div class="topic-grid">
-          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-gear" aria-hidden="true"></i></div><h3>Technical SEO</h3></div><p>Technical SEO covers how a site is built and configured &#8212; crawlability, indexability, canonical tags, redirect chains, robots meta tags and page structure. The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> checks several of these signals and surfaces potential issues for review.</p></div>
-          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div><h3>Website Performance</h3></div><p>Page speed and Core Web Vitals measure how fast and stable a page feels to a real user &#8212; Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint. The <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> surfaces these scores for any URL.</p></div>
-          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></div><h3>On-Page SEO</h3></div><p>On-page SEO covers the elements that help search engines understand a page &#8212; title tags, meta descriptions, heading structure, image alt attributes and internal linking. The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> and <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> both address on-page elements.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-gear" aria-hidden="true"></i></div><h3>Technical SEO</h3></div><p>Technical SEO covers how a site is built and configured - crawlability, indexability, canonical tags, redirect chains, robots meta tags and page structure. The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> checks several of these signals and surfaces potential issues for review.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></div><h3>Website Performance</h3></div><p>Page speed and Core Web Vitals measure how fast and stable a page feels to a real user - Largest Contentful Paint, Cumulative Layout Shift and Interaction to Next Paint. The <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> surfaces these scores for any URL.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></div><h3>On-Page SEO</h3></div><p>On-page SEO covers the elements that help search engines understand a page - title tags, meta descriptions, heading structure, image alt attributes and internal linking. The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> and <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> both address on-page elements.</p></div>
           <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div><h3>Local SEO</h3></div><p>For local businesses, website-side signals include consistent NAP (name, address, phone) information, LocalBusiness structured data, and location-specific page content. The <a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker</a> reviews these signals directly on the page.</p></div>
-          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></div><h3>XML Sitemaps</h3></div><p>An XML sitemap lists the important URLs on a website. Submitting one to Google Search Console helps ensure pages are found and reviewed for indexing &#8212; useful on larger sites or recently launched websites. The <a href="https://companiesbuilder.com/tools/sitemap-generator/">Sitemap Generator</a> creates a correctly formatted file ready for submission.</p></div>
-          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-code-square" aria-hidden="true"></i></div><h3>Structured Data</h3></div><p>Structured data uses the Schema.org vocabulary to describe content in a machine-readable way &#8212; articles, products, local businesses, FAQs and more. The <a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator</a> produces valid JSON-LD markup for supported types.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></div><h3>XML Sitemaps</h3></div><p>An XML sitemap lists the important URLs on a website. Submitting one to Google Search Console helps ensure pages are found and reviewed for indexing - useful on larger sites or recently launched websites. The <a href="https://companiesbuilder.com/tools/sitemap-generator/">Sitemap Generator</a> creates a correctly formatted file ready for submission.</p></div>
+          <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-code-square" aria-hidden="true"></i></div><h3>Structured Data</h3></div><p>Structured data uses the Schema.org vocabulary to describe content in a machine-readable way - articles, products, local businesses, FAQs and more. The <a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator</a> produces valid JSON-LD markup for supported types.</p></div>
           <div class="topic-block"><div class="topic-block-head"><div class="topic-icon"><i class="bi bi-share" aria-hidden="true"></i></div><h3>Social &amp; Open Graph Metadata</h3></div><p>Open Graph and Twitter Card tags control how a page appears when shared on social media. The <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> covers both standard and social metadata so your pages look correct in search results and social previews.</p></div>
         </div>
       </section>
@@ -347,7 +357,7 @@
           <p>Each tool is designed to be straightforward: enter a URL or fill in a form, and the tool returns results or generates output. No account or payment is required for the free usage tier.</p>
           <p>A few things worth keeping in mind when using any automated SEO tool:</p>
           <ul class="prose-bullets">
-            <li>Automated checks surface potential issues &#8212; they do not always know the full context of your site. Some findings will need manual review before you decide whether to act on them.</li>
+            <li>Automated checks surface potential issues - they do not always know the full context of your site. Some findings will need manual review before you decide whether to act on them.</li>
             <li>A clean audit report means fewer detectable issues, not a guarantee of search performance. Rankings depend on many factors including content quality, site authority, user signals and competition.</li>
             <li>Tools are most useful when used regularly. A check run once is a snapshot; periodic checks help you track whether changes have had the intended effect.</li>
             <li>If a tool flags something you are not sure about, refer to Google&#8217;s official Search documentation, or consult with an SEO professional before making significant changes.</li>
@@ -364,11 +374,11 @@
           <p>These tools were built to give website owners and marketing teams a practical way to check and improve specific parts of their site&#8217;s SEO without needing an enterprise subscription or specialist software for every task.</p>
           <p>They are designed to be:</p>
           <ul class="prose-bullets">
-            <li><strong style="color:#e2e8f0;">Free to use</strong> &#8212; no credit card or account needed to get started</li>
-            <li><strong style="color:#e2e8f0;">Focused</strong> &#8212; each tool does one thing well rather than trying to do everything at once</li>
-            <li><strong style="color:#e2e8f0;">Readable</strong> &#8212; results are explained clearly rather than buried in technical jargon</li>
-            <li><strong style="color:#e2e8f0;">Practical</strong> &#8212; outputs like sitemaps and schema markup are ready to use directly on your site</li>
-            <li><strong style="color:#e2e8f0;">Honest</strong> &#8212; results reflect actual checks, not inflated scores or arbitrary grades</li>
+            <li><strong style="color:#e2e8f0;">Free to use</strong> - no credit card or account needed to get started</li>
+            <li><strong style="color:#e2e8f0;">Focused</strong> - each tool does one thing well rather than trying to do everything at once</li>
+            <li><strong style="color:#e2e8f0;">Readable</strong> - results are explained clearly rather than buried in technical jargon</li>
+            <li><strong style="color:#e2e8f0;">Practical</strong> - outputs like sitemaps and schema markup are ready to use directly on your site</li>
+            <li><strong style="color:#e2e8f0;">Honest</strong> - results reflect actual checks, not inflated scores or arbitrary grades</li>
           </ul>
           <p style="margin-top:1rem;">They will not replace a full SEO audit by an experienced professional, and they are not intended to. But for routine website checks, generating SEO assets and getting a baseline understanding of how a site looks from a technical perspective, they cover a lot of ground without any cost.</p>
         </div>
@@ -380,15 +390,15 @@
       <section class="hub-section" aria-labelledby="small-biz-heading">
         <div class="hub-section-header"><h2 id="small-biz-heading">Free SEO Tools for Small Businesses</h2></div>
         <div class="prose-section">
-          <p>Small businesses often cannot justify the cost of full SEO platforms &#8212; particularly when the task at hand is checking a single website, generating a sitemap or reviewing metadata. These tools fill that gap by handling specific, common website checks without any subscription required.</p>
+          <p>Small businesses often cannot justify the cost of full SEO platforms - particularly when the task at hand is checking a single website, generating a sitemap or reviewing metadata. These tools fill that gap by handling specific, common website checks without any subscription required.</p>
           <p>For a small business website, a useful starting routine might look like this:</p>
           <ul class="prose-bullets">
             <li>Use the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> to get an overview of technical and on-page issues on your main business pages</li>
-            <li>Run the <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> to see whether load times could be improved &#8212; slow pages affect both visitors and search performance</li>
+            <li>Run the <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> to see whether load times could be improved - slow pages affect both visitors and search performance</li>
             <li>Use the <a href="https://companiesbuilder.com/tools/meta-tag-generator/">Meta Tag Generator</a> to write or review your title tags and meta descriptions before publishing new pages</li>
             <li>If you serve a local area, the <a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker</a> reviews the website-side signals that matter for local search</li>
             <li>Generate a clean XML sitemap with the <a href="https://companiesbuilder.com/tools/sitemap-generator/">Sitemap Generator</a> and submit it to Google Search Console</li>
-            <li>Add basic structured data with the <a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator</a> &#8212; particularly LocalBusiness or Organization markup, which is straightforward and commonly applicable</li>
+            <li>Add basic structured data with the <a href="https://companiesbuilder.com/tools/schema-generator/">Schema Generator</a> - particularly LocalBusiness or Organization markup, which is straightforward and commonly applicable</li>
           </ul>
           <p style="margin-top:1rem;">None of these steps is complicated, and most can be completed in under an hour. Together they help ensure your website is technically accessible, clearly described and properly set up for search engine discovery.</p>
         </div>
@@ -402,13 +412,13 @@
         <div class="faq-list" id="faqAccordion">
           <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="false" aria-controls="faq-1">What are SEO tools? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-1" class="faq-body collapse">SEO tools are utilities that help website owners and marketers review, analyze and improve different aspects of a website&#8217;s search engine optimization. They can check technical elements, analyze on-page content, generate SEO assets like sitemaps and metadata, and surface issues that may affect how a site appears in search results.</div></div>
           <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">What are SEO tools used for? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-2" class="faq-body collapse">They are used for a range of tasks: auditing a website for technical and on-page issues, checking page loading speed, reviewing metadata, generating sitemaps, checking local SEO signals, creating structured data and producing social metadata. Different tools focus on different parts of the SEO picture.</div></div>
-          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Can I use these SEO tools for free? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-3" class="faq-body collapse">Yes. All six tools are free to use with no account or sign-up required. Some tools &#8212; the SEO Auditor, Speed Checker, Sitemap Generator and Local SEO Checker &#8212; have a limit on free usage per device. The Meta Tag Generator and Schema Generator are unlimited. You can see the free tier details on each individual tool page.</div></div>
-          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">Which SEO tool should I use first? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-4" class="faq-body collapse">The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> is usually the best starting point because it provides a broad overview of technical and on-page issues across an entire page in a single check. From there you can decide which other tools &#8212; Speed Checker, Meta Tag Generator, Local SEO Checker and so on &#8212; are most relevant to what you found.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">Can I use these SEO tools for free? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-3" class="faq-body collapse">Yes. All six tools are free to use with no account or sign-up required. Some tools - the SEO Auditor, Speed Checker, Sitemap Generator and Local SEO Checker - have a limit on free usage per device. The Meta Tag Generator and Schema Generator are unlimited. You can see the free tier details on each individual tool page.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">Which SEO tool should I use first? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-4" class="faq-body collapse">The <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> is usually the best starting point because it provides a broad overview of technical and on-page issues across an entire page in a single check. From there you can decide which other tools - Speed Checker, Meta Tag Generator, Local SEO Checker and so on - are most relevant to what you found.</div></div>
           <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">What SEO tools can I use to check my website? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-5" class="faq-body collapse">For checking a website, the most relevant tools here are the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> (technical and on-page SEO), the <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> (page loading performance) and the <a href="https://companiesbuilder.com/tools/local-seo/">Local SEO Checker</a> (local business signals). Together they cover most of the common areas worth reviewing on a website.</div></div>
-          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-6" aria-expanded="false" aria-controls="faq-6">Do SEO tools guarantee higher Google rankings? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-6" class="faq-body collapse">No &#8212; and anyone claiming otherwise should be treated with caution. SEO tools help identify potential issues and generate useful assets, but search rankings depend on many factors including content relevance, site authority, backlinks, user engagement and competition. These tools provide a starting point for improving technical implementation, not a guaranteed ranking outcome.</div></div>
-          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-7" aria-expanded="false" aria-controls="faq-7">Can small businesses use these tools? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-7" class="faq-body collapse">Yes. These tools were designed with small businesses in mind. They cover practical, common website tasks &#8212; checking SEO, reviewing speed, generating a sitemap, creating metadata &#8212; without requiring an enterprise platform or technical background. Most checks take a few minutes and the results include clear explanations.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-6" aria-expanded="false" aria-controls="faq-6">Do SEO tools guarantee higher Google rankings? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-6" class="faq-body collapse">No - and anyone claiming otherwise should be treated with caution. SEO tools help identify potential issues and generate useful assets, but search rankings depend on many factors including content relevance, site authority, backlinks, user engagement and competition. These tools provide a starting point for improving technical implementation, not a guaranteed ranking outcome.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-7" aria-expanded="false" aria-controls="faq-7">Can small businesses use these tools? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-7" class="faq-body collapse">Yes. These tools were designed with small businesses in mind. They cover practical, common website tasks - checking SEO, reviewing speed, generating a sitemap, creating metadata - without requiring an enterprise platform or technical background. Most checks take a few minutes and the results include clear explanations.</div></div>
           <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-8" aria-expanded="false" aria-controls="faq-8">When should I use an SEO audit tool? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-8" class="faq-body collapse">An <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO audit tool</a> is useful when you want a baseline check of a page before it goes live, after a website redesign or platform migration, when you notice a traffic drop and want to rule out technical issues, or simply as a periodic check to catch anything that may have changed or broken over time.</div></div>
-          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-9" aria-expanded="false" aria-controls="faq-9">What is the difference between an SEO audit and a speed test? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-9" class="faq-body collapse">An SEO audit checks a broad range of on-page and technical factors &#8212; metadata, heading structure, image attributes, canonical tags and more. A speed test focuses specifically on how quickly a page loads and how it performs against Core Web Vitals metrics. Both are useful: the audit gives you a wider picture, while the speed test gives specific performance data. Use the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> and <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> independently or in combination.</div></div>
+          <div class="faq-item"><button class="faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq-9" aria-expanded="false" aria-controls="faq-9">What is the difference between an SEO audit and a speed test? <i class="bi bi-chevron-down faq-chevron" aria-hidden="true"></i></button><div id="faq-9" class="faq-body collapse">An SEO audit checks a broad range of on-page and technical factors - metadata, heading structure, image attributes, canonical tags and more. A speed test focuses specifically on how quickly a page loads and how it performs against Core Web Vitals metrics. Both are useful: the audit gives you a wider picture, while the speed test gives specific performance data. Use the <a href="https://companiesbuilder.com/tools/seo-auditor/">SEO Auditor</a> and <a href="https://companiesbuilder.com/tools/speed-checker/">Speed Checker</a> independently or in combination.</div></div>
         </div>
       </section>
 
@@ -418,7 +428,7 @@
       <section class="hub-section" aria-labelledby="cta-heading">
         <div class="cta-section">
           <h2 id="cta-heading">Need Help Fixing Your Website?</h2>
-          <p>These tools identify issues &#8212; but resolving them effectively often requires a specialist. Companies Builder helps businesses with website development, technical SEO and digital marketing from our base in Hyderabad. If you have found issues you would like help addressing, or you are looking for ongoing SEO support, we would be glad to talk.</p>
+          <p>These tools identify issues - but resolving them effectively often requires a specialist. Companies Builder helps businesses with website development, technical SEO and digital marketing from our base in Hyderabad. If you have found issues you would like help addressing, or you are looking for ongoing SEO support, we would be glad to talk.</p>
           <div class="cta-btns">
             <a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" class="cta-btn-primary"><i class="bi bi-bar-chart-line" aria-hidden="true"></i> Explore SEO Services</a>
             <a href="https://companiesbuilder.com/contact/" class="cta-btn-outline"><i class="bi bi-chat-dots" aria-hidden="true"></i> Get in Touch</a>
@@ -429,7 +439,7 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
+    <!-- FOOTER -->
   <footer class="site-footer py-5">
     <div class="container">
       <div class="row g-4 pb-4">
@@ -453,10 +463,12 @@
             <li><a href="https://companiesbuilder.com/about/">About Us</a></li>
             <li><a href="https://companiesbuilder.com/services/">Services</a></li>
             <li><a href="https://companiesbuilder.com/pricing">Pricing</a></li>
+            <li><a href="https://companiesbuilder.com/careers/">Careers</a></li>
             <li><a href="https://companiesbuilder.com/resources/checklists/">Checklists</a></li>
             <li><a href="https://companiesbuilder.com/tools/">Free SEO Tools</a></li>
             <li><a href="https://companiesbuilder.com/blogs/">Blog</a></li>
             <li><a href="https://companiesbuilder.com/contact/">Contact</a></li>
+            <li><a href="https://companiesbuilder.com/write-for-us/">Write for Us</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-3 col-lg-3">
