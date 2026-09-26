@@ -3,79 +3,741 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <title>Free XML Sitemap Generator | Create a Sitemap Online | Companies Builder</title>
+  <meta name="description" content="Create a free XML sitemap from your website's public pages and download a clean sitemap.xml file with our online sitemap generator. No sign-up required.">
+  <link rel="canonical" href="https://companiesbuilder.com/tools/sitemap-generator/">
+  <link rel="icon" href="https://companiesbuilder.com/assets/images/CB-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Companies Builder">
+  <meta property="og:title" content="Free XML Sitemap Generator | Create a Sitemap Online | Companies Builder">
+  <meta property="og:description" content="Create a free XML sitemap from your website's public pages and download a clean sitemap.xml file with our online sitemap generator. No sign-up required.">
+  <meta property="og:url" content="https://companiesbuilder.com/tools/sitemap-generator/">
+  <meta property="og:image" content="https://companiesbuilder.com/assets/images/CB-logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free XML Sitemap Generator | Create a Sitemap Online">
+  <meta name="twitter:description" content="Generate an XML sitemap from your website's public pages and download a clean sitemap.xml file with our free online sitemap generator.">
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/CB-logo.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-    .score-circle {
-      width: 120px;
-      height: 120px;
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS Frameworks -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="/tools/assets/shared.css">
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://companiesbuilder.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Free SEO Tools",
+        "item": "https://companiesbuilder.com/tools/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "XML Sitemap Generator",
+        "item": "https://companiesbuilder.com/tools/sitemap-generator/"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free XML Sitemap Generator",
+    "url": "https://companiesbuilder.com/tools/sitemap-generator/",
+    "description": "An online XML sitemap generator that crawls publicly accessible website pages and creates a standard sitemap.xml file for search engines.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Companies Builder",
+      "url": "https://companiesbuilder.com/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: #e2e8f0;
+      background-color: #060910;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+    }
+
+    .breadcrumb-nav {
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb-nav a {
+      color: #818cf8;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: #a5b4fc;
+      text-decoration: underline;
+    }
+
+    .breadcrumb-separator {
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+
+    .tool-hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .tool-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-hero .subtitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #a5b4fc;
+      margin-bottom: 1rem;
+    }
+
+    .tool-hero .lead-text {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #94a3b8;
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+
+    /* Generator Box */
+    .generator-card {
+      background: rgba(14, 20, 36, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      margin-bottom: 3.5rem;
+    }
+
+    .form-wrapper {
+      max-width: 620px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .input-group-custom {
+      display: flex;
+      gap: 0.75rem;
+      align-items: stretch;
+    }
+
+    @media (max-width: 576px) {
+      .input-group-custom {
+        flex-direction: column;
+      }
+    }
+
+    .url-input {
+      flex: 1;
+      background: rgba(6, 9, 16, 0.8);
+      border: 1.5px solid rgba(129, 140, 248, 0.35);
+      color: #ffffff;
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .url-input:focus {
+      outline: none;
+      border-color: #6366f1;
+      box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+      background: rgba(6, 9, 16, 0.95);
+      color: #ffffff;
+    }
+
+    .url-input::placeholder {
+      color: #64748b;
+    }
+
+    .btn-generate {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-generate:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+      color: #ffffff;
+    }
+
+    .btn-generate:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .scope-note {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    .loading-spinner {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-left-color: #6366f1;
       border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 1.5rem auto 0.75rem auto;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .crawl-status {
+      display: none;
+      color: #a5b4fc;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-top: 0.5rem;
+      font-family: var(--font-mono);
+    }
+
+    /* In-Page Error Alert */
+    .alert-error {
+      display: none;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-top: 1.25rem;
+      font-size: 0.95rem;
+      text-align: left;
+    }
+
+    /* Results */
+    #resultsArea {
+      display: none;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+    }
+
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .results-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
+      text-align: center;
+    }
+
+    .stat-pill .val {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #10b981;
+      font-family: var(--font-display);
+    }
+
+    .stat-pill .lbl {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.2rem;
+    }
+
+    .code-container {
+      background: #020408;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      position: relative;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .code-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-family: var(--font-mono);
+    }
+
+    .code-preview {
+      margin: 0;
+      padding: 1.25rem;
+      max-height: 380px;
+      overflow-y: auto;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #38bdf8;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .actions-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-download {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      padding: 0.75rem 1.6rem;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-download:hover {
+      background: linear-gradient(135deg, #34d399, #10b981);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      font-weight: 600;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.75rem 1.4rem;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Educational Section Styles */
+    .resource-content {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #cbd5e1;
+    }
+
+    .resource-content section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 80px;
+    }
+
+    .resource-content h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .resource-content h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #e0e7ff;
+      margin-top: 2rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .resource-content p {
+      margin-bottom: 1.25rem;
+      color: #94a3b8;
+    }
+
+    .resource-content strong {
+      color: #f1f5f9;
+    }
+
+    .resource-content ul, .resource-content ol {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+      color: #94a3b8;
+    }
+
+    .resource-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    .highlight-card {
+      background: rgba(20, 25, 45, 0.6);
+      border-left: 4px solid #6366f1;
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      color: #cbd5e1;
+    }
+
+    .highlight-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .warning-card {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 12px 12px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      color: #fde68a;
+    }
+
+    .warning-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .custom-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background: rgba(14, 20, 36, 0.5);
+    }
+
+    .custom-table th {
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      padding: 1rem 1.25rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .custom-table td {
+      padding: 1rem 1.25rem;
+      color: #cbd5e1;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Checklist Grid */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .checklist-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .checklist-card:hover {
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .checklist-icon {
+      color: #10b981;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .checklist-text {
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .checklist-subtext {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+    }
+
+    /* Related Tools Grid */
+    .tools-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .tool-link-card {
+      background: rgba(14, 20, 36, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+
+    .tool-link-card:hover {
+      border-color: #6366f1;
+      background: rgba(20, 28, 52, 0.8);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      color: inherit;
+    }
+
+    .tool-link-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0 auto 1.5rem auto;
-      border: 8px solid;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
     }
-    .score-good { border-color: var(--success-color); color: var(--success-color); }
-    .score-needs-improvement { border-color: var(--warning-color); color: var(--warning-color); }
-    .score-poor { border-color: var(--error-color); color: var(--error-color); }
 
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
+    .tool-link-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
     }
-    
-    .metric-card {
-      background: rgba(0,0,0,0.2);
-      border: 1px solid var(--border-color);
-      padding: 1rem;
-      border-radius: 8px;
+
+    .tool-link-card p {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .tool-link-action {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #818cf8;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Commercial CTA */
+    .commercial-banner {
+      background: linear-gradient(135deg, rgba(30, 27, 75, 0.8), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 18px;
+      padding: 3rem 2rem;
       text-align: center;
+      margin: 3.5rem 0;
     }
-    .metric-value {
-      font-size: 1.5rem;
+
+    .commercial-banner h2 {
+      font-size: 2rem;
       font-weight: 700;
-      margin: 0.5rem 0;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      border: none;
+      padding: 0;
     }
-    
-    .loading-spinner {
-      display: none;
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(255,255,255,0.1);
-      border-left-color: var(--accent-primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 2rem auto;
-    }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
 
-    #resultsArea { display: none; }
-    #crossPromoArea { margin-top: 2rem; }
+    .commercial-banner p {
+      max-width: 650px;
+      margin: 0 auto 1.75rem auto;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+
+    .btn-commercial {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-commercial:hover {
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Accordion FAQ */
+    .accordion-item {
+      background: rgba(14, 20, 36, 0.6) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px !important;
+      margin-bottom: 0.85rem;
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      background: rgba(14, 20, 36, 0.6) !important;
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 1.25rem 1.5rem;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: rgba(99, 102, 241, 0.12) !important;
+      color: #a5b4fc !important;
+    }
+
+    .accordion-button::after {
+      filter: invert(1);
+    }
+
+    .accordion-body {
+      color: #94a3b8;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      padding: 1.25rem 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .accordion-body strong {
+      color: #e2e8f0;
+    }
+
+    /* Code Snippets in Text */
+    .code-block-example {
+      background: #020408;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 1.25rem 0;
+    }
   </style>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/tools/assets/shared.css">
-
-  <title>Free XML Sitemap Generator Tool | Companies Builder</title>
-  <meta name="description" content="Instantly crawl your website and generate a perfectly formatted XML sitemap for search engines. Ensure Google indexes all your pages.">
-  <link rel="canonical" href="https://companiesbuilder.com/tools/sitemap-generator/">
-  <link rel="icon" href="https://companiesbuilder.com/assets/images/CB-logo.png" />
-  <meta property="og:site_name" content="Companies Builder" />
-  <meta property="og:title" content="Free XML Sitemap Generator Tool | Companies Builder" />
-  <meta property="og:description" content="Instantly crawl your website and generate a perfectly formatted XML sitemap for search engines. Ensure Google indexes all your pages." />
-  <meta property="og:url" content="https://companiesbuilder.com/tools/sitemap-generator/" />
-  <meta property="og:image" content="https://companiesbuilder.com/assets/images/CB-logo.png" />
-  <meta property="og:type" content="website" />
 </head>
 <body>
 
-  <!-- Shared Header -->
-    <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="https://companiesbuilder.com/" aria-label="Companies Builder home">
@@ -127,125 +789,671 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="container" style="padding-top: 3rem; padding-bottom: 4rem; max-width: 800px;">
-    <div style="margin-bottom: 2rem; text-align: center;">
-      <a href="/tools/" style="font-size: 0.9rem; display: block; margin-bottom: 1rem;">&larr; Back to Tools</a>
-      <h1>Sitemap Generator</h1>
-      <p>Instantly crawl your website and generate a perfectly formatted XML sitemap for search engines.</p>
-    </div>
+  <!-- MAIN CONTAINER -->
+  <main class="container" style="padding-top: 6.5rem; padding-bottom: 5rem; max-width: 920px;">
+
+    <!-- Breadcrumb Hierarchy -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="https://companiesbuilder.com/">Home</a>
+      <span class="breadcrumb-separator">&rarr;</span>
+      <a href="https://companiesbuilder.com/tools/">Free SEO Tools</a>
+      <span class="breadcrumb-separator">&rarr;</span>
+      <span style="color: #cbd5e1;">XML Sitemap Generator</span>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="tool-hero">
+      <h1>Free XML Sitemap Generator</h1>
+      <p class="subtitle">Create a Sitemap for Your Website Online</p>
+      <p class="lead-text">Generate an XML sitemap from your website's publicly accessible pages. Enter your domain, run the crawler to discover reachable internal links, review the discovered URLs, and download the generated sitemap.xml file.</p>
+    </header>
 
     <!-- Usage Limit Banner Container -->
     <div id="limitBannerContainer"></div>
 
-    <div class="glass-panel" style="text-align: center;">
-      
-      <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: center;">
-        <input type="url" id="targetUrl" class="form-control" placeholder="https://example.com" style="max-width: 400px;">
-        <button id="runBtn" class="btn btn-primary" onclick="generateSitemap()">Generate XML</button>
-      </div>
-      
-      <div class="loading-spinner" id="spinner"></div>
-      <div id="statusText" style="color: var(--text-muted); display: none; margin-bottom: 2rem;">Crawling website... Please wait.</div>
-
-      <div id="resultsArea" class="mt-8">
-        <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 2rem;">
-        
-        <h3 style="margin-bottom: 1rem;">Sitemap Generated (<span id="pageCount">0</span> pages)</h3>
-        
-        <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); text-align: left; overflow: hidden; margin-bottom: 1.5rem;">
-          <pre><code id="xmlOutput" style="color: var(--success-color); white-space: pre-wrap; word-break: break-all; font-family: monospace; max-height: 400px; overflow-y: auto; display: block;"></code></pre>
+    <!-- SITEMAP GENERATOR TOOL INTERFACE -->
+    <section class="generator-card" aria-label="Sitemap Generator Tool">
+      <form id="sitemapForm" onsubmit="event.preventDefault(); generateSitemap();">
+        <div class="form-wrapper">
+          <label for="targetUrl" class="visually-hidden">Website URL to crawl</label>
+          <div class="input-group-custom">
+            <input type="url" id="targetUrl" class="url-input" placeholder="https://example.com" required autocomplete="url">
+            <button type="submit" id="runBtn" class="btn-generate">
+              <i class="bi bi-play-circle-fill"></i>
+              <span>Generate XML</span>
+            </button>
+          </div>
+          <p class="scope-note">Crawls same-domain HTML links up to depth 2 (maximum 40 pages per session).</p>
         </div>
-        
-        <button class="btn btn-primary" onclick="downloadSitemap()" style="margin-bottom: 2rem;">
-          <i class="bi bi-download me-2"></i> Download sitemap.xml
-        </button>
+      </form>
+
+      <!-- In-Page Error Alert -->
+      <div id="errorAlert" class="alert-error" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        <span id="errorMessage">Unable to crawl the URL. Please verify the domain is publicly accessible and try again.</span>
+      </div>
+
+      <!-- Loading State -->
+      <div class="loading-spinner" id="spinner" role="status" aria-label="Crawling website"></div>
+      <div class="crawl-status" id="statusText">Crawling website pages... Please wait.</div>
+
+      <!-- Results Area -->
+      <div id="resultsArea">
+        <div class="results-header">
+          <h2 class="results-title" style="border:none; padding:0; margin:0;">
+            <i class="bi bi-check2-circle text-success me-2"></i>XML Sitemap Ready
+          </h2>
+          <div class="actions-row mb-0">
+            <button type="button" class="btn-copy" onclick="copySitemapXml()" id="copyBtn">
+              <i class="bi bi-clipboard"></i>
+              <span id="copyBtnText">Copy XML</span>
+            </button>
+            <button type="button" class="btn-download" onclick="downloadSitemap()">
+              <i class="bi bi-download"></i>
+              <span>Download sitemap.xml</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Metric Badges -->
+        <div class="stats-row">
+          <div class="stat-pill">
+            <div class="val" id="pageCount">0</div>
+            <div class="lbl">URLs Discovered</div>
+          </div>
+          <div class="stat-pill">
+            <div class="val" id="sitemapSize">0 KB</div>
+            <div class="lbl">File Size</div>
+          </div>
+          <div class="stat-pill">
+            <div class="val" style="color: #60a5fa;">0.9</div>
+            <div class="lbl">Sitemap Protocol</div>
+          </div>
+          <div class="stat-pill">
+            <div class="val" style="color: #a78bfa;">Valid</div>
+            <div class="lbl">XML Syntax</div>
+          </div>
+        </div>
+
+        <!-- XML Code Preview Box -->
+        <div class="code-container">
+          <div class="code-toolbar">
+            <span><i class="bi bi-file-code me-2"></i>sitemap.xml preview</span>
+            <span id="charCountLabel">UTF-8 Encoded</span>
+          </div>
+          <pre><code id="xmlOutput" class="code-preview"></code></pre>
+        </div>
 
         <div id="crossPromoArea"></div>
       </div>
+    </section>
 
-    </div>
+    <!-- EDUCATIONAL & BEST PRACTICE RESOURCE -->
+    <article class="resource-content">
+      <section id="introduction">
+<p>A reliable <strong>sitemap generator</strong> helps search engines discover your important pages by assembling an organized XML manifest. Instead of waiting for crawlers to uncover URLs through external links, an XML sitemap provides an explicit list of accessible endpoints. This CompaniesBuilder online tool crawls your public pages and outputs a clean file based on the Sitemaps.org protocol.</p>
+        <p>An XML sitemap helps bots like Googlebot discover content and crawl site structure efficiently.</p>
+      </section>
+      <section id="what-is-an-xml-sitemap">
+<h2>What Is an XML Sitemap?</h2>
+        <p>An XML sitemap is a structured file listing a website's primary URLs for search engine discovery. Established under the Sitemaps.org standard by Google, Yahoo!, and Microsoft, it provides a unified crawling protocol across major search engines.</p>
+        <p>Each entry includes the page location (<code>&lt;loc&gt;</code>) and optional modification dates (<code>&lt;lastmod&gt;</code>).</p>
+        <div class="highlight-card">
+          <p><strong>Crawl Discovery Aid:</strong> A sitemap provides crawling hints—it does not alter search rankings or guarantee indexing.</p>
+        </div>
+      </section>
+      <section id="free-sitemap-generator">
+<h2>Free XML Sitemap Generator</h2>
+        <p>Building an XML sitemap manually is tedious and prone to syntax errors that prevent search bots from reading it.</p>
+        <p>This <strong>free XML sitemap generator</strong> provides an online solution with no registration required. Enter your domain above to scan accessible HTML pages up to 40 links within two depths and download your clean <code>sitemap.xml</code> file.</p>
+      </section>
+      <section id="how-to-create-a-sitemap">
+<h2>How to Create an XML Sitemap</h2>
+        <p>Follow these steps to generate and deploy your website sitemap:</p>
+        <ol>
+          <li><strong>Enter URL:</strong> Input your domain above.</li>
+          <li><strong>Start Crawl:</strong> Click <strong>Generate XML</strong> to scan accessible pages.</li>
+          <li><strong>Review Results:</strong> Check discovered URL count and live XML output.</li>
+          <li><strong>Download:</strong> Click <strong>Download sitemap.xml</strong> or copy markup.</li>
+          <li><strong>Upload:</strong> Save the file to your root directory (<code>/sitemap.xml</code>).</li>
+          <li><strong>Submit:</strong> Add your sitemap in Google Search Console and <code>robots.txt</code>.</li>
+        </ol>
+      </section>
+      <section id="how-does-it-work">
+<h2>How Does a Sitemap Generator Work?</h2>
+        <p>An online sitemap generator functions as a focused crawler that maps internal website links:</p>
+        <ul>
+          <li><strong>Entry Point:</strong> Starts at your root URL to extract the domain.</li>
+          <li><strong>Link Discovery:</strong> Fetches HTML pages and parses anchor tags.</li>
+          <li><strong>Filtering:</strong> Strips fragments, phone links, mailto, and external domains.</li>
+          <li><strong>Status Check:</strong> Retains clean <code>200 OK</code> HTML pages.</li>
+          <li><strong>XML Output:</strong> Assembles URLs into standard Sitemaps.org schema with entity escaping.</li>
+        </ul>
+      </section>
+      <section id="what-urls-to-include">
+<h2>What URLs Should Be Included in a Sitemap?</h2>
+        <p>Include authoritative, public pages that deliver primary value to search visitors:</p>
+        <ul>
+          <li><strong>Canonical URLs:</strong> Provide the authoritative version of each page.</li>
+          <li><strong>Important Content Pages:</strong> Core landing pages, key services, and valuable articles.</li>
+          <li><strong>Preferred Protocol:</strong> Use secure HTTPS URLs matching your preferred domain.</li>
+          <li><strong>Live Pages:</strong> Only list pages returning successful <code>200 OK</code> responses.</li>
+          <li><strong>Indexable Pages:</strong> Verify that listed URLs are intended for search visibility.</li>
+        </ul>
+      </section>
+      <section id="what-urls-not-to-include">
+<h2>What URLs Should Not Be Included?</h2>
+        <p>Do not include utility or non-indexable URLs in your sitemap:</p>
+        <ul>
+          <li><strong>Query Parameters:</strong> Filtered views, sorting parameters, and session IDs.</li>
+          <li><strong>Private Portals:</strong> Admin panels, user dashboards, and checkout carts.</li>
+          <li><strong>Redirected URLs:</strong> Exclude 301/302 redirects; list only final canonical destinations.</li>
+          <li><strong>Error Pages:</strong> Never submit 404 or 500 error pages.</li>
+          <li><strong>Blocked Pages:</strong> URLs with <code>noindex</code> tags or disallowed in <code>robots.txt</code>.</li>
+        </ul>
+        <div class="warning-card">
+          <p><strong>Note:</strong> Excluding a URL does not prevent indexing. Use <code>noindex</code> to block search engines.</p>
+        </div>
+      </section>
+      <section id="xml-vs-html-sitemap">
+<h2>XML Sitemap vs HTML Sitemap</h2>
+        <p>While both map site content, they serve distinct audiences and technical functions:</p>
+        <div class="table-container">
+          <table class="custom-table">
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>XML Sitemap</th>
+                <th>HTML Sitemap</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Audience</strong></td>
+                <td>Search engine bots (Googlebot, Bingbot)</td>
+                <td>Human website visitors</td>
+              </tr>
+              <tr>
+                <td><strong>Format</strong></td>
+                <td>Structured XML document</td>
+                <td>Styled HTML navigation page</td>
+              </tr>
+              <tr>
+                <td><strong>Location</strong></td>
+                <td>Root directory (<code>/sitemap.xml</code>)</td>
+                <td>Footer link (<code>/sitemap/</code>)</td>
+              </tr>
+              <tr>
+                <td><strong>Purpose</strong></td>
+                <td>Crawl discovery &amp; metadata</td>
+                <td>Visitor navigation &amp; accessibility</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>XML sitemaps aid search crawlers, while HTML sitemaps assist human visitors.</p>
+      </section>
+      <section id="xml-sitemap-format">
+<h2>XML Sitemap Format</h2>
+        <p>A standard XML sitemap follows the Sitemaps.org protocol:</p>
+        <div class="code-block-example">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;url&gt;
+    &lt;loc&gt;https://example.com/&lt;/loc&gt;
+    &lt;lastmod&gt;2026-09-01&lt;/lastmod&gt;
+  &lt;/url&gt;
+&lt;/urlset&gt;
+        </div>
+        <h3>Core Tags Explained</h3>
+        <ul>
+          <li><code>&lt;urlset&gt;</code>: Root container referencing the XML namespace.</li>
+          <li><code>&lt;url&gt;</code>: Container for each individual page record.</li>
+          <li><code>&lt;loc&gt;</code>: Fully qualified absolute URL of the page.</li>
+          <li><code>&lt;lastmod&gt;</code>: Last modification date in W3C format (YYYY-MM-DD).</li>
+        </ul>
+        <p>Google has clarified that <strong>Googlebot ignores &lt;priority&gt; and &lt;changefreq&gt;</strong>. Only accurate <code>&lt;lastmod&gt;</code> timestamps are evaluated.</p>
+      </section>
+      <section id="best-practices">
+<h2>XML Sitemap Best Practices</h2>
+        <p>Follow established webmaster standards to optimize crawler efficiency:</p>
+        <ul>
+          <li><strong>Absolute URLs:</strong> Write <code>https://example.com/about/</code> instead of <code>/about/</code>.</li>
+          <li><strong>Canonical URLs:</strong> Match the URL defined in your <code>rel="canonical"</code> tag.</li>
+          <li><strong>Entity Escaping:</strong> Convert characters: <code>&amp;amp;</code>, <code>&amp;lt;</code>, and <code>&amp;gt;</code>.</li>
+          <li><strong>Accurate Lastmod:</strong> Update <code>&lt;lastmod&gt;</code> only when substantial content changes occur.</li>
+          <li><strong>Server Accessibility:</strong> Ensure your sitemap returns <code>200 OK</code> to search bots.</li>
+        </ul>
+      </section>
+      <section id="size-limits">
+<h2>XML Sitemap Size and URL Limits</h2>
+        <p>Under Sitemaps.org protocol, a single sitemap file is subject to two limits:</p>
+        <ul>
+          <li><strong>50,000 URLs</strong> maximum per individual sitemap file.</li>
+          <li><strong>50 MB</strong> maximum uncompressed file size.</li>
+        </ul>
+        <p>Sites exceeding these thresholds must split URLs across multiple files linked by a sitemap index. This tool crawls up to 40 pages within 2 depths, tailored for small websites and blogs.</p>
+      </section>
+      <section id="sitemap-index-files">
+<h2>Sitemap Index Files</h2>
+        <p>A sitemap index organizes multiple sitemap files when a website exceeds 50,000 URLs or separates content types (posts, pages, products):</p>
+        <div class="code-block-example">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;
+  &lt;sitemap&gt;
+    &lt;loc&gt;https://example.com/post-sitemap.xml&lt;/loc&gt;
+    &lt;lastmod&gt;2026-09-01&lt;/lastmod&gt;
+  &lt;/sitemap&gt;
+&lt;/sitemapindex&gt;
+        </div>
+        <p>Submitting the index URL to Google Search Console enables search bots to crawl all linked sitemaps automatically.</p>
+      </section>
+      <section id="indexing-help">
+<h2>Do Sitemaps Help Google Index Your Website?</h2>
+        <p>A sitemap helps search engines discover your pages, but <strong>submitting a sitemap does not guarantee indexing or ranking</strong>. Google independently decides indexing based on:</p>
+        <ul>
+          <li><strong>Content Quality:</strong> Original, substantive content satisfying search intent.</li>
+          <li><strong>Technical Health:</strong> Fast loading speed, mobile usability, and canonical signals.</li>
+          <li><strong>Internal Links:</strong> Clear link pathways providing crawl context and authority.</li>
+        </ul>
+        <p>A sitemap ensures discovery; indexing depends on overall site quality.</p>
+      </section>
+      <section id="how-to-submit-sitemap">
+<h2>How to Submit a Sitemap to Google</h2>
+        <p>Publish your sitemap to your web server and submit it using two standard methods:</p>
+        <h3>Submitting in Google Search Console</h3>
+        <ol>
+          <li>Open <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console</a> and select your verified domain.</li>
+          <li>Navigate to <strong>Indexing &gt; Sitemaps</strong> in the sidebar.</li>
+          <li>Enter <code>sitemap.xml</code> under <strong>Add a new sitemap</strong> and click <strong>Submit</strong>.</li>
+        </ol>
+        <h3>Referencing in Robots.txt</h3>
+        <div class="code-block-example">
+Sitemap: https://example.com/sitemap.xml
+        </div>
+      </section>
+      <section id="sitemap-and-robots-txt">
+<h2>Sitemap and Robots.txt</h2>
+        <p>While both files guide search bots, they perform contrasting functions:</p>
+        <ul>
+          <li><strong>robots.txt:</strong> Specifies crawl permissions and restricts bot access.</li>
+          <li><strong>sitemap.xml:</strong> Highlights the preferred public pages you want discovered.</li>
+        </ul>
+        <div class="highlight-card">
+          <p><strong>Key Difference:</strong> A sitemap cannot override robots.txt. Disallowed pages will not be crawled even if listed in your sitemap.</p>
+        </div>
+      </section>
+      <section id="sitemap-for-blogs">
+<h2>Sitemap Generator for Blogs</h2>
+        <p>Blogs require structured sitemaps because publishing new articles creates category, tag, and archive pages:</p>
+        <ul>
+          <li><strong>Prioritize Core Posts:</strong> Ensure articles are included with canonical URLs.</li>
+          <li><strong>Exclude Thin Archives:</strong> Date-based archives and empty tags should be omitted.</li>
+          <li><strong>Verify CMS Features:</strong> Platforms like WordPress often generate sitemaps automatically. Check your root URL first.</li>
+        </ul>
+      </section>
+      <section id="blogger-blogspot-sitemaps">
+<h2>Blogger and Blogspot Sitemaps</h2>
+        <p>Google's Blogger platform automatically provides built-in sitemaps for all blogs:</p>
+        <div class="code-block-example">
+https://yourblogname.blogspot.com/sitemap.xml
+        </div>
+        <p>Check that default URL first before generating an external sitemap. While our tool can crawl public Blogger pages up to 40 URLs, CompaniesBuilder is an independent service with no affiliation with Google or Blogger.</p>
+      </section>
+      <section id="troubleshooting-problems">
+<h2>Common XML Sitemap Problems</h2>
+        <p>Technical audits often identify recurring sitemap configuration errors:</p>
+        <ul>
+          <li><strong>Unescaped Ampersands:</strong> Raw <code>&amp;</code> characters break XML parsing; use <code>&amp;amp;</code>.</li>
+          <li><strong>Relative URLs:</strong> Omission of protocol and domain violates Sitemaps.org schema.</li>
+          <li><strong>Mixed Protocols:</strong> Listing HTTP URLs on HTTPS websites forces redirects.</li>
+          <li><strong>Broken 404 Links:</strong> Including dead URLs wastes search bot crawl resources.</li>
+          <li><strong>Blocked Sitemap:</strong> Adding disallow directives in <code>robots.txt</code> for sitemaps.</li>
+        </ul>
+      </section>
+      <section id="why-not-indexing">
+<h2>Why Is Google Not Indexing My URL After I Submitted a Sitemap?</h2>
+        <p>A sitemap assists discovery, but Google decides indexing based on several factors:</p>
+        <ul>
+          <li><strong>Crawl Queue:</strong> Google schedules crawling by domain authority and server capacity.</li>
+          <li><strong>Discovered - Not Indexed:</strong> The URL was found but not yet crawled.</li>
+          <li><strong>Crawled - Not Indexed:</strong> Evaluated but excluded due to thin content or duplication.</li>
+          <li><strong>Canonical Choice:</strong> Google selected a different URL as canonical.</li>
+          <li><strong>Internal Links:</strong> The page lacks sufficient contextual internal links.</li>
+        </ul>
+      </section>
+      <section id="sitemap-checklist">
+<h2>XML Sitemap Checklist</h2>
+        <p>Review this technical checklist before submitting your sitemap:</p>
+        <div class="checklist-grid">
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">HTTP 200 Status</div><div class="checklist-subtext">Loads cleanly.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">Valid XML Syntax</div><div class="checklist-subtext">Proper schema tags.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">Absolute URLs</div><div class="checklist-subtext">Fully qualified HTTPS.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">Canonical URLs</div><div class="checklist-subtext">Matches canonicals.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">Indexable Pages</div><div class="checklist-subtext">No noindex tags.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">No 404s/Redirects</div><div class="checklist-subtext">Only live 200 OK.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">Within File Limits</div><div class="checklist-subtext">Under 50,000 URLs.</div></div></div>
+          <div class="checklist-card"><i class="bi bi-check-circle-fill checklist-icon"></i><div><div class="checklist-text">Console Submitted</div><div class="checklist-subtext">Submitted in GSC.</div></div></div>
+        </div>
+      </section>
+      <section id="when-to-generate-new-sitemap">
+<h2>When Should You Generate a New Sitemap?</h2>
+        <p>Update your sitemap when your site structure undergoes meaningful changes:</p>
+        <ul>
+          <li><strong>New Website Launch:</strong> Submits initial indexable pages to search engines.</li>
+          <li><strong>Adding Sections or Products:</strong> Expands crawler coverage to newly published content.</li>
+          <li><strong>Site Migrations &amp; Redesigns:</strong> Crucial after URL restructures or migrations.</li>
+          <li><strong>Content Pruning:</strong> Removes retired pages and updates redirect targets.</li>
+        </ul>
+      </section>
+      <section id="sitemap-vs-navigation">
+<h2>XML Sitemap vs Site Navigation</h2>
+        <p>A sitemap supports URL discovery, but it <strong>never replaces internal links</strong>. Search engines rely on internal links to understand topical hierarchy and distribute authority.</p>
+        <p>Pages linked from primary navigation are crawled frequently and indexed reliably. Optimal technical SEO integrates strong internal linking with a clean XML sitemap.</p>
+      </section>
+      <section id="who-benefits">
+<h2>Free Website Sitemap Generator</h2>
+        <p>This <strong>free website sitemap generator</strong> provides instant XML generation for:</p>
+        <ul>
+          <li><strong>Small Business Websites:</strong> Corporate landing pages without automated CMS plugins.</li>
+          <li><strong>Static Site Generators:</strong> Custom HTML/CSS builds, Jekyll, Hugo, and Eleventy sites.</li>
+          <li><strong>Marketing Agencies:</strong> Quick technical crawls and client page inventory checks.</li>
+          <li><strong>Startups &amp; Portfolios:</strong> New domains needing search engine discovery assets.</li>
+        </ul>
+      </section>
+      <section id="generator-mechanics">
+<h2>How This Sitemap Generator Works</h2>
+        <p>Here is the crawl workflow behind this CompaniesBuilder tool:</p>
+        <ol>
+          <li><strong>Normalization:</strong> Validates input URLs and applies HTTPS if protocol is omitted.</li>
+          <li><strong>Domain Isolation:</strong> Restricts crawling exclusively to your verified hostname.</li>
+          <li><strong>BFS Link Discovery:</strong> Streams HTML responses via Cloudflare Workers HTMLRewriter.</li>
+          <li><strong>Link Filtering:</strong> Strips hashes, mailto, phone links, and external URLs.</li>
+          <li><strong>HTTP Validation:</strong> Retains only clean 200 OK HTML pages.</li>
+          <li><strong>XML Output:</strong> Assembles valid Sitemaps.org XML with proper entity escaping.</li>
+        </ol>
+      </section>
+      <section id="transparency-limitations">
+<h2>What This Sitemap Generator Does and Does Not Do</h2>
+        <div class="row g-3 my-2">
+          <div class="col-md-6">
+            <div style="background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 1.25rem;">
+              <h4 style="color: #34d399; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem;">
+                <i class="bi bi-check-circle me-2"></i>What This Tool Does
+              </h4>
+              <ul style="padding-left: 1.25rem; margin-bottom: 0; font-size: 0.92rem; color: #cbd5e1;">
+                <li>Crawls public internal HTML pages up to depth 2.</li>
+                <li>Discovers up to 40 accessible pages per session.</li>
+                <li>Filters fragments, mailto, and telephone links.</li>
+                <li>Escapes entities for valid XML syntax.</li>
+                <li>Generates downloadable <code>sitemap.xml</code>.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div style="background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.2); border-radius: 12px; padding: 1.25rem;">
+              <h4 style="color: #f87171; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem;">
+                <i class="bi bi-x-circle me-2"></i>What This Tool Does Not Do
+              </h4>
+              <ul style="padding-left: 1.25rem; margin-bottom: 0; font-size: 0.92rem; color: #cbd5e1;">
+                <li>Does not crawl past 40 pages.</li>
+                <li>Does not parse <code>robots.txt</code> or <code>noindex</code> tags.</li>
+                <li>Does not crawl password-protected pages.</li>
+                <li>Does not upload files to your web server.</li>
+                <li>Does not guarantee search rankings or indexing.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="related-seo-tools">
+<h2>More Free SEO Tools</h2>
+        <p>A sitemap is one element of technical SEO. Explore our companion webmaster utilities:</p>
+        <div class="tools-hub-grid">
+          <a href="https://companiesbuilder.com/tools/seo-auditor/" class="tool-link-card">
+            <div class="tool-link-icon"><i class="bi bi-search"></i></div>
+            <h4>SEO Auditor</h4>
+            <span class="tool-link-action">Run SEO Audit &rarr;</span>
+          </a>
+          <a href="https://companiesbuilder.com/tools/speed-checker/" class="tool-link-card">
+            <div class="tool-link-icon"><i class="bi bi-speedometer2"></i></div>
+            <h4>Website Speed Checker</h4>
+            <span class="tool-link-action">Check Website Speed &rarr;</span>
+          </a>
+          <a href="https://companiesbuilder.com/tools/local-seo/" class="tool-link-card">
+            <div class="tool-link-icon"><i class="bi bi-geo-alt"></i></div>
+            <h4>Local SEO Checker</h4>
+            <span class="tool-link-action">Check Local SEO &rarr;</span>
+          </a>
+          <a href="https://companiesbuilder.com/tools/meta-tag-generator/" class="tool-link-card">
+            <div class="tool-link-icon"><i class="bi bi-tags"></i></div>
+            <h4>Meta Tag Generator</h4>
+            <span class="tool-link-action">Create Meta Tags &rarr;</span>
+          </a>
+          <a href="https://companiesbuilder.com/tools/schema-generator/" class="tool-link-card">
+            <div class="tool-link-icon"><i class="bi bi-code-slash"></i></div>
+            <h4>Schema Generator</h4>
+            <span class="tool-link-action">Generate Structured Data &rarr;</span>
+          </a>
+          <a href="https://companiesbuilder.com/tools/" class="tool-link-card">
+            <div class="tool-link-icon"><i class="bi bi-grid"></i></div>
+            <h4>All Free SEO Tools</h4>
+            <span class="tool-link-action">Explore All Free SEO Tools &rarr;</span>
+          </a>
+        </div>
+      </section>
+      <section id="commercial-help">
+<h2>Need Help With Your Website SEO?</h2>
+        <p>Solving crawl issues, optimizing internal architecture, and growing search visibility requires technical expertise. Companies Builder helps businesses build search-optimized websites and execute strategic organic growth campaigns.</p>
+        <a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" class="btn-commercial">
+          <i class="bi bi-rocket-takeoff"></i>
+          <span>Explore Professional SEO Services</span>
+        </a>
+      </section>
+      <section id="faqs">
+<h2>Frequently Asked Questions About Sitemap Generators</h2>
+        <div class="accordion" id="sitemapAccordion">
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                What is a sitemap generator?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                A tool that crawls internal links and generates a standard Sitemaps.org XML file for search engines.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What is an XML sitemap?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                A machine-readable XML document listing website URLs to help search engines discover pages efficiently.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How do I create an XML sitemap for my website?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Enter your URL above, click <strong>Generate XML</strong>, download <code>sitemap.xml</code>, and upload it to your web server root.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Is this sitemap generator completely free?
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Yes, free with no registration. It crawls up to 40 pages per session.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                How many URLs can an XML sitemap contain?
+              </button>
+            </h3>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Up to <strong>50,000 URLs</strong> and <strong>50 MB</strong> uncompressed per individual sitemap file.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                What is the difference between an XML sitemap and an HTML sitemap?
+              </button>
+            </h3>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                XML sitemaps assist search crawlers. HTML sitemaps provide human navigation links.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                Do blogs need an XML sitemap?
+              </button>
+            </h3>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Yes, blogs add articles frequently. Check first whether your CMS generates one automatically.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                Does Blogger (Blogspot) already have a sitemap?
+              </button>
+            </h3>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Yes. Blogger provides sitemaps at <code>yourblog.blogspot.com/sitemap.xml</code>. Check that URL first.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                How do I submit an XML sitemap to Google?
+              </button>
+            </h3>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Upload <code>sitemap.xml</code>, go to <strong>Sitemaps</strong> in Search Console, and click <strong>Submit</strong>.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                Does submitting a sitemap guarantee that Google will index my pages?
+              </button>
+            </h3>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                No. A sitemap aids discovery; Google decides indexing based on quality and relevance.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingEleven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                Where should I place sitemap.xml on my web server?
+              </button>
+            </h3>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Upload it to your root domain directory (<code>example.com/sitemap.xml</code>) for site-wide coverage.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwelve">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                What URLs should I put in an XML sitemap?
+              </button>
+            </h3>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Include public, canonical, HTTP 200 URLs that you want search engines to discover.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThirteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                Should I include every single URL on my website in the sitemap?
+              </button>
+            </h3>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                No. Exclude private logins, query filters, redirects, 404s, and pages with <code>noindex</code> tags.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFourteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                What is the difference between sitemap.xml and robots.txt?
+              </button>
+            </h3>
+            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                <code>robots.txt</code> controls crawl access permissions; sitemaps highlight preferred public URLs.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFifteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                How often should I update or regenerate my sitemap?
+              </button>
+            </h3>
+            <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#sitemapAccordion">
+              <div class="accordion-body">
+                Update it after major site redesigns, migrations, or adding large page sets. Avoid resubmitting unchanged files repeatedly.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </article>
   </main>
 
-  <script src="/tools/assets/shared.js"></script>
-  <script>
-    const TOOL_ID = 'sitemap-generator';
-
-    // On load, check if they are already blocked
-    window.onload = () => {
-      CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
-    };
-
-    
-    let currentXml = '';
-
-    function downloadSitemap() {
-        if (!currentXml) return;
-        const blob = new Blob([currentXml], { type: 'application/xml' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'sitemap.xml';
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    }
-
-    async function generateSitemap() {
-      const url = document.getElementById('targetUrl').value;
-      if (!url) {
-        alert("Please enter a valid URL.");
-        return;
-      }
-
-      const btn = document.getElementById('runBtn');
-      const spinner = document.getElementById('spinner');
-      const resultsArea = document.getElementById('resultsArea');
-      const statusText = document.getElementById('statusText');
-      
-      const proceed = CompaniesBuilderTools.incrementAndCheckLimit(TOOL_ID, 'runBtn', 'limitBannerContainer');
-      if (!proceed) return;
-
-      btn.disabled = true;
-      btn.innerText = "Crawling...";
-      spinner.style.display = "block";
-      resultsArea.style.display = "none";
-      statusText.style.display = "block";
-
-      try {
-        const res = await fetch('/tools/api/sitemap?url=' + encodeURIComponent(url));
-        const data = await res.json();
-        
-        if (data.error) throw new Error(data.error);
-        
-        document.getElementById('pageCount').innerText = data.pagesFound;
-        document.getElementById('xmlOutput').textContent = data.xml;
-        currentXml = data.xml;
-        
-        spinner.style.display = "none";
-        statusText.style.display = "none";
-        resultsArea.style.display = "block";
-        
-        // Show cross promotion unconditionally for sitemap (e.g. try SEO auditor)
-        if (window.showCrossPromotion) {
-            window.showCrossPromotion(document.getElementById('crossPromoArea'));
-        }
-        
-      } catch (err) {
-        spinner.style.display = "none";
-        statusText.style.display = "none";
-        alert("Error generating sitemap: " + err.message);
-      } finally {
-        if (CompaniesBuilderTools.getAttempts(TOOL_ID) < CompaniesBuilderTools.MAX_ATTEMPTS) {
-           btn.disabled = false;
-           btn.innerText = "Generate XML";
-        }
-      }
-    }
-
-
-  </script>
   <!-- FOOTER -->
   <footer class="site-footer py-5">
     <div class="container">
@@ -304,16 +1512,168 @@
       </div>
     </div>
   </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-<script>
-// Navbar scroll effect
-(function () {
-  var nav = document.getElementById('siteNav');
-  if(!nav) return;
-  var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
-  document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-})();
-</script>
+
+  <script src="/tools/assets/shared.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script>
+    const TOOL_ID = 'sitemap-generator';
+
+    // On page load, verify free usage limit state
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.CompaniesBuilderTools) {
+        CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
+      }
+    });
+
+    let currentXml = '';
+
+    function showError(message) {
+      const errorAlert = document.getElementById('errorAlert');
+      const errorMessage = document.getElementById('errorMessage');
+      if (errorAlert && errorMessage) {
+        errorMessage.textContent = message;
+        errorAlert.style.display = 'block';
+      }
+    }
+
+    function hideError() {
+      const errorAlert = document.getElementById('errorAlert');
+      if (errorAlert) {
+        errorAlert.style.display = 'none';
+      }
+    }
+
+    function downloadSitemap() {
+      if (!currentXml) return;
+      const blob = new Blob([currentXml], { type: 'application/xml;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'sitemap.xml';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    async function copySitemapXml() {
+      if (!currentXml) return;
+      const copyBtnText = document.getElementById('copyBtnText');
+      try {
+        await navigator.clipboard.writeText(currentXml);
+        if (copyBtnText) {
+          copyBtnText.textContent = 'Copied!';
+          setTimeout(() => { copyBtnText.textContent = 'Copy XML'; }, 2200);
+        }
+      } catch (err) {
+        // Fallback for older clipboard API permissions
+        const textarea = document.createElement('textarea');
+        textarea.value = currentXml;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (copyBtnText) {
+          copyBtnText.textContent = 'Copied!';
+          setTimeout(() => { copyBtnText.textContent = 'Copy XML'; }, 2200);
+        }
+      }
+    }
+
+    async function generateSitemap() {
+      hideError();
+      const urlInput = document.getElementById('targetUrl');
+      let url = urlInput.value.trim();
+
+      if (!url) {
+        showError('Please enter a valid website URL.');
+        return;
+      }
+
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+        urlInput.value = url;
+      }
+
+      const btn = document.getElementById('runBtn');
+      const spinner = document.getElementById('spinner');
+      const resultsArea = document.getElementById('resultsArea');
+      const statusText = document.getElementById('statusText');
+
+      if (window.CompaniesBuilderTools) {
+        const proceed = CompaniesBuilderTools.incrementAndCheckLimit(TOOL_ID, 'runBtn', 'limitBannerContainer');
+        if (!proceed) return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Crawling...';
+      spinner.style.display = 'block';
+      resultsArea.style.display = 'none';
+      statusText.style.display = 'block';
+      statusText.textContent = 'Crawling website pages (max depth 2, up to 40 pages)...';
+
+      try {
+        let res;
+        try {
+          res = await fetch('/tools/api/sitemap?url=' + encodeURIComponent(url));
+        } catch (fetchErr) {
+          // Fallback if not mapped via /tools/
+          res = await fetch('/api/sitemap?url=' + encodeURIComponent(url));
+        }
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || `Server responded with status ${res.status}`);
+        }
+
+        const data = await res.json();
+        if (data.error) throw new Error(data.error);
+
+        const pageCount = data.pagesFound || 0;
+        document.getElementById('pageCount').innerText = pageCount;
+        document.getElementById('xmlOutput').textContent = data.xml;
+        currentXml = data.xml;
+
+        // Calculate sitemap size in KB
+        const sizeInBytes = new Blob([data.xml]).size;
+        const sizeInKb = (sizeInBytes / 1024).toFixed(1) + ' KB';
+        document.getElementById('sitemapSize').innerText = sizeInKb;
+
+        spinner.style.display = 'none';
+        statusText.style.display = 'none';
+        resultsArea.style.display = 'block';
+
+        if (pageCount === 0) {
+          showError('Crawl completed, but 0 accessible HTML pages were found on this domain. Ensure the website is reachable, does not block automated requests, and returns standard 200 OK responses.');
+        }
+
+        // Show cross promotion if available
+        if (window.CompaniesBuilderTools && typeof CompaniesBuilderTools.showCrossPromotion === 'function') {
+          CompaniesBuilderTools.showCrossPromotion('meta', 'crossPromoArea', TOOL_ID);
+        }
+
+      } catch (err) {
+        spinner.style.display = 'none';
+        statusText.style.display = 'none';
+        showError('Error generating sitemap: ' + err.message);
+      } finally {
+        const maxAttempts = (window.CompaniesBuilderTools && (CompaniesBuilderTools.MAX_FREE_ATTEMPTS || CompaniesBuilderTools.MAX_ATTEMPTS)) || 5;
+        const currentAttempts = window.CompaniesBuilderTools ? CompaniesBuilderTools.getAttempts(TOOL_ID) : 0;
+        if (currentAttempts < maxAttempts) {
+          btn.disabled = false;
+          btn.innerHTML = '<i class="bi bi-play-circle-fill"></i><span>Generate XML</span>';
+        }
+      }
+    }
+
+    // Navbar scroll effect
+    (function () {
+      var nav = document.getElementById('siteNav');
+      if (!nav) return;
+      var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
