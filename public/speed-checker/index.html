@@ -1,32 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <title>Free Website Speed Checker | Core Web Vitals Test</title>
-  <meta name="description" content="Use our free website speed checker to test page performance, Core Web Vitals and key speed metrics on desktop and mobile.">
-  <link rel="canonical" href="https://companiesbuilder.com/tools/speed-checker/">
+  <meta name="description" content="Use our free website speed checker to test page performance, Core Web Vitals, and key speed metrics on desktop and mobile. Check your webpage speed online." />
+  <meta name="keywords" content="website speed checker, web speed checker, website speed test, check website speed, website speed checker google, Core Web Vitals, LCP, INP, CLS, website performance" />
+  <meta name="author" content="Companies Builder" />
+  <link rel="canonical" href="https://companiesbuilder.com/tools/speed-checker/" />
+  <link rel="icon" type="image/x-icon" href="https://companiesbuilder.com/favicon.ico" />
   <link rel="icon" href="https://companiesbuilder.com/assets/images/CB-logo.png" />
-  
+  <meta name="theme-color" content="#060910" />
+
+  <!-- Open Graph -->
   <meta property="og:site_name" content="Companies Builder" />
   <meta property="og:title" content="Free Website Speed Checker | Core Web Vitals Test" />
-  <meta property="og:description" content="Use our free website speed checker to test page performance, Core Web Vitals and key speed metrics on desktop and mobile." />
+  <meta property="og:description" content="Use our free website speed checker to test page performance, Core Web Vitals, and key speed metrics on desktop and mobile. Check your webpage speed online." />
   <meta property="og:url" content="https://companiesbuilder.com/tools/speed-checker/" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/CB-logo.png" />
   <meta property="og:type" content="website" />
-  
-  <!-- Schema.org JSON-LD -->
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Website Speed Checker | Core Web Vitals Test" />
+  <meta name="twitter:description" content="Use our free website speed checker to test page performance, Core Web Vitals, and key speed metrics on desktop and mobile. Check your webpage speed online." />
+  <meta name="twitter:image" content="https://companiesbuilder.com/assets/images/CB-logo.png" />
+
+  <!-- Schema.org JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Free Website Speed Checker",
     "url": "https://companiesbuilder.com/tools/speed-checker/",
-    "description": "A free online tool to test webpage performance, Core Web Vitals (LCP, INP, CLS), and overall speed score on desktop and mobile devices.",
+    "description": "A free online website speed checker to analyze page performance, Core Web Vitals (LCP, INP, CLS), and Lighthouse diagnostics across mobile and desktop devices.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "All",
     "offers": {
@@ -41,7 +51,7 @@
     }
   }
   </script>
-  
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,226 +79,1003 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a website speed checker?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A website speed checker is an automated testing tool that evaluates how rapidly a specific webpage downloads, renders, and becomes interactive for visitors. It measures server response, asset rendering, and Core Web Vitals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I check my website speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter any public webpage URL into the input field above, choose between mobile or desktop simulation, and click 'Run Test'. The tool generates a Lighthouse performance score and Core Web Vitals report."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good website speed score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Lighthouse audits, 90+ is Good, 50-89 Needs Improvement, and under 50 is Poor. However, passing objective Core Web Vitals benchmarks matters far more for visitors than chasing an arbitrary 100/100 score."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Core Web Vitals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core Web Vitals are three user-experience metrics defined by Google: Largest Contentful Paint (LCP) for loading speed, Interaction to Next Paint (INP) for responsiveness, and Cumulative Layout Shift (CLS) for visual stability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is LCP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Largest Contentful Paint (LCP) measures the time needed for the largest above-the-fold content block—such as a hero image or main heading—to render completely. A good LCP is 2.5 seconds or less."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is INP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Interaction to Next Paint (INP) evaluates interaction responsiveness across a visit, measuring latency between user taps, clicks, or keystrokes and the next visual update. A good INP is strictly less than 200 milliseconds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is CLS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cumulative Layout Shift (CLS) measures unexpected visual movement while a page loads, detecting when content jumps due to missing media dimensions or late-loading ads. A good CLS score is strictly less than 0.1."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Google check website speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google checks website speed through controlled synthetic audits via Lighthouse, and real-user monitoring via the Chrome User Experience Report (CrUX), which aggregates anonymized performance data from actual Chrome browser sessions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is PageSpeed Insights the same as a website speed test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Google PageSpeed Insights is a specific diagnostic tool combining Lighthouse lab tests and CrUX field data. Website speed test is a broad industry term encompassing any performance assessment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a speed test guarantee better Google rankings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. While Core Web Vitals contribute to Google's page-experience signals, content relevance, depth, and quality are primary. Fast pages improve retention and user satisfaction, but speed alone never guarantees top positions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is my website faster on desktop than mobile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Desktop computers feature faster processors and reliable broadband connections, whereas mobile phones have power-constrained CPUs and connect over cellular networks with higher latency. Heavy scripts affect mobile devices much more severely."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do website speed results change between tests?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Variations occur naturally due to fluctuating hosting server loads, transient network routing latency, third-party script responsiveness, and whether assets were cached at the exact moment of testing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I improve my website speed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Key optimizations include compressing images into WebP/AVIF formats, deferring non-essential JavaScript, minifying CSS stylesheets, enabling browser caching, using a CDN, and setting explicit dimensions on all media."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/tools/assets/shared.css" />
+
   <style>
+    :root {
+      --navy-950: #060910;
+      --navy-900: #0e1424;
+      --navy-850: #12192d;
+      --navy-800: #161d33;
+      --navy-700: #212a48;
+      --ink: #eef0f9;
+      --ink-dim: #9aa3be;
+      --violet: #6c63ff;
+      --violet-light: #8b83ff;
+      --blue: #3d8bff;
+      --blue-light: #60a5fa;
+      --amber: #ffb020;
+      --green: #22d3a0;
+      --red: #ef4444;
+      --line-dark: rgba(255, 255, 255, 0.08);
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --card-bg: rgba(14, 20, 36, 0.75);
+      --card-border: rgba(255, 255, 255, 0.09);
+    }
+
+    body {
+      background-color: var(--navy-950) !important;
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(108, 99, 255, 0.22) 0%, rgba(61, 139, 255, 0.12) 40%, transparent 70%);
+      pointer-events: none;
+      filter: blur(80px);
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .main-wrap {
+      position: relative;
+      z-index: 1;
+      padding-top: 7rem;
+      padding-bottom: 5rem;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: var(--ink-dim);
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb-nav a {
+      color: var(--violet-light);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb-nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .breadcrumb-nav .sep {
+      opacity: 0.4;
+    }
+
+    .tool-hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(108, 99, 255, 0.12);
+      border: 1px solid rgba(108, 99, 255, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--violet-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-pill-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green);
+    }
+
+    .tool-hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #b8c2e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--ink);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--ink-dim);
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .tool-console-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem 2rem 2.25rem;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .tool-form-row {
+      display: flex;
+      gap: 1rem;
+      align-items: stretch;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .input-group-custom {
+      position: relative;
+      flex: 1 1 380px;
+      min-width: 260px;
+    }
+
+    .input-icon-prefix {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-dim);
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .tool-input {
+      width: 100%;
+      height: 52px;
+      background: rgba(8, 12, 22, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0 1rem 0 2.85rem;
+      font-size: 1rem;
+      color: #ffffff;
+      outline: none;
+      transition: all 0.25s ease;
+      font-family: var(--font-body);
+    }
+
+    .tool-input:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2);
+      background: rgba(10, 16, 30, 0.95);
+    }
+
+    .tool-input::placeholder {
+      color: #687390;
+    }
+
+    .tool-select-wrap {
+      flex: 0 0 150px;
+      min-width: 140px;
+    }
+
+    .tool-select {
+      width: 100%;
+      height: 52px;
+      background: rgba(8, 12, 22, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #ffffff;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: var(--font-body);
+    }
+
+    .tool-select:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2);
+    }
+
+    .tool-btn-run {
+      height: 52px;
+      padding: 0 1.85rem;
+      background: linear-gradient(135deg, #6c63ff 0%, #3d8bff 100%);
+      border: none;
+      border-radius: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: var(--font-display);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 8px 24px rgba(108, 99, 255, 0.35);
+      white-space: nowrap;
+    }
+
+    .tool-btn-run:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(108, 99, 255, 0.5);
+      filter: brightness(1.08);
+    }
+
+    .tool-btn-run:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .tool-footnote {
+      margin-top: 1rem;
+      font-size: 0.825rem;
+      color: var(--ink-dim);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .tool-footnote span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .loading-spinner {
+      display: none;
+      width: 52px;
+      height: 52px;
+      border: 4px solid rgba(255, 255, 255, 0.08);
+      border-top-color: var(--violet);
+      border-right-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.9s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite;
+      margin: 2.5rem auto 1rem auto;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    #resultsArea {
+      display: none;
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .results-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      margin: 2.25rem 0 2rem;
+      border: none;
+    }
+
+    .score-summary-wrap {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
     .score-circle {
-      width: 120px;
-      height: 120px;
+      width: 128px;
+      height: 128px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0 auto 1.5rem auto;
-      border: 8px solid;
+      font-family: var(--font-display);
+      font-size: 2.85rem;
+      font-weight: 800;
+      margin: 0 auto 1.25rem auto;
+      border: 7px solid;
+      background: rgba(8, 12, 24, 0.9);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease;
     }
-    .score-good { border-color: var(--success-color, #10b981); color: var(--success-color, #10b981); }
-    .score-needs-improvement { border-color: var(--warning-color, #f59e0b); color: var(--warning-color, #f59e0b); }
-    .score-poor { border-color: var(--error-color, #ef4444); color: var(--error-color, #ef4444); }
+
+    .score-good {
+      border-color: var(--green) !important;
+      color: var(--green) !important;
+      box-shadow: 0 0 35px rgba(34, 211, 160, 0.25) !important;
+    }
+
+    .score-needs-improvement {
+      border-color: var(--amber) !important;
+      color: var(--amber) !important;
+      box-shadow: 0 0 35px rgba(255, 176, 32, 0.25) !important;
+    }
+
+    .score-poor {
+      border-color: var(--red) !important;
+      color: var(--red) !important;
+      box-shadow: 0 0 35px rgba(239, 68, 68, 0.25) !important;
+    }
+
+    .score-summary-wrap h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .score-summary-wrap p {
+      color: var(--ink-dim);
+      font-size: 0.925rem;
+      max-width: 580px;
+      margin: 0 auto;
+    }
 
     .metric-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.25rem;
+      margin-bottom: 2rem;
     }
-    
+
     .metric-card {
-      background: var(--bg-secondary, rgba(25, 25, 35, 0.6));
-      border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
-      padding: 1.5rem;
+      background: rgba(18, 25, 45, 0.7);
+      border: 1px solid var(--card-border);
       border-radius: 16px;
-      text-align: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 1.5rem;
+      text-align: left;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    
+
     .metric-card:hover {
-      border-color: var(--accent-primary, #6366f1);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
-    }
-    
-    .metric-value {
-      font-size: 1.75rem;
-      font-weight: 800;
-      margin: 0.5rem 0;
-      color: var(--text-main, #f0f0f5);
-    }
-    
-    .loading-spinner {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border: 4px solid rgba(255,255,255,0.05);
-      border-left-color: var(--accent-primary, #6366f1);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 2rem auto;
-    }
-    
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-
-    #resultsArea { display: none; }
-    #crossPromoArea { margin-top: 2.5rem; }
-    
-    /* Content Formatting */
-    .edu-content {
-      margin-top: 5rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border-color, rgba(255,255,255,0.08));
+      border-color: rgba(108, 99, 255, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
-    .edu-content h2 {
-      margin-top: 3.5rem;
-      margin-bottom: 1.5rem;
-      font-weight: 800;
-      font-size: 2.2rem;
-      color: var(--text-main, #f0f0f5);
-      background: linear-gradient(135deg, #fff 0%, #a0a0b0 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
+    .metric-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
     }
 
-    .edu-content h3 {
-      margin-top: 2.5rem;
-      margin-bottom: 1.25rem;
+    .metric-title {
+      font-size: 0.85rem;
       font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--text-main, #f0f0f5);
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-display);
     }
 
-    .edu-content p {
-      line-height: 1.8;
+    .metric-icon-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(108, 99, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--violet-light);
+      font-size: 1rem;
+    }
+
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 2.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 0.65rem;
+    }
+
+    .metric-desc {
+      font-size: 0.85rem;
+      color: var(--ink-dim);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .threshold-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.775rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+      background: rgba(34, 211, 160, 0.1);
+      color: var(--green);
+      border: 1px solid rgba(34, 211, 160, 0.25);
+    }
+
+    .threshold-guide {
+      font-size: 0.75rem;
+      color: #7d88a4;
+      margin-top: 0.4rem;
+    }
+
+    .cwv-accuracy-notice {
+      background: rgba(22, 31, 56, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
+      color: var(--ink-dim);
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .cwv-accuracy-notice i {
+      color: var(--blue-light);
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+
+    .bridge-banner {
+      background: linear-gradient(135deg, rgba(108, 99, 255, 0.12) 0%, rgba(61, 139, 255, 0.1) 100%);
+      border: 1px solid rgba(108, 99, 255, 0.25);
+      border-radius: 16px;
+      padding: 1.35rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .bridge-banner-text {
+      flex: 1 1 360px;
+    }
+
+    .bridge-banner-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bridge-banner-title i {
+      color: var(--violet-light);
+    }
+
+    .bridge-banner-desc {
+      font-size: 0.9rem;
+      color: var(--ink-dim);
+      margin: 0;
+    }
+
+    .bridge-banner-btn {
+      padding: 0.65rem 1.25rem;
+      background: rgba(108, 99, 255, 0.2);
+      border: 1px solid rgba(108, 99, 255, 0.4);
+      border-radius: 10px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .bridge-banner-btn:hover {
+      background: var(--violet);
+      color: #ffffff;
+      border-color: var(--violet);
+    }
+
+    .edu-content {
+      position: relative;
+    }
+
+    .edu-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .edu-section h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.15rem);
+      margin-bottom: 1.25rem;
+      color: #ffffff;
+      position: relative;
+      padding-bottom: 0.6rem;
+    }
+
+    .edu-section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 48px;
+      height: 3px;
+      background: var(--violet);
+      border-radius: 2px;
+    }
+
+    .edu-section h3 {
+      font-size: 1.35rem;
+      margin-top: 1.85rem;
+      margin-bottom: 0.75rem;
+      color: #e6ebfa;
+    }
+
+    .edu-section p {
+      font-size: 1.05rem;
+      color: var(--ink-dim);
+      margin-bottom: 1.25rem;
+      line-height: 1.75;
+    }
+
+    .edu-section ul, .edu-section ol {
+      color: var(--ink-dim);
       margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      color: var(--text-muted, #a0a0b0);
-    }
-
-    .edu-content ul, .edu-content ol {
-      margin-bottom: 1.75rem;
       padding-left: 1.5rem;
-      color: var(--text-muted, #a0a0b0);
     }
 
-    .edu-content li {
-      margin-bottom: 0.85rem;
+    .edu-section li {
+      font-size: 1.025rem;
+      margin-bottom: 0.65rem;
       line-height: 1.7;
-      font-size: 1.1rem;
     }
-    
-    .edu-content strong {
-      color: var(--text-main, #f0f0f5);
+
+    .edu-section strong {
+      color: #ffffff;
       font-weight: 600;
     }
-    
+
+    .edu-section a {
+      color: var(--violet-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease;
+    }
+
+    .edu-section a:hover {
+      color: #ffffff;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .comparison-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+
+    .comparison-box h4 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .comparison-box p {
+      font-size: 0.95rem;
+      color: var(--ink-dim);
+      margin-bottom: 0.75rem;
+    }
+
     .checklist-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.25rem;
-      margin: 2.5rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
     }
-    
+
     .checklist-item {
       display: flex;
       align-items: center;
-      background: var(--bg-secondary, rgba(25, 25, 35, 0.6));
-      border: 1px solid var(--border-color, rgba(255,255,255,0.08));
-      padding: 1.25rem 1.5rem;
+      gap: 0.85rem;
+      background: rgba(18, 25, 45, 0.6);
+      border: 1px solid var(--card-border);
       border-radius: 12px;
-      font-size: 1.05rem;
-      color: var(--text-main, #f0f0f5);
-      transition: all 0.3s ease;
+      padding: 1rem 1.25rem;
+      font-size: 0.95rem;
+      color: var(--ink);
       font-weight: 500;
+      transition: all 0.2s ease;
     }
-    
+
     .checklist-item:hover {
-      border-color: var(--accent-primary, #6366f1);
-      background: rgba(99, 102, 241, 0.05);
+      background: rgba(22, 31, 56, 0.8);
+      border-color: rgba(108, 99, 255, 0.35);
       transform: translateY(-2px);
     }
-    
+
     .checklist-item i {
-      color: var(--success-color, #10b981);
-      font-size: 1.35rem;
-      margin-right: 14px;
+      color: var(--green);
+      font-size: 1.2rem;
+      flex-shrink: 0;
     }
-    
-    .breadcrumb-nav {
-      font-size: 0.95rem;
-      margin-bottom: 2.5rem;
-      color: var(--text-muted, #a0a0b0);
+
+    .tools-nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+
+    .tool-link-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .tool-link-card:hover {
+      border-color: var(--violet);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(108, 99, 255, 0.15);
+    }
+
+    .tool-link-card-header {
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(108, 99, 255, 0.12);
+      color: var(--violet-light);
+      display: flex;
+      align-items: center;
       justify-content: center;
+      font-size: 1.25rem;
     }
-    
-    .breadcrumb-nav a {
-      color: var(--accent-primary, #6366f1);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+
+    .tool-link-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
     }
-    
-    .breadcrumb-nav a:hover {
-      color: var(--accent-secondary, #a855f7);
+
+    .tool-link-desc {
+      font-size: 0.875rem;
+      color: var(--ink-dim);
+      margin-bottom: 1rem;
+      line-height: 1.55;
     }
-    
-    .tool-hero {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    
-    .accordion-button {
+
+    .tool-link-action {
+      font-size: 0.825rem;
       font-weight: 600;
-      color: #f0f0f5 !important;
-      background: rgba(25, 25, 35, 0.6) !important;
-      padding: 1.25rem 1.5rem;
+      color: var(--violet-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .cta-card {
+      background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 60%),
+                  radial-gradient(circle at bottom left, rgba(61, 139, 255, 0.15), transparent 60%),
+                  rgba(14, 20, 36, 0.85);
+      border: 1px solid rgba(108, 99, 255, 0.3);
+      border-radius: 20px;
+      padding: 3rem 2.5rem;
+      text-align: center;
+      margin: 3.5rem 0;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .cta-card h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .cta-card h2::after {
+      display: none;
+    }
+
+    .cta-card p {
       font-size: 1.1rem;
+      color: var(--ink-dim);
+      max-width: 680px;
+      margin: 0 auto 2rem auto;
+      line-height: 1.7;
     }
-    
+
+    .cta-btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-primary {
+      padding: 0.85rem 2rem;
+      background: linear-gradient(135deg, #6c63ff 0%, #3d8bff 100%);
+      color: #ffffff;
+      font-weight: 700;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 24px rgba(108, 99, 255, 0.35);
+    }
+
+    .btn-cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(108, 99, 255, 0.5);
+      color: #ffffff;
+    }
+
+    .btn-cta-secondary {
+      padding: 0.85rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .accordion-item {
+      background: rgba(14, 20, 36, 0.6) !important;
+      border: 1px solid var(--card-border) !important;
+      border-radius: 12px !important;
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .accordion-button {
+      background: transparent !important;
+      color: #ffffff !important;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 1.25rem 1.5rem;
+      box-shadow: none !important;
+    }
+
     .accordion-button:not(.collapsed) {
-      background: rgba(99, 102, 241, 0.1) !important;
-      color: #8b83ff !important;
-      box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+      background: rgba(108, 99, 255, 0.08) !important;
+      color: var(--violet-light) !important;
     }
-    
+
     .accordion-button::after {
       filter: invert(1) brightness(200%);
+      transition: transform 0.2s ease;
     }
-    
+
     .accordion-button:not(.collapsed)::after {
       filter: invert(0.5) sepia(1) saturate(5) hue-rotate(220deg);
     }
-    
-    .accordion-item {
-      background: var(--bg-secondary, rgba(25, 25, 35, 0.6)) !important;
-      border: 1px solid var(--border-color, rgba(255,255,255,0.08)) !important;
-      margin-bottom: 1.25rem;
-      border-radius: 12px !important;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    
+
     .accordion-body {
-      color: var(--text-muted, #a0a0b0);
-      line-height: 1.8;
-      padding: 1.5rem;
-      font-size: 1.05rem;
+      color: var(--ink-dim);
+      font-size: 0.985rem;
+      line-height: 1.75;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .main-wrap {
+        padding-top: 5.5rem;
+      }
+      .tool-console-card {
+        padding: 1.5rem 1.25rem;
+      }
+      .tool-form-row {
+        flex-direction: column;
+      }
+      .input-group-custom, .tool-select-wrap, .tool-btn-run {
+        width: 100%;
+        flex: 1 1 100%;
+      }
+      .score-circle {
+        width: 110px;
+        height: 110px;
+        font-size: 2.4rem;
+      }
     }
   </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="/tools/assets/shared.css">
-
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="siteNav" aria-label="Main navigation">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="https://companiesbuilder.com/" aria-label="Companies Builder home">
-        <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36">
+        <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36" />
         <span>Companies Builder</span>
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -303,14 +1090,10 @@
             <a class="nav-link dropdown-toggle" href="https://companiesbuilder.com/services/" id="servicesDrop" role="button"
               data-bs-toggle="dropdown" aria-expanded="false" data-nav="services">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDrop">
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i
-                    class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i
-                    class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i
-                    class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
-              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i
-                    class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/web-development-and-designing/"><i class="bi bi-code-slash me-2 opacity-75"></i>Web Development &amp; Designing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/"><i class="bi bi-bar-chart-line me-2 opacity-75"></i>SEO Services in Hyderabad</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/"><i class="bi bi-megaphone me-2 opacity-75"></i>Social Media Marketing</a></li>
+              <li><a class="dropdown-item" href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/"><i class="bi bi-briefcase me-2 opacity-75"></i>B2B Digital Marketing</a></li>
               <li><hr class="dropdown-divider my-1"></li>
               <li><a class="dropdown-item fw-bold" href="https://companiesbuilder.com/services/"><i class="bi bi-grid me-2 opacity-75"></i>All Services</a></li>
             </ul>
@@ -336,411 +1119,738 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="container" style="padding-top: 6rem; padding-bottom: 4rem; max-width: 900px;">
-    
-    <div class="breadcrumb-nav">
-      <a href="/">Home</a> <span>&rarr;</span>
-      <a href="/tools/">Free SEO Tools</a> <span>&rarr;</span>
-      <span>Website Speed Checker</span>
-    </div>
+  <!-- Ambient Hero Decorative Background -->
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
 
+  <!-- MAIN CONTAINER -->
+  <main class="container main-wrap">
+
+    <!-- BREADCRUMBS -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+      <a href="https://companiesbuilder.com/">Home</a>
+      <span class="sep">&rarr;</span>
+      <a href="https://companiesbuilder.com/tools/">Free SEO Tools</a>
+      <span class="sep">&rarr;</span>
+      <span aria-current="page">Website Speed Checker</span>
+    </nav>
+
+    <!-- HERO HEADER -->
     <div class="tool-hero">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        <span>Google PageSpeed Insights Engine &bull; Core Web Vitals Audit</span>
+      </div>
       <h1>Free Website Speed Checker</h1>
-      <p class="lead" style="color: #f0f0f5;">Check Website Speed, Performance & Core Web Vitals</p>
-      <p style="color: #a0a0b0; max-width: 600px; margin: 0 auto 1.5rem auto;">Check how a webpage performs and review important speed metrics including Core Web Vitals. Enter a public URL to run a performance test and see the results.</p>
+      <p class="hero-subtitle">Check Website Speed, Performance &amp; Core Web Vitals</p>
+      <p class="hero-description">Check how a webpage performs and review important speed metrics including Core Web Vitals. Enter a public URL to run a performance test, compare mobile and desktop delivery, and isolate critical bottlenecks.</p>
     </div>
 
-    <!-- Usage Limit Banner Container -->
+    <!-- USAGE LIMIT BANNER CONTAINER -->
     <div id="limitBannerContainer"></div>
 
-    <div class="glass-panel" style="text-align: center; margin-bottom: 3rem;">
-      <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: center; flex-wrap: wrap;">
-        <input type="url" id="targetUrl" class="form-control" placeholder="https://example.com" style="max-width: 400px; min-width: 250px;">
-        <select id="strategy" class="form-select" style="width: auto;">
-          <option value="mobile">Mobile</option>
-          <option value="desktop">Desktop</option>
-        </select>
-        <button id="runBtn" class="btn btn-primary px-4" onclick="runSpeedTest()">Run Test</button>
+    <!-- SPEED CHECKER TOOL CONSOLE -->
+    <div class="tool-console-card">
+      <div class="tool-form-row">
+        <div class="input-group-custom">
+          <i class="bi bi-globe input-icon-prefix" aria-hidden="true"></i>
+          <input type="url" id="targetUrl" class="tool-input" placeholder="https://example.com/page" aria-label="Enter public webpage URL to test" required />
+        </div>
+        <div class="tool-select-wrap">
+          <select id="strategy" class="tool-select" aria-label="Select test simulation device">
+            <option value="mobile" selected>Mobile Device</option>
+            <option value="desktop">Desktop Device</option>
+          </select>
+        </div>
+        <button id="runBtn" class="tool-btn-run" onclick="runSpeedTest()" aria-label="Run speed check on webpage">
+          <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+          <span>Run Test</span>
+        </button>
       </div>
-      
-      <div class="loading-spinner" id="spinner"></div>
 
-      <div id="resultsArea" class="mt-4">
-        <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 2rem;">
-        
-        <div id="scoreCircle" class="score-circle score-good">100</div>
-        <h3 style="margin-bottom: 1rem;">Overall Performance Score</h3>
-        <p class="text-muted" style="margin-bottom: 2rem; font-size: 0.95rem;">A Lighthouse-based summary of the page's performance test when supported by the underlying data source.</p>
+      <div class="tool-footnote">
+        <span><i class="bi bi-shield-check text-success"></i> Free &amp; Private</span>
+        <span>&bull;</span>
+        <span><i class="bi bi-cpu"></i> Lighthouse Lab Emulation</span>
+        <span>&bull;</span>
+        <span><i class="bi bi-phone"></i> Mobile &amp; Desktop Profiles</span>
+      </div>
+
+      <!-- LOADING SPINNER -->
+      <div class="loading-spinner" id="spinner" role="status" aria-label="Testing webpage speed, please wait..."></div>
+
+      <!-- RESULTS AREA -->
+      <div id="resultsArea" aria-live="polite">
+        <hr class="results-divider" />
+
+        <div class="score-summary-wrap">
+          <div id="scoreCircle" class="score-circle score-good">--</div>
+          <h3>Overall Performance Score</h3>
+          <p>A Lighthouse-based summary of the page's performance test when supported by the underlying data source under standardized lab conditions.</p>
+        </div>
 
         <div class="metric-grid">
+          <!-- LCP Card -->
           <div class="metric-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Largest Contentful Paint (LCP)</div>
+            <div class="metric-card-header">
+              <span class="metric-title">Largest Contentful Paint</span>
+              <span class="metric-icon-badge"><i class="bi bi-image"></i></span>
+            </div>
             <div id="metricLCP" class="metric-value">--</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Measures when the largest visible content element has loaded.</div>
-            <div style="font-size: 0.75rem; font-weight: 600;">Good: &le; 2.5s</div>
+            <div class="metric-desc">Measures when the largest visible content element has loaded. Reflects perceived visual loading speed.</div>
+            <div>
+              <span class="threshold-badge good"><i class="bi bi-check-circle-fill"></i> Good: &le; 2.5s</span>
+              <div class="threshold-guide">Needs Improvement: 2.5s &ndash; 4.0s | Poor: &gt; 4.0s</div>
+            </div>
           </div>
+
+          <!-- INP Card -->
           <div class="metric-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Interaction to Next Paint (INP)</div>
+            <div class="metric-card-header">
+              <span class="metric-title">Interaction to Next Paint</span>
+              <span class="metric-icon-badge"><i class="bi bi-cursor-fill"></i></span>
+            </div>
             <div id="metricINP" class="metric-value">--</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Measures how responsive a page is to user interactions.</div>
-            <div style="font-size: 0.75rem; font-weight: 600;">Good: &lt; 200ms</div>
+            <div class="metric-desc">Measures how responsive a page is to user interactions such as clicks, taps, and keyboard inputs.</div>
+            <div>
+              <span class="threshold-badge good"><i class="bi bi-check-circle-fill"></i> Good: &lt; 200ms</span>
+              <div class="threshold-guide">Needs Improvement: 200ms &ndash; 500ms | Poor: &gt; 500ms</div>
+            </div>
           </div>
+
+          <!-- CLS Card -->
           <div class="metric-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Cumulative Layout Shift (CLS)</div>
+            <div class="metric-card-header">
+              <span class="metric-title">Cumulative Layout Shift</span>
+              <span class="metric-icon-badge"><i class="bi bi-layout-wtf"></i></span>
+            </div>
             <div id="metricCLS" class="metric-value">--</div>
-            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Measures unexpected visual movement while a page loads.</div>
-            <div style="font-size: 0.75rem; font-weight: 600;">Good: &lt; 0.1</div>
+            <div class="metric-desc">Measures unexpected visual movement while a page loads. Evaluates layout stability and visual polish.</div>
+            <div>
+              <span class="threshold-badge good"><i class="bi bi-check-circle-fill"></i> Good: &lt; 0.1</span>
+              <div class="threshold-guide">Needs Improvement: 0.1 &ndash; 0.25 | Poor: &gt; 0.25</div>
+            </div>
           </div>
         </div>
 
+        <div class="cwv-accuracy-notice">
+          <i class="bi bi-info-circle-fill"></i>
+          <div>
+            <strong>Performance Context &amp; Accuracy:</strong> Core Web Vitals thresholds represent Google's user-experience criteria. Meeting these benchmarks contributes positively to search engine page-experience evaluations and visitor satisfaction, but a high score does not independently guarantee top rankings. Lab tests simulate an isolated browser session; actual field experiences may differ across distinct user devices.
+          </div>
+        </div>
+
+        <!-- Cross Promotion Inject Area -->
         <div id="crossPromoArea"></div>
       </div>
     </div>
-    
-    <!-- Educational Content Section -->
-    <div class="edu-content">
-      <h2>What Is a Website Speed Checker?</h2>
-      <p>A website speed checker analyzes how quickly a specific webpage loads and becomes interactive for users. By processing a public URL, it evaluates the underlying resources - such as images, scripts, and server response times - to determine what is slowing down the page experience.</p>
-      <p>People test website performance to identify bottlenecks that could frustrate visitors or hinder conversions. A proper speed test reveals not just an overall score, but granular details about how different elements load over time. Since individual pages have different layouts, images, and functionality, varying pages on the same website often produce significantly different results.</p>
-      <p>Furthermore, mobile and desktop results often diverge. Mobile devices generally have less processing power and connect over variable mobile networks, while desktop users typically benefit from faster processors and stable broadband connections. That is why measuring performance across both environments and checking your most important pages - not just the homepage - is crucial for a complete understanding.</p>
 
-      <h2>Check Website Speed Online</h2>
-      <p>Using a web speed checker makes it straightforward to assess your site's performance without requiring technical software installations. To check website speed online using this tool, simply follow these steps:</p>
-      <ol>
-        <li><strong>Enter a public webpage URL</strong> into the testing field above. Make sure the page is publicly accessible and not behind a login wall.</li>
-        <li><strong>Choose the available test mode</strong> to simulate either a mobile device or a desktop environment.</li>
-        <li><strong>Run the speed test</strong> by clicking the submit button, and wait while the application analyzes the page.</li>
-        <li><strong>Review the Performance Score</strong> to get a high-level overview of the test results.</li>
-        <li><strong>Check LCP, INP, and CLS</strong> to see how the page measures up against Core Web Vitals thresholds.</li>
-      </ol>
-      <p>Once you review the available diagnostics, you can identify the highest-impact improvements needed for your webpage. Keep in mind that checking a single URL provides a snapshot of that specific page's performance rather than an audit of the entire website.</p>
-
-      <h2>What Does a Website Speed Test Measure?</h2>
-      <p>When you initiate a website performance test, the tool measures a variety of technical milestones to evaluate loading behavior, responsiveness, and layout stability. The primary measurements returned by this application include:</p>
-      <ul>
-        <li><strong>Performance Score:</strong> A weighted summary indicating the overall efficiency of the page based on Lighthouse analysis.</li>
-        <li><strong>Largest Contentful Paint (LCP):</strong> An assessment of visual loading speed, measuring how quickly the main content appears.</li>
-        <li><strong>Interaction to Next Paint (INP):</strong> A measurement of the page's responsiveness to user input.</li>
-        <li><strong>Cumulative Layout Shift (CLS):</strong> A calculation of unexpected visual movement that occurs during the page's lifespan.</li>
-      </ul>
-
-      <h2>Core Web Vitals Explained</h2>
-      <p>Core Web Vitals are a set of specific performance metrics that Google considers essential for a great user experience. Understanding these metrics helps you focus your optimization efforts on the areas that matter most to your visitors.</p>
-      
-      <h3>Largest Contentful Paint (LCP)</h3>
-      <p>LCP measures the time it takes for the largest image or text block visible within the viewport to fully render. Users care about loading speed because a fast LCP reassures them that the page is actually working and that the content they requested is becoming available. A good LCP is 2.5 seconds or less.</p>
-
-      <h3>Interaction to Next Paint (INP)</h3>
-      <p>INP evaluates the overall responsiveness of a page. It measures the delay between a user's interaction (like clicking a button or tapping a menu) and the moment the browser is actually able to paint the resulting visual update on the screen. Long interaction delays make a website feel sluggish or broken. A good INP score is less than 200 milliseconds.</p>
-
-      <h3>Cumulative Layout Shift (CLS)</h3>
-      <p>CLS quantifies how much the visible content shifts unexpectedly during the page load. Have you ever tried to click a link, only for the page layout to suddenly drop, causing you to click the wrong thing? That is what CLS measures. A stable layout ensures that users do not lose their place while reading or interacting. A good CLS score is less than 0.1.</p>
-
-      <h2>What Is a Good Website Speed Score?</h2>
-      <p>While achieving a perfect 100/100 performance score might seem ideal, these scores are useful indicators rather than the entire story. A perfect score is not strictly necessary to provide an excellent user experience. Instead, focus on the Core Web Vitals, which have defined good, needs-improvement, and poor thresholds.</p>
-      <p>Real user experience matters more than lab scores. Different pages may naturally perform differently depending on their purpose - an article page should load almost instantly, while an interactive web application may take slightly longer to initialize. Often, improving a specific bottleneck, such as a massive hero image or a render-blocking script, can matter significantly more than chasing a perfect score.</p>
-
-      <h2>Why Website Speed Matters</h2>
-      <p>Website speed has a direct impact on user experience, especially during mobile browsing. A fast, highly responsive page reduces friction, helping users find the information they need or complete a purchase without frustration. Perceived responsiveness contributes heavily to overall website usability.</p>
-      <p>Additionally, faster pages often see improved engagement and conversions, simply because visitors are less likely to abandon the site before it finishes loading. Beyond user experience, Core Web Vitals are among the page-experience considerations used by Google Search. While relevant content remains the most critical factor, offering a smooth, fast experience supports your overall search visibility strategy.</p>
-
-      <h2>Common Website Speed Problems</h2>
-      <p>During a website performance analysis, several common issues frequently surface. Understanding these bottlenecks is the first step toward resolving them.</p>
-
-      <h3>Large Images</h3>
-      <p>Oversized image files are one of the most frequent causes of a slow LCP. When high-resolution photographs are loaded without being properly compressed or scaled for the user's screen, the browser must download unnecessary data, drastically slowing down the page.</p>
-
-      <h3>Too Much JavaScript</h3>
-      <p>Heavy, unoptimized JavaScript requires the browser to spend significant time downloading, parsing, and executing code. This can severely affect both loading speed and interaction delays, resulting in a poor INP.</p>
-
-      <h3>Render-Blocking Resources</h3>
-      <p>Certain CSS and JavaScript files force the browser to pause rendering the page until they have been fully processed. These dependencies can leave visitors staring at a blank screen longer than necessary.</p>
-
-      <h3>Third-Party Scripts</h3>
-      <p>External scripts such as analytics trackers, advertising networks, chat widgets, and social sharing buttons introduce external dependencies. If a third-party server is slow to respond, it can drag down your page's performance.</p>
-
-      <h3>Slow Server Response</h3>
-      <p>If your hosting environment or server takes too long to process a request and deliver the initial HTML document, every subsequent loading metric will be delayed.</p>
-
-      <h3>Poor Caching</h3>
-      <p>Without proper browser and server caching, returning visitors must re-download assets they already retrieved previously. Efficient caching at a high level allows the browser to store static files locally.</p>
-
-      <h3>Web Fonts</h3>
-      <p>Loading custom fonts incorrectly can lead to delayed text rendering or invisible text while the font file downloads, negatively impacting both LCP and CLS.</p>
-
-      <h3>Layout Shifts</h3>
-      <p>Missing width and height dimensions on images, dynamically injected content like ads, and poorly embedded iframes cause the layout to jump around as assets load, resulting in a poor CLS score.</p>
-
-      <h2>How to Improve Website Speed</h2>
-      <p>Addressing performance issues involves practical optimizations. Depending on the actual audit findings from the speed checker, you should consider the following recommendations:</p>
-      <ul>
-        <li>Compress and properly size images to fit their display containers.</li>
-        <li>Use modern image formats, such as WebP or AVIF, when appropriate.</li>
-        <li>Lazy-load below-the-fold images so that the browser prioritizes what is immediately visible.</li>
-        <li>Reduce unnecessary JavaScript and minimize unused CSS/JS where practical.</li>
-        <li>Improve caching policies on your server.</li>
-        <li>Optimize server response times by upgrading hosting or utilizing a Content Delivery Network (CDN).</li>
-        <li>Reduce unnecessary third-party scripts and defer those that are not strictly essential.</li>
-        <li>Preload only critical resources when justified to accelerate the rendering of important elements.</li>
-        <li>Use appropriate font-loading strategies, such as `font-display: swap`.</li>
-        <li>Reserve space for images and embeds by setting explicit dimensions to reduce layout shifts.</li>
-        <li>Always review mobile performance separately from desktop performance.</li>
-      </ul>
-      <p>It is important not to blindly implement every optimization you read about. The correct fix always depends on the specific bottlenecks identified during testing.</p>
-
-      <h2>How to Check Website Speed on Mobile</h2>
-      <p>Testing on a desktop connection does not automatically represent mobile performance. Mobile devices typically operate under different constraints: mobile networks vary widely in speed and reliability, and the CPU capability of an average smartphone is significantly lower than that of a desktop computer.</p>
-      <p>Because of this, responsive pages should be tested specifically on mobile settings. When using this tool, simply use the device selector to switch to the mobile mode before running the test. Core Web Vitals should always be considered in the appropriate context, recognizing that mobile users face unique performance hurdles.</p>
-
-      <h2>How Google Checks Website Performance</h2>
-      <p>Understanding how performance data is gathered clarifies what your results mean. This website speed checker utilizes data originating from Google's performance analysis technology.</p>
-      <p>Google PageSpeed Insights and Lighthouse are the foundational tools for this measurement. Lighthouse simulates a page load in a controlled environment to generate diagnostics and a performance score. When you test a URL here, the tool requests this public performance analysis to evaluate your page using the same logic that developers and SEO professionals rely on globally.</p>
-
-      <h2>Lab Data vs Real-User Data</h2>
-      <p>It is crucial to distinguish between lab data and field data when analyzing performance metrics.</p>
-      <p><strong>Lab testing</strong> involves simulating a page load under controlled test conditions. It is incredibly useful for diagnostics, finding bottlenecks, and reproducing issues during the development phase. However, because it runs on a standardized connection and simulated device, results can vary slightly between runs and may not perfectly mirror real-world conditions.</p>
-      <p><strong>Field data</strong> (or real-user data), such as the metrics collected by the Chrome User Experience Report (CrUX), is based on actual user experiences. It reflects the real-world devices, network conditions, and interactions of your actual visitors. While field data is the truest measurement of performance, it may not exist for every page or newly launched website.</p>
-      <p>When you run a test through this checker, the performance score and immediate diagnostics primarily reflect lab data generated at the moment of the test.</p>
-
-      <h2>What Does a Website Speed Report Tell You?</h2>
-      <p>A website speed report helps you interpret the current state of a webpage. By reviewing the performance score and Core Web Vitals, you gain an immediate understanding of the page's health.</p>
-      <p>Beyond the top-level numbers, the analysis identifies warnings, technical opportunities, and diagnostics that highlight precisely which files or scripts are causing delays. Understanding these results allows webmasters to move beyond guessing and implement targeted recommendations to fix structural issues.</p>
-
-      <h2>Website Speed Optimization Checklist</h2>
-      <p>Use this concise, practical starting checklist to guide your performance improvements. Remember that this checklist covers foundational elements and does not guarantee that every possible performance problem has been addressed.</p>
-      <div class="checklist-grid">
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Test important pages individually</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check mobile performance</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check desktop performance</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review LCP (Largest Contentful Paint)</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review INP (Interaction to Next Paint)</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review CLS (Cumulative Layout Shift)</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Optimize large images</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Reduce unnecessary JavaScript</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review third-party scripts</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review caching rules</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check server response time</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review custom fonts loading behavior</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Reduce layout shifts by specifying image dimensions</div>
-        <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Re-test the page after making changes</div>
+    <!-- CONTEXTUAL LINK TO SEO AUDITOR -->
+    <div class="bridge-banner">
+      <div class="bridge-banner-text">
+        <div class="bridge-banner-title">
+          <i class="bi bi-sliders"></i>
+          <span>Looking for a comprehensive technical review?</span>
+        </div>
+        <p class="bridge-banner-desc">Once you've checked website performance, use the <a href="/tools/seo-auditor/" class="fw-bold text-white text-decoration-underline">SEO Auditor</a> to review broader SEO, accessibility and best-practice signals across your webpage.</p>
       </div>
-
-      <h2>When Should You Run a Website Speed Test?</h2>
-      <p>Testing website speed should not be a one-time event. There are several useful situations where running a performance test is highly recommended:</p>
-      <ul>
-        <li>When launching a new website to ensure a strong start.</li>
-        <li>After redesigning a page or launching new templates.</li>
-        <li>During or after migrating to a new hosting provider.</li>
-        <li>When adding a large script, such as a new tracking tool or CRM integration.</li>
-        <li>When changing CMS themes or front-end frameworks.</li>
-        <li>After adding analytics, chat widgets, or embedded advertisements.</li>
-        <li>After completing an image optimization cycle.</li>
-        <li>To verify that recent performance improvements were successful.</li>
-        <li>When investigating user complaints about slow pages.</li>
-        <li>Before launching major marketing campaigns to ensure the landing page can handle the traffic efficiently.</li>
-      </ul>
-
-      <h2>What a Website Speed Checker Can and Cannot Tell You</h2>
-      <p>Transparency is essential when evaluating performance data. A speed test can help identify significant technical issues, but it cannot tell the whole story about a website.</p>
-      <p>Because a test normally targets a specific URL, it does not automatically represent the performance of your entire domain. Test environments differ from real visitor devices, and results can vary slightly between runs based on server load or network routing. Furthermore, a speed score does not guarantee rankings, and fixing every single recommendation is not always necessary or practically possible without a complete rebuild. Some optimizations may require an experienced developer's review to implement safely.</p>
-
-      <h2>Does Website Speed Affect SEO?</h2>
-      <p>Website performance matters for both users and search visibility. Google uses Core Web Vitals among its page-experience signals, meaning that a fast, stable page provides a better foundation for search visibility.</p>
-      <p>However, performance is only one part of how Google evaluates pages. Content relevance, quality, and authority remain paramount. A strong speed score does not by itself guarantee higher rankings, but ignoring severe performance problems can certainly hold a good page back from reaching its full potential.</p>
-
-      <h2>More Free SEO Tools</h2>
-      <p>Once you've checked website performance, use the <a href="/tools/seo-auditor/">SEO Auditor</a> to review broader SEO, accessibility, and best-practice signals. Explore our other free resources to support your optimization strategy:</p>
-      <ul>
-        <li><a href="/tools/seo-auditor/">Run a full SEO audit</a></li>
-        <li><a href="/tools/sitemap-generator/">Generate an XML sitemap</a></li>
-        <li><a href="/tools/local-seo/">Check local SEO signals</a></li>
-        <li><a href="/tools/meta-tag-generator/">Create SEO meta tags</a></li>
-        <li><a href="/tools/schema-generator/">Generate structured data</a></li>
-        <li><a href="/tools/">Explore all free SEO tools</a></li>
-      </ul>
-
-      <h2>Need Help Improving Your Website Speed?</h2>
-      <p>Understanding the issues is only the first step; fixing them often requires technical expertise. Companies Builder builds and optimizes websites with deep attention to performance, responsive design, Core Web Vitals, and technical SEO.</p>
-      <p>If you need assistance resolving complex bottlenecks or are considering a high-performance rebuild, explore our <a href="/services/web-development-and-designing/">Web Development &amp; Designing</a> services or learn how our <a href="/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a> can help improve your overall search visibility and user experience.</p>
-
-      <h2>Frequently Asked Questions About Website Speed</h2>
-      
-      <div class="accordion" id="speedFaqAccordion">
-        
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingOne" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              What is a website speed checker?
-            </button>
-          </h3>
-          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              A website speed checker is a tool that analyzes a specific webpage to measure how fast it loads, how quickly it becomes interactive, and how visually stable it is during loading. It provides a performance score and technical diagnostics.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingTwo" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              How do I check my website speed?
-            </button>
-          </h3>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              Simply enter a public webpage URL into the testing field on this page, choose between mobile or desktop testing, and run the analysis. The tool will process the page and return performance metrics.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingThree" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              What is a good website speed score?
-            </button>
-          </h3>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              While a score of 90 or above is generally considered excellent, a perfect score is not strictly necessary. Focusing on meeting the recommended thresholds for Core Web Vitals (LCP, INP, and CLS) is a more practical goal for providing a great user experience.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingFour" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              What are Core Web Vitals?
-            </button>
-          </h3>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              Core Web Vitals are a set of specific metrics created by Google to measure essential aspects of user experience: loading performance (LCP), interactivity (INP), and visual stability (CLS).
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingFive" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              How does Google check website speed?
-            </button>
-          </h3>
-          <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              Google uses technologies like Lighthouse for simulated lab testing and the Chrome User Experience Report (CrUX) to gather real-world field data from actual Chrome users to evaluate website speed and Core Web Vitals.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingSix" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-              Can a speed test guarantee better Google rankings?
-            </button>
-          </h3>
-          <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              No. While page experience and Core Web Vitals are used as ranking signals, content relevance, quality, and authority are far more important. Speed optimizations support your overall strategy but do not guarantee top Search rankings on their own.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingSeven" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-              Why is my website faster on desktop than mobile?
-            </button>
-          </h3>
-          <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              Desktop computers generally have much faster processors and rely on stable broadband connections. Mobile devices often have less processing power and connect over variable mobile networks, making it harder for them to quickly download and execute heavy scripts and large images.
-            </div>
-          </div>
-        </div>
-        
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingEight" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-              Why do website speed results change between tests?
-            </button>
-          </h3>
-          <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              Minor variations are completely normal. Simulated test results can fluctuate based on network routing variations, third-party server response times (like ads or trackers), and the immediate load on your hosting server at the precise moment the test is run.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item bg-transparent border-secondary border-opacity-25">
-          <h3 class="accordion-header" id="headingNine" style="margin: 0;">
-            <button class="accordion-button collapsed bg-transparent text-body shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-              How can I improve my website speed?
-            </button>
-          </h3>
-          <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#speedFaqAccordion">
-            <div class="accordion-body">
-              Common improvements include properly sizing and compressing images, reducing unnecessary JavaScript and CSS, setting up browser caching, minimizing the use of external third-party scripts, and upgrading hosting performance. The exact steps depend on the specific diagnostics from your speed test.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+      <a href="/tools/seo-auditor/" class="bridge-banner-btn">Run Full SEO Audit &rarr;</a>
     </div>
+
+    <!-- LONG-FORM EDUCATIONAL & TECHNICAL CONTENT -->
+        <!-- LONG-FORM EDUCATIONAL & TECHNICAL CONTENT -->
+    <article class="edu-content">
+
+      <!-- SECTION 1 -->
+      <section class="edu-section">
+        <h2>What Is a Website Speed Checker?</h2>
+        <p>A website speed checker is an automated testing tool that analyzes how rapidly a webpage downloads, renders, and becomes interactive for visitors. Rather than testing simple internet bandwidth, a web speed checker inspects critical rendering path milestones—analyzing how HTML, stylesheets, scripts, media, and server responses coordinate during execution.</p>
+        <p>Webmasters use website speed checker tools to uncover technical bottlenecks before they hurt user retention and conversions. A thorough website speed check reveals uncompressed media, render-blocking resources, slow server response times, and unexpected layout shifts. Because individual pages have distinct asset weights, testing important landing and conversion pages—not just the homepage—is essential for accurate website speed checking.</p>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section class="edu-section">
+        <h2>Check Website Speed Online</h2>
+        <p>When you need to check website speed online, using a browser-based website speed checker tool provides an immediate benchmark without software setup. To run an online website speed test and test website speed free, follow these practical steps:</p>
+        <ol>
+          <li><strong>Enter a public URL:</strong> Paste any live web address into the website speed checker online field above.</li>
+          <li><strong>Choose your test mode:</strong> Select mobile or desktop simulation to test website speed in your audience's primary environment.</li>
+          <li><strong>Run the speed test:</strong> Initiate the audit to evaluate your page under Google's Lighthouse testing rules.</li>
+          <li><strong>Review the Performance Score:</strong> Examine the overall composite score to assess delivery efficiency.</li>
+          <li><strong>Check LCP, INP, and CLS:</strong> Compare your Core Web Vitals against Google's standardized thresholds.</li>
+          <li><strong>Inspect diagnostics:</strong> Identify specific scripts, stylesheets, and images causing execution delays.</li>
+          <li><strong>Prioritize fixes:</strong> Address the highest-impact bottlenecks first to maximize user experience gains.</li>
+        </ol>
+        <p>Our website speed checker free utility and website speed checker online free tool evaluate individual URLs directly, making it easy to run a website speed test free on high-priority pages.</p>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section class="edu-section">
+        <h2>What Does a Website Speed Test Measure?</h2>
+        <p>A comprehensive website speed test measures loading performance, input responsiveness, and visual stability. The primary metrics reported by this tool include:</p>
+        <ul>
+          <li><strong>Overall Performance Score:</strong> A Lighthouse-based weighted summary of page speed and asset delivery efficiency.</li>
+          <li><strong>Largest Contentful Paint (LCP):</strong> A Core Web Vital measuring perceived visual loading speed for main viewport content.</li>
+          <li><strong>Interaction to Next Paint (INP):</strong> A Core Web Vital tracking interaction latency between user inputs and visual updates.</li>
+          <li><strong>Cumulative Layout Shift (CLS):</strong> A Core Web Vital quantifying visual stability and unexpected movement of elements during load.</li>
+          <li><strong>Lab Diagnostics:</strong> Supporting metrics like First Contentful Paint (FCP) and Total Blocking Time (TBT) that pinpoint execution delays.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section class="edu-section">
+        <h2>Core Web Vitals Explained</h2>
+        <p>Core Web Vitals are three standardized metrics established by Google to evaluate real-world web user experience.</p>
+
+        <h3>Largest Contentful Paint (LCP)</h3>
+        <p>LCP measures the time required for the largest visible element within the viewport—typically a hero banner, featured image, or main heading—to render completely. Users care about loading speed because a quick LCP confirms that the page is functioning. Google considers an LCP of <strong>2.5 seconds or less</strong> (&le; 2.5s) as Good, between 2.5s and 4.0s as Needs Improvement, and above 4.0s as Poor.</p>
+
+        <h3>Interaction to Next Paint (INP)</h3>
+        <p>INP evaluates page responsiveness across user interactions throughout a visit. It measures the latency between a visitor tapping a button, clicking a link, or opening a menu and the browser rendering the resulting visual update. Long JavaScript tasks cause frustrating interaction delays. Google considers an INP of <strong>strictly less than 200 milliseconds</strong> (&lt; 200ms) as Good, 200ms to 500ms as Needs Improvement, and above 500ms as Poor.</p>
+
+        <h3>Cumulative Layout Shift (CLS)</h3>
+        <p>CLS measures unexpected visual movement on a webpage. Layout shifts happen when images lack declared dimensions, dynamically injected ads appear late, or custom web fonts swap abruptly, pushing content around. Google considers a CLS of <strong>strictly less than 0.1</strong> (&lt; 0.1) as Good, 0.1 to 0.25 as Needs Improvement, and above 0.25 as Poor.</p>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section class="edu-section">
+        <h2>What Is a Good Website Speed Score?</h2>
+        <p>In a Lighthouse audit, scores from 90 to 100 indicate Good performance, 50 to 89 indicates Needs Improvement, and below 50 reflects Poor performance. However, performance scores are analytical indicators rather than the complete story.</p>
+        <p>A perfect score is not strictly necessary for an outstanding user experience. Chasing 100/100 can tempt teams to remove valuable features like customer chat widgets, analytics, or product videos. Real user experience matters far more than an artificial rating.</p>
+        <p>Prioritize meeting objective Core Web Vitals thresholds. Reducing a 5-second LCP to 2.2 seconds by compressing an oversized hero banner delivers massive real-world business value, even if background scripts keep your aggregate score in the mid-80s. Google explicitly confirms that a 100 score does not guarantee top search rankings.</p>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section class="edu-section">
+        <h2>Why Website Speed Matters</h2>
+        <p>Website performance shapes visitor perception, user retention, and business success. When pages load slowly, visitors experience friction and frequently abandon their sessions.</p>
+        <ul>
+          <li><strong>User Experience:</strong> Fast-loading pages feel intuitive and reliable, encouraging visitors to explore your content smoothly.</li>
+          <li><strong>Mobile Browsing:</strong> Most web traffic occurs on handheld devices over wireless networks. Streamlined pages load much more consistently under variable cellular conditions.</li>
+          <li><strong>Perceived Responsiveness &amp; Trust:</strong> Prompt visual feedback signals technical competence, building credibility with potential clients.</li>
+          <li><strong>Conversions &amp; Usability:</strong> Removing delays on landing pages and checkout flows decreases drop-offs and supports higher inquiry rates.</li>
+          <li><strong>Search Visibility Considerations:</strong> Core Web Vitals are among Google's page-experience signals, rewarding sites that pair relevant content with friction-free loading.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section class="edu-section">
+        <h2>Common Website Speed Problems</h2>
+        <p>Performance audits consistently uncover several recurring technical issues that degrade webpage loading speed:</p>
+
+        <h3>Large Images</h3>
+        <p>Oversized, uncompressed media files are the most frequent cause of slow LCP. Using modern formats like WebP or AVIF and responsive sizing prevents downloading unnecessary megabytes.</p>
+
+        <h3>Too Much JavaScript</h3>
+        <p>Heavy script bundles require significant CPU processing time to download, parse, and execute, blocking the main thread and worsening your INP score.</p>
+
+        <h3>Render-Blocking Resources</h3>
+        <p>Synchronous CSS stylesheets and scripts placed in the document <code>&lt;head&gt;</code> halt HTML parsing until fully downloaded, leaving visitors looking at a blank screen.</p>
+
+        <h3>Third-Party Scripts</h3>
+        <p>External trackers, chat widgets, and advertising tags introduce third-party network dependencies. Sluggish external servers can drag down overall page performance.</p>
+
+        <h3>Slow Server Response</h3>
+        <p>A high Time to First Byte (TTFB) caused by shared hosting, unoptimized database queries, or missing server-side caching delays every subsequent loading milestone.</p>
+
+        <h3>Poor Caching</h3>
+        <p>Without proper <code>Cache-Control</code> headers, repeat visitors must re-download unchanged static assets on every visit instead of loading them instantly from browser cache.</p>
+
+        <h3>Web Fonts</h3>
+        <p>Loading multiple custom font families and weights without <code>font-display: swap</code> causes invisible text or sudden font swapping that alters layout dimensions.</p>
+
+        <h3>Layout Shifts</h3>
+        <p>Images, ads, and embedded iframes lacking declared <code>width</code> and <code>height</code> dimensions cause the layout to jump as elements load, triggering poor CLS scores.</p>
+      </section>
+
+      <!-- SECTION 8 -->
+      <section class="edu-section">
+        <h2>How to Improve Website Speed</h2>
+        <p>Improving website performance requires practical, measured updates tailored to your specific audit findings:</p>
+        <ul>
+          <li><strong>Compress and properly size images:</strong> Convert media files to modern WebP or AVIF formats and use responsive image attributes.</li>
+          <li><strong>Implement native lazy loading:</strong> Add <code>loading="lazy"</code> to below-the-fold images and iframes so they load only as visitors scroll toward them.</li>
+          <li><strong>Reduce and defer JavaScript:</strong> Defer non-critical scripts with <code>defer</code> or <code>async</code> and eliminate unused library code.</li>
+          <li><strong>Minimize render-blocking CSS:</strong> Inline critical styles and load secondary stylesheets asynchronously.</li>
+          <li><strong>Leverage browser and edge caching:</strong> Set long cache lifetimes for static assets and deploy a global Content Delivery Network (CDN) to reduce server latency.</li>
+          <li><strong>Audit third-party integrations:</strong> Remove obsolete marketing tags and delay non-essential widgets until after initial render.</li>
+          <li><strong>Optimize web typography:</strong> Use modern WOFF2 font files, limit font weights, and apply <code>font-display: swap</code>.</li>
+          <li><strong>Reserve space for dynamic media:</strong> Add explicit width and height attributes or CSS aspect ratios to prevent unexpected layout shifts.</li>
+          <li><strong>Review mobile performance separately:</strong> Test your responsive layouts under mobile throttling to isolate device-specific bottlenecks.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 9 -->
+      <section class="edu-section">
+        <h2>How to Check Website Speed on Mobile</h2>
+        <p>Running a website speed test on mobile is critical because desktop results do not represent handheld performance. Mobile devices operate under tighter physical constraints: mobile processors throttle performance to manage heat and battery life, and wireless connections experience higher latency.</p>
+        <p>A JavaScript bundle that parses smoothly on desktop can easily lock up a mobile device's main thread for over a second, creating sluggish interactions and poor Core Web Vitals scores. To check website speed on mobile using this tool, simply set the device selector dropdown above to <strong>Mobile Device</strong> before clicking 'Run Test'. The test emulates mobile CPU and network throttling to provide an accurate assessment of handheld performance.</p>
+      </section>
+
+      <!-- SECTION 10 -->
+      <section class="edu-section">
+        <h2>How Google Checks Website Performance</h2>
+        <p>Understanding Google website speed testing clarifies what your performance results mean. When evaluating pages, the Google website speed test ecosystem relies on two complementary methods: simulated lab audits through Lighthouse, and real-world field data through the Chrome User Experience Report (CrUX).</p>
+        <p>If you want to check website speed Google style, our website speed checker google integration makes it simple. When you run a website speed test Google-aligned audit, our backend queries the official public Google PageSpeed Insights API. This Google web speed checker query executes an automated Lighthouse audit under standardized emulation conditions to evaluate Core Web Vitals and performance milestones.</p>
+        <p><em>Transparency Note:</em> Companies Builder is an independent digital agency. While our tool queries Google's public PageSpeed Insights API to retrieve diagnostic data, Companies Builder is not affiliated with or endorsed by Google, and Google does not operate this website.</p>
+      </section>
+
+      <!-- SECTION 11 -->
+      <section class="edu-section">
+        <h2>Lab Data vs Real-User Data</h2>
+        <p>It is important to distinguish between synthetic lab data and real-world field data when analyzing performance results.</p>
+
+        <div class="comparison-grid">
+          <div class="comparison-box">
+            <h4><i class="bi bi-laptop text-primary"></i> Lab Data (Synthetic Testing)</h4>
+            <p><strong>What it is:</strong> Performance measurements captured during an automated, simulated page load in a controlled environment with fixed device and network settings.</p>
+            <p><strong>Primary Use:</strong> Excellent for debugging, isolating code bottlenecks, and verifying fixes during development. Results can vary slightly between runs due to transient network conditions.</p>
+          </div>
+          <div class="comparison-box">
+            <h4><i class="bi bi-people-fill text-success"></i> Field Data (Real-User Monitoring)</h4>
+            <p><strong>What it is:</strong> Performance metrics aggregated from actual, anonymous Chrome users over a 28-day window via the Chrome User Experience Report (CrUX).</p>
+            <p><strong>Primary Use:</strong> Reflects how real visitors experience your site across diverse hardware and networks. Requires sufficient monthly traffic to generate data.</p>
+          </div>
+        </div>
+
+        <p>The performance score and metrics displayed by this speed checker represent <strong>simulated lab data</strong> generated at the time of your test. Never label a single automated lab test as "real user data"—lab testing provides controlled diagnostics, while field data reflects historical real-world usage.</p>
+      </section>
+
+      <!-- SECTION 12 -->
+      <section class="edu-section">
+        <h2>What Does a Website Speed Report Tell You?</h2>
+        <p>A website speed report translates technical loading behavior into actionable diagnostic insights. Reviewing your speed report helps you understand where to direct development effort:</p>
+        <ul>
+          <li><strong>Performance Score Overview:</strong> Provides an immediate health check on page efficiency. Scores above 90 represent strong optimization.</li>
+          <li><strong>Core Web Vitals Status:</strong> Shows whether your page passes LCP, INP, and CLS thresholds, highlighting whether your issue is loading time, responsiveness, or visual stability.</li>
+          <li><strong>Prioritized Opportunities:</strong> Highlights specific heavy files—such as uncompressed images or unused stylesheets—and estimates potential time savings.</li>
+          <li><strong>Technical Diagnostics:</strong> Flags structural issues like DOM tree complexity, excessive main-thread work, or missing caching headers.</li>
+        </ul>
+        <p>Results are generated in real time on this page. Re-testing key pages after deploying fixes allows you to verify measurable performance gains.</p>
+      </section>
+
+      <!-- SECTION 13 -->
+      <section class="edu-section">
+        <h2>Website Speed Optimization Checklist</h2>
+        <p>Use this concise, practical checklist to guide your optimization workflow and resolve common performance bottlenecks:</p>
+
+        <div class="checklist-grid">
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Test important conversion pages individually</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check mobile performance separately from desktop</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review Largest Contentful Paint (LCP &le; 2.5s)</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review Interaction to Next Paint (INP &lt; 200ms)</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review Cumulative Layout Shift (CLS &lt; 0.1)</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Optimize and convert images to WebP/AVIF</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Reduce and defer unnecessary JavaScript</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Audit and prune third-party tracking scripts</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review browser and server caching rules</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Check server response time and TTFB</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Review custom web font loading behavior</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Set explicit width and height on media elements</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Deploy static assets through a global CDN</div>
+          <div class="checklist-item"><i class="bi bi-check-circle-fill"></i> Re-test pages post-deployment to confirm improvements</div>
+        </div>
+      </section>
+
+      <!-- SECTION 14 -->
+      <section class="edu-section">
+        <h2>When Should You Run a Website Speed Test?</h2>
+        <p>Speed testing should be an ongoing part of your web management routine. Important scenarios where running a website speed test tools audit is highly recommended include:</p>
+        <ul>
+          <li><strong>Launching a new website:</strong> Establish performance baselines before promoting your site publicly.</li>
+          <li><strong>Redesigning templates:</strong> Verify that new layouts or framework components do not introduce speed regressions.</li>
+          <li><strong>Migrating web hosts:</strong> Confirm that your new hosting environment or CDN delivers improved server response times.</li>
+          <li><strong>Adding third-party scripts:</strong> Test before and after embedding analytics, live chat, or ad tags to measure their impact.</li>
+          <li><strong>Changing themes or plugins:</strong> Themes and plugins often inject hidden CSS and script overhead.</li>
+          <li><strong>Following media optimizations:</strong> Confirm that image compression efforts successfully improved LCP scores.</li>
+          <li><strong>Investigating slow pages:</strong> Diagnose pages experiencing sudden drops in user engagement or conversion rates.</li>
+          <li><strong>Before major ad campaigns:</strong> Ensure marketing landing pages load promptly before directing paid traffic to them.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 15 -->
+      <section class="edu-section">
+        <h2>What a Website Speed Checker Can and Cannot Tell You</h2>
+        <p>Transparency is essential when evaluating performance tools. Understanding what a speed checker can and cannot do ensures you make balanced technical decisions.</p>
+        <p>When selecting the best website speed checker for your workflow, look for clear Core Web Vitals reporting, transparent lab methodology, and mobile emulation. However, be aware of natural limitations:</p>
+        <ul>
+          <li><strong>It cannot test your entire site in one pass:</strong> It evaluates the single URL entered. Representative pages must be tested individually.</li>
+          <li><strong>It cannot replicate every visitor's unique device:</strong> Lab tests use standardized emulation that approximates common conditions but cannot capture every hardware configuration.</li>
+          <li><strong>It cannot guarantee search rankings:</strong> High speed scores do not guarantee top search rankings. Content relevance, quality, and intent remain the primary ranking factors.</li>
+          <li><strong>It cannot assess content quality:</strong> A fast page with unhelpful or irrelevant content will not convert visitors or rank sustainably.</li>
+          <li><strong>Not all recommendations are mandatory:</strong> Certain automated suggestions require developer review to avoid breaking necessary website functionality.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 16 -->
+      <section class="edu-section">
+        <h2>Does Website Speed Affect SEO?</h2>
+        <p>Website performance matters for both users and search visibility. Google includes Core Web Vitals among its page-experience signals, meaning that a fast, stable webpage provides a strong foundation for search visibility.</p>
+        <p>However, performance is only one part of how Google evaluates pages. Content relevance, topical depth, and overall quality remain the most critical ranking factors. A strong speed score does not by itself guarantee higher rankings, but severe speed problems can cause visitors to bounce back to search results, negatively impacting user retention and overall performance.</p>
+      </section>
+
+      <!-- SECTION 17 -->
+      <section class="edu-section">
+        <h2>More Free SEO Tools</h2>
+        <p>Website speed is one component of technical optimization. Explore our additional free SEO utilities to support your digital strategy:</p>
+
+        <div class="tools-nav-grid">
+          <!-- Tool 1: SEO Auditor -->
+          <a href="/tools/seo-auditor/" class="tool-link-card">
+            <div>
+              <div class="tool-link-card-header">
+                <div class="tool-link-icon"><i class="bi bi-search"></i></div>
+                <h3 class="tool-link-title">SEO Auditor</h3>
+              </div>
+              <p class="tool-link-desc">Run a full SEO audit to uncover on-page issues, meta tags, heading hierarchy, accessibility signals, and technical best practices.</p>
+            </div>
+            <span class="tool-link-action">Run a full SEO audit <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Tool 2: Sitemap Generator -->
+          <a href="/tools/sitemap-generator/" class="tool-link-card">
+            <div>
+              <div class="tool-link-card-header">
+                <div class="tool-link-icon"><i class="bi bi-diagram-3"></i></div>
+                <h3 class="tool-link-title">Sitemap Generator</h3>
+              </div>
+              <p class="tool-link-desc">Generate valid XML sitemaps to ensure search engine crawlers discover, index, and update all important URLs across your site.</p>
+            </div>
+            <span class="tool-link-action">Generate an XML sitemap <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Tool 3: Local SEO Checker -->
+          <a href="/tools/local-seo/" class="tool-link-card">
+            <div>
+              <div class="tool-link-card-header">
+                <div class="tool-link-icon"><i class="bi bi-geo-alt"></i></div>
+                <h3 class="tool-link-title">Local SEO Checker</h3>
+              </div>
+              <p class="tool-link-desc">Analyze local search signals, Google Business Profile readiness, and local schema markup to improve regional search visibility.</p>
+            </div>
+            <span class="tool-link-action">Check local SEO signals <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Tool 4: Meta Tag Generator -->
+          <a href="/tools/meta-tag-generator/" class="tool-link-card">
+            <div>
+              <div class="tool-link-card-header">
+                <div class="tool-link-icon"><i class="bi bi-tags"></i></div>
+                <h3 class="tool-link-title">Meta Tag Generator</h3>
+              </div>
+              <p class="tool-link-desc">Craft search-optimized meta titles, descriptions, and Open Graph tags that maximize click-through rates across search results.</p>
+            </div>
+            <span class="tool-link-action">Create SEO meta tags <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Tool 5: Schema Generator -->
+          <a href="/tools/schema-generator/" class="tool-link-card">
+            <div>
+              <div class="tool-link-card-header">
+                <div class="tool-link-icon"><i class="bi bi-code-square"></i></div>
+                <h3 class="tool-link-title">Schema Generator</h3>
+              </div>
+              <p class="tool-link-desc">Build error-free JSON-LD structured data for organizations, local businesses, FAQs, and articles to qualify for rich snippets.</p>
+            </div>
+            <span class="tool-link-action">Generate structured data <i class="bi bi-arrow-right"></i></span>
+          </a>
+
+          <!-- Tool 6: Tools Hub -->
+          <a href="/tools/" class="tool-link-card">
+            <div>
+              <div class="tool-link-card-header">
+                <div class="tool-link-icon"><i class="bi bi-grid-fill"></i></div>
+                <h3 class="tool-link-title">All Free SEO Tools</h3>
+              </div>
+              <p class="tool-link-desc">Browse our full suite of free digital marketing, auditing, and development tools built to help your business grow online.</p>
+            </div>
+            <span class="tool-link-action">Explore all free tools <i class="bi bi-arrow-right"></i></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- SECTION 18: COMMERCIAL / SERVICE CTA -->
+      <section class="cta-card">
+        <h2>Need Help Improving Your Website Speed?</h2>
+        <p>Fixing complex performance bottlenecks, database latency, and Core Web Vitals issues often requires experienced engineering expertise. Companies Builder builds and optimizes websites with careful attention to performance, responsive design, Core Web Vitals, and technical SEO.</p>
+        <div class="cta-btn-group">
+          <a href="https://companiesbuilder.com/services/web-development-and-designing/" class="btn-cta-primary">
+            <i class="bi bi-code-slash me-2"></i>Web Development &amp; Designing
+          </a>
+          <a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" class="btn-cta-secondary">
+            <i class="bi bi-graph-up-arrow me-2"></i>SEO Services in Hyderabad
+          </a>
+        </div>
+      </section>
+
+      <!-- SECTION 19: FAQ ACCORDION -->
+      <section class="edu-section">
+        <h2>Frequently Asked Questions About Website Speed</h2>
+        <p>Find answers to common questions about page speed testing, Core Web Vitals metrics, and website optimization practices.</p>
+
+        <div class="accordion" id="speedFaqAccordion">
+          <!-- FAQ 1 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                What is a website speed checker?
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                A website speed checker tests a webpage URL to measure loading speed, interactivity, and visual stability, evaluating server response, render blocking, and Core Web Vitals.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                How do I check my website speed?
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Enter any public URL above, select mobile or desktop simulation, and click 'Run Test'. The tool generates a Lighthouse score and Core Web Vitals breakdown in seconds.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                What is a good website speed score?
+              </button>
+            </h3>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                In Lighthouse, 90+ is Good, 50-89 Needs Improvement, and under 50 is Poor. Passing Core Web Vitals thresholds matters far more for visitors than chasing an arbitrary 100/100 score.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFour" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                What are Core Web Vitals?
+              </button>
+            </h3>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Core Web Vitals are three standardized metrics established by Google: Largest Contentful Paint (loading speed), Interaction to Next Paint (responsiveness), and Cumulative Layout Shift (visual stability).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingFive" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                What is LCP?
+              </button>
+            </h3>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Largest Contentful Paint measures when the largest viewport element—such as a hero image or title—renders. A good LCP is <strong>2.5 seconds or less</strong> (&le; 2.5s).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingSix" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                What is INP?
+              </button>
+            </h3>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Interaction to Next Paint evaluates page responsiveness to user clicks, taps, and keypresses. A good INP score is <strong>strictly less than 200 milliseconds</strong> (&lt; 200ms).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 7 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingSeven" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                What is CLS?
+              </button>
+            </h3>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Cumulative Layout Shift quantifies unexpected visual movement while a page loads. A good CLS score is <strong>strictly less than 0.1</strong> (&lt; 0.1).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 8 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingEight" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                How does Google check website speed?
+              </button>
+            </h3>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Google checks website performance through controlled synthetic audits via Lighthouse and real-user monitoring aggregated through the Chrome User Experience Report (CrUX).
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 9 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingNine" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                Is PageSpeed Insights the same as a website speed test?
+              </button>
+            </h3>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                PageSpeed Insights is a specific Google diagnostic tool using Lighthouse and CrUX data. Website speed test is a general term for any performance assessment tool.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 10 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTen" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                Can a speed test guarantee better Google rankings?
+              </button>
+            </h3>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                No. Core Web Vitals are page-experience signals, but search intent, content depth, and quality are primary. Fast pages improve retention, but speed alone never guarantees top rankings.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 11 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingEleven" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-controls="collapseEleven">
+                Why is my website faster on desktop than mobile?
+              </button>
+            </h3>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Desktop computers feature faster CPUs and broadband connections, whereas mobile phones have power-constrained processors and connect over cellular networks with higher latency.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 12 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwelve" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                Why do website speed results change between tests?
+              </button>
+            </h3>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Fluctuations occur naturally due to momentary hosting server load, network routing latency, third-party script responsiveness, and whether caches were warm or cold during testing.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 13 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThirteen" style="margin: 0;">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                How can I improve my website speed?
+              </button>
+            </h3>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#speedFaqAccordion">
+              <div class="accordion-body">
+                Key optimizations include converting images to WebP/AVIF, deferring non-essential JavaScript, minifying CSS, enabling browser caching, using a CDN, and reserving space for media elements.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+
   </main>
 
-  <!-- Javascript Logic from original file -->
+  <!-- JAVASCRIPT LOGIC -->
   <script src="/tools/assets/shared.js"></script>
   <script>
     const TOOL_ID = 'speed-checker';
 
     window.onload = () => {
-      CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
+      if (window.CompaniesBuilderTools) {
+        CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
+      }
     };
+
+    // Allow pressing Enter in URL input to trigger test
+    document.getElementById('targetUrl').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        runSpeedTest();
+      }
+    });
 
     function getScoreClass(score) {
       if (score >= 90) return 'score-good';
       if (score >= 50) return 'score-needs-improvement';
       return 'score-poor';
     }
-    
+
     function formatMetric(valueStr) {
       if (!valueStr) return 'N/A';
       return valueStr.replace(/[^0-9.]/g, '') + (valueStr.includes('ms') ? ' ms' : ' s');
     }
 
     async function runSpeedTest() {
-      const url = document.getElementById('targetUrl').value;
+      const urlInput = document.getElementById('targetUrl');
+      let url = urlInput.value.trim();
       if (!url) {
-        alert("Please enter a valid URL.");
+        alert("Please enter a valid webpage URL.");
+        urlInput.focus();
         return;
       }
 
-      if (!CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer')) {
+      // Prepend https:// if omitted
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+        urlInput.value = url;
+      }
+
+      if (window.CompaniesBuilderTools && !CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer')) {
         return;
       }
 
-      document.getElementById('spinner').style.display = 'block';
-      document.getElementById('resultsArea').style.display = 'none';
-      document.getElementById('crossPromoArea').innerHTML = '';
-      document.getElementById('runBtn').disabled = true;
-
+      const spinner = document.getElementById('spinner');
+      const resultsArea = document.getElementById('resultsArea');
+      const crossPromo = document.getElementById('crossPromoArea');
+      const runBtn = document.getElementById('runBtn');
       const strategy = document.getElementById('strategy').value;
+
+      spinner.style.display = 'block';
+      resultsArea.style.display = 'none';
+      crossPromo.innerHTML = '';
+      runBtn.disabled = true;
 
       try {
         const response = await fetch(`/tools/api/speed?url=${encodeURIComponent(url)}&strategy=${strategy}`);
-        
+
         if (!response.ok) {
           const errData = await response.json().catch(() => ({}));
           throw new Error(errData.error || `API Error: ${response.status} ${response.statusText}`);
         }
 
         const data = await response.json();
-        
+
         const score = Math.round((data.lighthouseResult?.categories?.performance?.score || 0) * 100);
         const audits = data.lighthouseResult?.audits || {};
-        
+
         const lcp = audits['largest-contentful-paint']?.displayValue || 'N/A';
         const cls = audits['cumulative-layout-shift']?.displayValue || 'N/A';
         const inp = audits['interactive']?.displayValue || 'N/A';
@@ -753,96 +1863,103 @@
         document.getElementById('metricCLS').innerText = cls;
         document.getElementById('metricINP').innerText = inp;
 
-        document.getElementById('spinner').style.display = 'none';
-        document.getElementById('resultsArea').style.display = 'block';
+        spinner.style.display = 'none';
+        resultsArea.style.display = 'block';
 
-        CompaniesBuilderTools.incrementUsage(TOOL_ID);
-
-        if (score < 90) {
-          CompaniesBuilderTools.showCrossPromotion('speed', 'crossPromoArea', TOOL_ID);
+        if (window.CompaniesBuilderTools) {
+          CompaniesBuilderTools.incrementUsage(TOOL_ID);
+          if (score < 90) {
+            CompaniesBuilderTools.showCrossPromotion('speed', 'crossPromoArea', TOOL_ID);
+          }
         }
 
       } catch (err) {
-        if (err.message.includes('429')) {
+        if (err.message && err.message.includes('429')) {
           alert("Google PageSpeed API Error: 429 Too Many Requests.\n\nWithout an API key, Google strictly limits requests. You will need to add a PSI_API_KEY environment variable in Cloudflare Pages to fix this.");
         } else {
           alert("Failed to fetch speed data: " + err.message);
         }
-        document.getElementById('spinner').style.display = 'none';
+        spinner.style.display = 'none';
       } finally {
-        document.getElementById('runBtn').disabled = false;
-        CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
+        runBtn.disabled = false;
+        if (window.CompaniesBuilderTools) {
+          CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
+        }
       }
     }
   </script>
 
-    <!-- FOOTER -->
-  <footer class="site-footer py-5">
+  <!-- FOOTER -->
+  <footer class="site-footer py-5" style="background: #04060b; border-top: 1px solid var(--line-dark);">
     <div class="container">
       <div class="row g-4 pb-4">
         <div class="col-md-4 col-lg-3">
           <a href="https://companiesbuilder.com/" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px">
             <img src="https://companiesbuilder.com/assets/images/CB-logo.png" alt="Companies Builder logo" height="36" width="36" style="height:36px;width:auto;display:inline-block">
-            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1rem">Companies Builder</span>
+            <span style="font-family:var(--font-display);font-weight:700;color:#fff;font-size:1.05rem">Companies Builder</span>
           </a>
-          <p class="footer-brand-desc">Digital marketing agency and web development company in Hyderabad, serving startups and SMBs across India.</p>
-          <div class="footer-social">
-            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+          <p style="color:var(--ink-dim);font-size:0.9rem;line-height:1.6">Digital marketing agency and web development company in Hyderabad, serving startups and SMBs across India.</p>
+          <div style="display:flex;gap:12px;margin-top:16px;">
+            <a href="https://www.facebook.com/profile.php?id=61579509437210" target="_blank" rel="noopener" aria-label="Facebook" style="color:var(--ink-dim);font-size:1.1rem"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/companiesbuilder" target="_blank" rel="noopener" aria-label="Instagram" style="color:var(--ink-dim);font-size:1.1rem"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/companiesbuilder" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:var(--ink-dim);font-size:1.1rem"><i class="bi bi-linkedin"></i></a>
+            <a href="https://x.com/CB_technologies" target="_blank" rel="noopener" aria-label="Twitter / X" style="color:var(--ink-dim);font-size:1.1rem"><i class="bi bi-twitter-x"></i></a>
           </div>
         </div>
         <div class="col-6 col-md-2 col-lg-2 offset-lg-1">
-          <h3>Quick Links</h3>
-          <ul class="list-unstyled">
-            <li><a href="https://companiesbuilder.com/">Home</a></li>
-            <li><a href="https://companiesbuilder.com/about/">About Us</a></li>
-            <li><a href="https://companiesbuilder.com/services/">Services</a></li>
-            <li><a href="https://companiesbuilder.com/pricing">Pricing</a></li>
-            <li><a href="https://companiesbuilder.com/careers/">Careers</a></li>
-            <li><a href="https://companiesbuilder.com/resources/checklists/">Checklists</a></li>
-            <li><a href="https://companiesbuilder.com/tools/">Free SEO Tools</a></li>
-            <li><a href="https://companiesbuilder.com/blogs/">Blog</a></li>
-            <li><a href="https://companiesbuilder.com/contact/">Contact</a></li>
-            <li><a href="https://companiesbuilder.com/write-for-us/">Write for Us</a></li>
+          <h3 style="font-size:1rem;color:#fff;margin-bottom:1rem">Quick Links</h3>
+          <ul class="list-unstyled" style="font-size:0.9rem;line-height:2">
+            <li><a href="https://companiesbuilder.com/" style="color:var(--ink-dim);text-decoration:none">Home</a></li>
+            <li><a href="https://companiesbuilder.com/about/" style="color:var(--ink-dim);text-decoration:none">About Us</a></li>
+            <li><a href="https://companiesbuilder.com/services/" style="color:var(--ink-dim);text-decoration:none">Services</a></li>
+            <li><a href="https://companiesbuilder.com/pricing" style="color:var(--ink-dim);text-decoration:none">Pricing</a></li>
+            <li><a href="https://companiesbuilder.com/careers/" style="color:var(--ink-dim);text-decoration:none">Careers</a></li>
+            <li><a href="https://companiesbuilder.com/resources/checklists/" style="color:var(--ink-dim);text-decoration:none">Checklists</a></li>
+            <li><a href="https://companiesbuilder.com/tools/" style="color:var(--ink-dim);text-decoration:none">Free SEO Tools</a></li>
+            <li><a href="https://companiesbuilder.com/blogs/" style="color:var(--ink-dim);text-decoration:none">Blog</a></li>
+            <li><a href="https://companiesbuilder.com/contact/" style="color:var(--ink-dim);text-decoration:none">Contact</a></li>
+            <li><a href="https://companiesbuilder.com/write-for-us/" style="color:var(--ink-dim);text-decoration:none">Write for Us</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-3 col-lg-3">
-          <h3>Services</h3>
-          <ul class="list-unstyled">
-            <li><a href="https://companiesbuilder.com/services/web-development-and-designing/">Web Development &amp; Design</a></li>
-            <li><a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO Services in Hyderabad</a></li>
-            <li><a href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/">Social Media Marketing</a></li>
-            <li><a href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/">B2B Digital Marketing</a></li>
-            <li><a href="https://companiesbuilder.com/demo/">Request a Demo</a></li>
+          <h3 style="font-size:1rem;color:#fff;margin-bottom:1rem">Services</h3>
+          <ul class="list-unstyled" style="font-size:0.9rem;line-height:2">
+            <li><a href="https://companiesbuilder.com/services/web-development-and-designing/" style="color:var(--ink-dim);text-decoration:none">Web Development &amp; Design</a></li>
+            <li><a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/" style="color:var(--ink-dim);text-decoration:none">SEO Services in Hyderabad</a></li>
+            <li><a href="https://companiesbuilder.com/services/social-media-marketing-company-in-hyderabad/" style="color:var(--ink-dim);text-decoration:none">Social Media Marketing</a></li>
+            <li><a href="https://companiesbuilder.com/services/b2b-digital-marketing-agency/" style="color:var(--ink-dim);text-decoration:none">B2B Digital Marketing</a></li>
+            <li><a href="https://companiesbuilder.com/demo/" style="color:var(--ink-dim);text-decoration:none">Request a Demo</a></li>
           </ul>
         </div>
         <div class="col-md-3 col-lg-3">
-          <h3>Get in Touch</h3>
-          <ul class="list-unstyled">
-            <li style="margin-bottom:10px"><a href="mailto:info@companiesbuilder.com" style="display:flex;align-items:center;gap:8px"><i class="bi bi-envelope" style="color:var(--violet-light);font-size:.9rem"></i>info@companiesbuilder.com</a></li>
-            <li style="margin-bottom:10px"><a href="tel:+916302787953" style="display:flex;align-items:center;gap:8px"><i class="bi bi-telephone" style="color:var(--violet-light);font-size:.9rem"></i>+91 63027 87953</a></li>
-            <li><a href="https://companiesbuilder.com/demo/" style="display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check" style="color:var(--green);font-size:.9rem"></i>Request a Demo</a></li>
+          <h3 style="font-size:1rem;color:#fff;margin-bottom:1rem">Get in Touch</h3>
+          <ul class="list-unstyled" style="font-size:0.9rem;line-height:2">
+            <li><a href="mailto:info@companiesbuilder.com" style="color:var(--ink-dim);text-decoration:none;display:flex;align-items:center;gap:8px"><i class="bi bi-envelope" style="color:var(--violet-light)"></i>info@companiesbuilder.com</a></li>
+            <li><a href="tel:+916302787953" style="color:var(--ink-dim);text-decoration:none;display:flex;align-items:center;gap:8px"><i class="bi bi-telephone" style="color:var(--violet-light)"></i>+91 63027 87953</a></li>
+            <li><a href="https://companiesbuilder.com/demo/" style="color:var(--ink-dim);text-decoration:none;display:flex;align-items:center;gap:8px"><i class="bi bi-calendar-check" style="color:var(--green)"></i>Request a Demo</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div style="border-top:1px solid var(--line-dark);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:0.85rem;color:var(--ink-dim)">
         <span>&copy; 2026 Companies Builder. All rights reserved.</span>
-        <span class="footer-badge">Hyderabad, India</span>
-        <span><a href="https://companiesbuilder.com/privacy-policy/" style="margin-right:16px">Privacy Policy</a><a href="https://companiesbuilder.com/sitemap.xml">Sitemap</a></span>
+        <span>Hyderabad, India</span>
+        <span>
+          <a href="https://companiesbuilder.com/privacy-policy/" style="color:var(--ink-dim);text-decoration:none;margin-right:16px">Privacy Policy</a>
+          <a href="https://companiesbuilder.com/sitemap.xml" style="color:var(--ink-dim);text-decoration:none">Sitemap</a>
+        </span>
       </div>
     </div>
   </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <script>
-  (function () {
-    var nav = document.getElementById('siteNav');
-    if(!nav) return;
-    var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10) };
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
+    (function () {
+      var nav = document.getElementById('siteNav');
+      if (!nav) return;
+      var onScroll = function () { nav.classList.toggle('is-scrolled', window.scrollY > 10); };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
   </script>
 </body>
 </html>
