@@ -5,74 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-    .score-circle {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 0 auto 1.5rem auto;
-      border: 8px solid;
-    }
-    .score-good { border-color: var(--success-color); color: var(--success-color); }
-    .score-needs-improvement { border-color: var(--warning-color); color: var(--warning-color); }
-    .score-poor { border-color: var(--error-color); color: var(--error-color); }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-    }
-    
-    .metric-card {
-      background: rgba(0,0,0,0.2);
-      border: 1px solid var(--border-color);
-      padding: 1rem;
-      border-radius: 8px;
-      text-align: center;
-    }
-    .metric-value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 0.5rem 0;
-    }
-    
-    .loading-spinner {
-      display: none;
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(255,255,255,0.1);
-      border-left-color: var(--accent-primary);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 2rem auto;
-    }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
-
-    #resultsArea { display: none; }
-    #crossPromoArea { margin-top: 2rem; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="/tools/assets/shared.css">
 
-  <title>Free Local SEO & Google Maps Checker | Companies Builder</title>
-  <meta name="description" content="Check and ensure your business is perfectly optimized for local search and Google Maps rankings with our free Local SEO Checker.">
+  <title>Free Local SEO Checker | Local SEO Audit Tool</title>
+  <meta name="description" content="Check your website for local SEO signals, including LocalBusiness schema, phone and address details, and Google Maps links, with this free local SEO checker.">
   <link rel="canonical" href="https://companiesbuilder.com/tools/local-seo/">
   <link rel="icon" href="https://companiesbuilder.com/assets/images/CB-logo.png" />
+  <meta name="author" content="Companies Builder">
   <meta property="og:site_name" content="Companies Builder" />
-  <meta property="og:title" content="Free Local SEO & Google Maps Checker | Companies Builder" />
-  <meta property="og:description" content="Check and ensure your business is perfectly optimized for local search and Google Maps rankings with our free Local SEO Checker." />
+  <meta property="og:title" content="Free Local SEO Checker | Local SEO Audit Tool" />
+  <meta property="og:description" content="Check your website for local SEO signals, including LocalBusiness schema, phone and address details, and Google Maps links, with this free local SEO checker." />
   <meta property="og:url" content="https://companiesbuilder.com/tools/local-seo/" />
   <meta property="og:image" content="https://companiesbuilder.com/assets/images/CB-logo.png" />
   <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Local SEO Checker | Local SEO Audit Tool">
+  <meta name="twitter:description" content="Check your website for local SEO signals, including LocalBusiness schema, phone and address details, and Google Maps links, with this free local SEO checker.">
+  <style>
+    :root { --lsc-mint:#4fe0c0;--lsc-mint-dim:rgba(79,224,192,.12);--lsc-line:rgba(221,231,245,.12);--lsc-panel:rgba(12,22,35,.92);--lsc-copy:#dce5f0;--lsc-muted:#a7b4c6;--lsc-warning:#f3c36a;--lsc-blue:#168bff; }
+    body.local-seo-page { background-color:#07111d!important;background-image:radial-gradient(ellipse at 84% 13%,rgba(0,125,190,.18),transparent 39%),linear-gradient(180deg,#07111d 0%,#08121f 55%,#07101a 100%)!important;background-attachment:fixed; }
+    .lsc-main { width:min(1200px,calc(100% - 48px));margin:0 auto;padding:110px 0 80px; }
+    .lsc-breadcrumb { display:flex;flex-wrap:wrap;align-items:center;gap:9px;color:var(--lsc-muted);font-size:.84rem;margin:0 0 32px; }
+    .lsc-breadcrumb a { color:var(--lsc-copy);text-decoration:none; }
+    .lsc-breadcrumb a:hover { color:var(--lsc-mint); }
+    .lsc-breadcrumb [aria-current="page"] { color:#fff; }
+    .lsc-hero { display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);align-items:center;gap:clamp(24px,4vw,54px);max-width:none;min-height:450px;margin:0 0 26px;padding:clamp(28px,4vw,54px);position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(113,205,245,.18);border-radius:18px;background:radial-gradient(ellipse at 80% 15%,rgba(16,139,220,.18),transparent 48%),linear-gradient(120deg,#071827 0%,#0a2033 58%,#0a1c2b 100%);box-shadow:0 26px 90px rgba(0,0,0,.3); }
+    .lsc-hero::after { content:"";position:absolute;z-index:-1;width:300px;height:300px;right:-170px;top:-170px;border:1px solid rgba(79,224,192,.13);border-radius:50%;box-shadow:0 0 0 34px rgba(79,224,192,.025),0 0 0 70px rgba(79,224,192,.02); }
+    .lsc-hero-copy { min-width:0; }
+    .lsc-hero-art { min-width:0;margin:0; }
+    .lsc-hero-art img { display:block;width:100%;height:420px;aspect-ratio:1.28;object-fit:cover;object-position:83% center;border:1px solid rgba(211,237,255,.2);border-radius:12px;box-shadow:0 26px 58px rgba(0,0,0,.44),0 0 42px rgba(12,145,218,.14); }
+    .lsc-hero-art figcaption { margin:10px 2px 0;color:#9eb2c6;font-size:.72rem;line-height:1.5; }
+    .lsc-hero-actions { display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin:24px 0 26px; }
+    .lsc-hero-primary,.lsc-hero-secondary { display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 17px;border-radius:7px;font-size:.91rem;font-weight:700;text-decoration:none;transition:transform .2s ease,background .2s ease,border-color .2s ease; }
+    .lsc-hero-primary { background:linear-gradient(105deg,#12bfe1,#1784ff);color:#04141e!important;box-shadow:0 9px 24px rgba(13,160,216,.23); }
+    .lsc-hero-primary:hover { transform:translateY(-2px);background:#67e4f0;color:#04141e!important; }
+    .lsc-hero-secondary { border:1px solid rgba(225,239,250,.22);color:#eaf6ff!important;background:rgba(255,255,255,.035); }
+    .lsc-hero-secondary:hover { transform:translateY(-2px);border-color:rgba(79,224,192,.56);color:#fff!important; }
+    .lsc-hero-points { display:flex;flex-wrap:wrap;gap:10px 18px;list-style:none;padding:0;margin:0; }
+    .lsc-hero-points li { display:inline-flex;align-items:center;gap:7px;color:#c3d3e0;font-size:.79rem;line-height:1.4; }
+    .lsc-hero-points i { color:var(--lsc-mint);font-size:.95rem; }
+    .lsc-eyebrow { display:inline-flex;align-items:center;gap:8px;color:#69e7d1;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:15px;padding:7px 10px;border:1px solid rgba(79,224,192,.2);border-radius:5px;background:rgba(79,224,192,.07); }
+    .lsc-main h1 { background:none;-webkit-text-fill-color:#fff;color:#fff;font-family:'Space Grotesk',var(--font-display),sans-serif;font-size:3.15rem;letter-spacing:0;line-height:1.05;margin:0 0 16px; }
+    .lsc-main h2 { color:#fff;font-family:'Space Grotesk',var(--font-display),sans-serif;font-size:1.8rem;letter-spacing:0;margin:0 0 14px; }
+    .lsc-main h3 { color:#fff;font-family:'Space Grotesk',var(--font-display),sans-serif;font-size:1.08rem;letter-spacing:0;margin:0 0 8px; }
+    .lsc-main p,.lsc-main li { color:var(--lsc-copy);line-height:1.75; }
+    .lsc-main p { margin:0 0 14px; }
+    .lsc-lead { color:#dce5f0!important;font-size:1.02rem;max-width:600px;line-height:1.72!important; }
+    .lsc-note { color:#9fb4c8!important;font-size:.84rem; }
+    .lsc-tool { background:var(--lsc-panel);border:1px solid var(--lsc-line);border-radius:14px;padding:clamp(20px,4vw,34px);box-shadow:0 24px 70px rgba(0,0,0,.22); }
+    .lsc-tool-head { display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px; }
+    .lsc-tool-head p { margin:0;color:var(--lsc-muted);max-width:700px; }
+    .lsc-free-tag { flex:0 0 auto;color:var(--lsc-mint);border:1px solid rgba(93,224,189,.35);background:var(--lsc-mint-dim);border-radius:999px;padding:6px 11px;font-size:.78rem;font-weight:700; }
+    .lsc-form label { display:block;color:#fff;font-weight:650;margin:0 0 8px; }
+    .lsc-form-row { display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px; }
+    .lsc-form input { min-width:0;min-height:52px;background:#0b1320;color:#fff;border:1px solid rgba(221,231,245,.22);border-radius:8px;padding:12px 14px; }
+    .lsc-form input::placeholder { color:#8795a9; }
+    .lsc-form input:focus-visible,.lsc-form button:focus-visible,.lsc-main a:focus-visible,.lsc-main summary:focus-visible,.lsc-main button:focus-visible { outline:3px solid var(--lsc-mint);outline-offset:3px; }
+    .lsc-submit { min-height:52px;padding:11px 20px;border:0;border-radius:8px;background:var(--lsc-mint);color:#09221d;font-weight:750;white-space:nowrap; }
+    .lsc-submit:hover:not(:disabled) { background:#8aefd4; }
+    .lsc-submit:disabled { opacity:.65;cursor:wait; }
+    .lsc-help { margin:8px 0 0!important;font-size:.84rem;color:var(--lsc-muted)!important; }
+    .lsc-inline-state { margin:16px 0 0!important;padding:12px 14px;border-radius:8px; }
+    .lsc-error { color:#ffd2d2!important;background:rgba(175,42,55,.14);border:1px solid rgba(255,117,117,.3); }
+    .lsc-progress { color:#dcfff4!important;background:rgba(93,224,189,.08);border:1px solid rgba(93,224,189,.2); }
+    .lsc-empty { margin-top:22px;padding-top:18px;border-top:1px solid var(--lsc-line);color:var(--lsc-muted);font-size:.9rem; }
+    .lsc-limit { margin-top:18px; }
+    .lsc-results { margin-top:26px;padding-top:26px;border-top:1px solid var(--lsc-line); }
+    .lsc-results[hidden],.lsc-empty[hidden],.lsc-inline-state[hidden],#resetCheck[hidden] { display:none!important; }
+    .lsc-result-heading { display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:18px; }
+    .lsc-result-heading h2 { margin:0;font-size:1.45rem; }
+    .lsc-checked-url { color:var(--lsc-muted)!important;font-size:.84rem;margin:0!important;overflow-wrap:anywhere; }
+    .lsc-dashboard { display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.6fr);gap:20px;align-items:stretch; }
+    .lsc-score-panel { padding:22px;border:1px solid var(--lsc-line);border-radius:10px;background:rgba(6,13,23,.55);text-align:center; }
+    .lsc-score-ring { width:142px;aspect-ratio:1;border-radius:50%;margin:0 auto 14px;display:grid;place-content:center;position:relative;background:conic-gradient(var(--lsc-mint) calc(var(--score) * 1%),rgba(221,231,245,.12) 0); }
+    .lsc-score-ring::before { content:"";position:absolute;inset:8px;border-radius:50%;background:#101927; }
+    .lsc-score-value,.lsc-score-outof { position:relative;z-index:1; }
+    .lsc-score-value { font-size:2.8rem;font-weight:800;line-height:1;color:#fff; }
+    .lsc-score-outof { color:var(--lsc-muted);font-size:.8rem;margin-top:4px; }
+    .lsc-status { display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:.92rem;font-weight:700; }
+    .lsc-score-explainer { margin:9px 0 0!important;color:var(--lsc-muted)!important;font-size:.84rem; }
+    .lsc-score-panel details { margin-top:16px;text-align:left;border-top:1px solid var(--lsc-line);padding-top:13px; }
+    .lsc-score-panel summary { color:#fff;font-size:.88rem;font-weight:650;cursor:pointer; }
+    .lsc-score-panel details p { margin:10px 0 0;font-size:.84rem;color:var(--lsc-muted); }
+    .lsc-findings { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
+    .lsc-finding { min-width:0;padding:15px;border:1px solid var(--lsc-line);border-radius:9px;background:rgba(255,255,255,.025); }
+    .lsc-finding-top { display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px; }
+    .lsc-finding h3 { margin:0;font-size:.96rem; }
+    .lsc-finding-state { flex:0 0 auto;color:var(--lsc-muted);font-size:.76rem;font-weight:750; }
+    .lsc-finding-state[data-state="detected"] { color:var(--lsc-mint); }
+    .lsc-finding-state[data-state="review"] { color:var(--lsc-warning); }
+    .lsc-finding p { color:var(--lsc-muted);font-size:.83rem;line-height:1.6;margin:0; }
+    .lsc-action-section { margin-top:22px; }
+    .lsc-action-section h3 { font-size:1.15rem; }
+    .lsc-action-list { list-style:none;padding:0;margin:0;display:grid;gap:9px; }
+    .lsc-action { padding:14px 16px;border-left:3px solid var(--lsc-mint);background:rgba(255,255,255,.035);border-radius:0 7px 7px 0; }
+    .lsc-action[data-priority="Optional"] { border-left-color:#8cbcf5; }
+    .lsc-action[data-priority="Review"] { border-left-color:var(--lsc-warning); }
+    .lsc-action-title { display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:5px; }
+    .lsc-action-title h4 { color:#fff;font-size:.96rem;margin:0; }
+    .lsc-action-title span { color:var(--lsc-muted);font-size:.72rem;font-weight:700;text-transform:uppercase; }
+    .lsc-action p { color:var(--lsc-copy);font-size:.86rem;margin:0 0 5px; }
+    .lsc-action p:last-child { margin-bottom:0;color:#c1d1df; }
+    .lsc-action-label { color:var(--lsc-mint);font-weight:700; }
+    .lsc-result-foot { display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:18px; }
+    .lsc-result-foot p { color:var(--lsc-muted);font-size:.8rem;margin:0;max-width:690px; }
+    .lsc-reset { border:1px solid rgba(221,231,245,.25);border-radius:7px;padding:8px 12px;background:transparent;color:#fff;font-weight:650; }
+    .lsc-reset:hover { border-color:var(--lsc-mint);color:var(--lsc-mint); }
+    .lsc-section { padding:48px 0;border-bottom:1px solid rgba(221,231,245,.09); }
+    .lsc-section:last-of-type { border-bottom:0; }
+    .lsc-section p:last-child { margin-bottom:0; }
+    .lsc-section a,.lsc-main a:not(.lsc-breadcrumb a) { color:var(--lsc-mint);text-underline-offset:3px; }
+    .lsc-section a:hover { color:#a1f3de; }
+    .lsc-callout { border-left:3px solid var(--lsc-mint);padding:14px 18px;background:rgba(93,224,189,.06);border-radius:0 8px 8px 0;margin:18px 0; }
+    .lsc-callout p { margin:0;color:#e7f1f5; }
+    .lsc-signal-list { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:10px 0 0;padding:0;list-style:none; }
+    .lsc-signal-list li { padding:14px 0;border-top:1px solid var(--lsc-line); }
+    .lsc-signal-list strong { display:block;color:#fff;margin-bottom:4px; }
+    .lsc-signal-list span { color:var(--lsc-muted);font-size:.9rem; }
+    .lsc-two-col { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px; }
+    .lsc-checklist { padding-left:20px;margin:10px 0 0; }
+    .lsc-checklist li { padding:3px 0;color:var(--lsc-copy); }
+    .lsc-checklist li::marker { color:var(--lsc-mint); }
+    .lsc-comparison { width:100%;border-collapse:collapse;margin:18px 0; }
+    .lsc-comparison th,.lsc-comparison td { text-align:left;vertical-align:top;padding:13px;border-bottom:1px solid var(--lsc-line);color:var(--lsc-copy); }
+    .lsc-comparison th { color:#fff;font-size:.9rem; }
+    .lsc-code { overflow:auto;padding:18px;border:1px solid var(--lsc-line);border-radius:9px;background:#08111b;color:#d9efe7;font:.86rem/1.7 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .lsc-tool-links { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px; }
+    .lsc-tool-links a { display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 15px;border:1px solid var(--lsc-line);border-radius:8px;color:#fff!important;text-decoration:none; }
+    .lsc-tool-links a:hover { border-color:var(--lsc-mint);background:rgba(93,224,189,.05); }
+    .lsc-faq { border-top:1px solid var(--lsc-line); }
+    .lsc-faq details { border-bottom:1px solid var(--lsc-line);padding:16px 0; }
+    .lsc-faq summary { color:#fff;font-weight:700;cursor:pointer;line-height:1.5; }
+    .lsc-faq details p { color:var(--lsc-muted);font-size:.93rem;margin:11px 0 0; }
+    .lsc-cta { display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px;border:1px solid rgba(93,224,189,.25);border-radius:11px;background:linear-gradient(105deg,rgba(93,224,189,.1),rgba(59,130,246,.06)); }
+    .lsc-cta h2 { margin-bottom:7px; }
+    .lsc-cta p { margin:0;color:var(--lsc-muted);max-width:690px; }
+    .lsc-cta-link { flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:12px 17px;background:var(--lsc-mint);color:#09221d!important;font-weight:750;text-decoration:none; }
+    .lsc-cta-link:hover { background:#8aefd4;color:#09221d!important; }
+    @media (max-width:760px) {
+      .lsc-main { width:min(100% - 32px,1120px);padding-top:100px; }
+      .lsc-hero { grid-template-columns:1fr;gap:22px;min-height:0;padding:30px; }
+      .lsc-hero-copy { max-width:690px; }
+      .lsc-hero-art img { height:340px;aspect-ratio:1.7;object-position:80% center; }
+      .lsc-dashboard { grid-template-columns:1fr; }
+      .lsc-tool-head { display:block; }
+      .lsc-free-tag { display:inline-flex;margin-top:12px; }
+      .lsc-tool-links { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .lsc-cta { align-items:flex-start;flex-direction:column; }
+    }
+    @media (max-width:520px) {
+      .lsc-main { width:calc(100% - 28px);padding-top:90px; }
+      .lsc-main h1 { font-size:2.35rem; }
+      .lsc-main h2 { font-size:1.5rem; }
+      .lsc-hero { gap:12px;padding:23px 18px;border-radius:12px; }
+      .lsc-hero-art img { height:230px;aspect-ratio:1.42;object-position:84% center;border-radius:8px; }
+      .lsc-hero-art figcaption { font-size:.68rem; }
+      .lsc-hero-actions { margin:18px 0 20px; }
+      .lsc-hero-primary,.lsc-hero-secondary { min-height:44px;padding:0 13px;font-size:.84rem; }
+      .lsc-hero-points { gap:8px 12px; }
+      .lsc-hero-points li { font-size:.74rem; }
+      .lsc-form-row { grid-template-columns:1fr; }
+      .lsc-findings,.lsc-signal-list,.lsc-two-col,.lsc-tool-links { grid-template-columns:1fr; }
+      .lsc-score-panel { padding:18px; }
+      .lsc-section { padding:36px 0; }
+      .lsc-comparison th,.lsc-comparison td { padding:10px 8px;font-size:.84rem; }
+      .lsc-comparison th:first-child,.lsc-comparison td:first-child { width:27%; }
+    }
+    @media (prefers-reduced-motion:reduce) { .lsc-main * { scroll-behavior:auto!important;transition:none!important;animation:none!important; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebPage", "@id": "https://companiesbuilder.com/tools/local-seo/#webpage", "url": "https://companiesbuilder.com/tools/local-seo/", "name": "Free Local SEO Checker | Local SEO Audit Tool", "description": "Check your website for local SEO signals, including LocalBusiness schema, phone and address details, and Google Maps links, with this free local SEO checker.", "isPartOf": { "@type": "WebSite", "@id": "https://companiesbuilder.com/#website", "url": "https://companiesbuilder.com/", "name": "Companies Builder" }, "inLanguage": "en" },
+      { "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://companiesbuilder.com/" }, { "@type": "ListItem", "position": 2, "name": "Free SEO Tools", "item": "https://companiesbuilder.com/tools/" }, { "@type": "ListItem", "position": 3, "name": "Local SEO Checker", "item": "https://companiesbuilder.com/tools/local-seo/" } ] }
+    ]
+  }
+  </script>
 </head>
-<body>
+<body class="local-seo-page">
 
   <!-- Shared Header -->
     <!-- NAVBAR -->
@@ -127,155 +242,444 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <main class="container" style="padding-top: 3rem; padding-bottom: 4rem; max-width: 800px;">
-    <div style="margin-bottom: 2rem; text-align: center;">
-      <a href="/tools/" style="font-size: 0.9rem; display: block; margin-bottom: 1rem;">&larr; Back to Tools</a>
-      <h1>Local SEO Checker</h1>
-      <p>Scan your website for critical on-page Local SEO signals (Schema markup, Map embeds, and Contact details).</p>
-    </div>
+  <main class="lsc-main">
+    <nav class="lsc-breadcrumb" aria-label="Breadcrumb">
+      <a href="https://companiesbuilder.com/">Home</a><span aria-hidden="true">/</span>
+      <a href="/tools/">Free SEO Tools</a><span aria-hidden="true">/</span>
+      <span aria-current="page">Local SEO Checker</span>
+    </nav>
 
-    <!-- Usage Limit Banner Container -->
-    <div id="limitBannerContainer"></div>
-
-    <div class="glass-panel" style="text-align: center;">
-      
-      <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: center;">
-        <input type="url" id="targetUrl" class="form-control" placeholder="https://example.com" style="max-width: 400px;">
-        <button id="runBtn" class="btn btn-primary" onclick="runLocalCheck()">Check Local SEO</button>
+    <header class="lsc-hero">
+      <div class="lsc-hero-copy">
+        <span class="lsc-eyebrow"><i class="bi bi-geo-alt" aria-hidden="true"></i> Website-side audit</span>
+        <h1>Free Local SEO Checker</h1>
+        <p class="lsc-lead">Check one public webpage for LocalBusiness structured data, phone and address signals, and Google Maps links or embeds. See a transparent score and practical next steps.</p>
+        <p class="lsc-note">This checker reviews website signals. It does not track Google Maps rankings, profile performance or reviews.</p>
+        <div class="lsc-hero-actions">
+          <a class="lsc-hero-primary" href="#localSeoForm"><i class="bi bi-search" aria-hidden="true"></i> Check your website <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
+          <a class="lsc-hero-secondary" href="/tools/">Explore all tools</a>
+        </div>
+        <ul class="lsc-hero-points" aria-label="Checker details">
+          <li><i class="bi bi-check2-circle" aria-hidden="true"></i> Four page-level signals</li>
+          <li><i class="bi bi-speedometer2" aria-hidden="true"></i> Results in one check</li>
+          <li><i class="bi bi-shield-check" aria-hidden="true"></i> No account required</li>
+        </ul>
       </div>
-      
-      <div class="loading-spinner" id="spinner"></div>
+      <figure class="lsc-hero-art">
+        <img src="/tools/assets/companies-builder-local-seo.png" alt="Concept artwork for a local SEO checker, showing a website audit dashboard beside map imagery; it is not a live audit result." width="1600" height="900" fetchpriority="high">
+        <figcaption>Concept artwork only. This checker analyzes the four website signals listed below; it does not track citations, reviews, page speed or rankings.</figcaption>
+      </figure>
+    </header>
 
-      <div id="resultsArea" class="mt-8">
-        <hr style="border: none; border-top: 1px solid var(--border-color); margin-bottom: 2rem;">
-        
-        <div id="scoreCircle" class="score-circle score-good" style="margin-bottom: 1rem;">100</div>
-        <h3 style="margin-bottom: 2rem;">Local SEO Score</h3>
+    <section class="lsc-tool" aria-labelledby="tool-heading">
+      <div class="lsc-tool-head">
+        <div><h2 id="tool-heading">Check a webpage</h2><p>Enter a public contact, location or business page to review its HTML signals.</p></div>
+        <span class="lsc-free-tag">Free · no account</span>
+      </div>
+      <div id="limitBannerContainer" class="lsc-limit"></div>
+      <form class="lsc-form" id="localSeoForm" novalidate>
+        <label for="targetUrl">Public webpage URL</label>
+        <div class="lsc-form-row">
+          <input type="url" id="targetUrl" name="url" placeholder="https://example.com/contact/" autocomplete="url" inputmode="url" aria-describedby="urlHelp checkMessage" required>
+          <button id="runBtn" class="lsc-submit" type="submit"><i class="bi bi-search" aria-hidden="true"></i> Check Local SEO</button>
+        </div>
+        <p class="lsc-help" id="urlHelp">Use a complete public HTTP or HTTPS address. One page is checked per run.</p>
+        <p class="lsc-inline-state lsc-progress" id="spinner" role="status" aria-live="polite" hidden>Retrieving the page and checking its local SEO signals…</p>
+        <p class="lsc-inline-state lsc-error" id="checkMessage" role="alert" hidden></p>
+      </form>
 
-        <div class="metric-grid" style="margin-bottom: 2rem;">
-          <div class="metric-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Local Schema Markup</div>
-            <div id="metricSchema" class="metric-value">--</div>
+      <p class="lsc-empty" id="emptyState"><strong>Checks:</strong> LocalBusiness schema · phone · address · Google Maps link or embed. No rank, profile, review or citation tracking.</p>
+
+      <section class="lsc-results" id="resultsArea" aria-labelledby="resultsHeading" aria-live="polite" hidden>
+        <div class="lsc-result-heading">
+          <h2 id="resultsHeading">Local SEO audit results</h2>
+          <p class="lsc-checked-url" id="checkedUrl"></p>
+        </div>
+        <div class="lsc-dashboard">
+          <div class="lsc-score-panel">
+            <div class="lsc-score-ring" id="scoreRing" role="img" aria-label="Local SEO diagnostic score">
+              <span class="lsc-score-value" id="scoreValue">0</span><span class="lsc-score-outof">out of 100</span>
+            </div>
+            <div class="lsc-status" id="scoreStatus">Needs attention</div>
+            <p class="lsc-score-explainer">A CompaniesBuilder diagnostic indicator, not a Google ranking score.</p>
+            <details>
+              <summary>How is the score calculated?</summary>
+              <p>Each of four detected signals contributes 25 points: schema, phone, address and Maps link or embed. Detection does not validate accuracy.</p>
+              <ol id="scoreBreakdown" class="lsc-checklist"></ol>
+            </details>
           </div>
-          <div class="metric-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Phone Number Detected</div>
-            <div id="metricPhone" class="metric-value">--</div>
-          </div>
-          <div class="metric-card">
-            <div style="font-size: 0.85rem; color: var(--text-muted);">Google Map Embeds / Links</div>
-            <div id="metricMaps" class="metric-value">--</div>
+          <div class="lsc-findings" aria-label="Audit findings">
+            <article class="lsc-finding"><div class="lsc-finding-top"><h3>LocalBusiness schema</h3><span class="lsc-finding-state" id="metricSchema">Not checked</span></div><p id="detailSchema">The checker looks for supported LocalBusiness types in JSON-LD.</p></article>
+            <article class="lsc-finding"><div class="lsc-finding-top"><h3>Phone signal</h3><span class="lsc-finding-state" id="metricPhone">Not checked</span></div><p id="detailPhone">Checks telephone links, business data and number-like page text.</p></article>
+            <article class="lsc-finding"><div class="lsc-finding-top"><h3>Address signal</h3><span class="lsc-finding-state" id="metricAddress">Not checked</span></div><p id="detailAddress">Checks address fields in business data and common address-like text.</p></article>
+            <article class="lsc-finding"><div class="lsc-finding-top"><h3>Google Maps signal</h3><span class="lsc-finding-state" id="metricMaps">Not checked</span></div><p id="detailMaps">Checks for Google Maps links and map embeds on the page.</p></article>
           </div>
         </div>
-        
-        <h3 style="text-align: left; margin-bottom: 1.5rem;">Action Plan</h3>
-        <ul id="actionPlanList" class="list-unstyled" style="text-align: left; display: grid; gap: 1rem;">
-           <!-- JS will populate this -->
-        </ul>
+        <div class="lsc-action-section">
+          <h3>Recommended actions</h3>
+          <ul id="actionPlanList" class="lsc-action-list"></ul>
+        </div>
+        <div class="lsc-result-foot">
+          <p>Automated text and schema detection can miss details or flag address-like text. Confirm important information manually. A map is useful for visitors but is not evidence of ranking.</p>
+          <button id="resetCheck" class="lsc-reset" type="button">Run another check</button>
+        </div>
+      </section>
+    </section>
 
-        <div id="crossPromoArea" style="margin-top: 2rem;"></div>
+    <section class="lsc-section" aria-labelledby="what-is-local-seo">
+      <h2 id="what-is-local-seo">What Is Local SEO?</h2>
+      <p>Local SEO is the process of improving a business’s online presence so it can be discovered for relevant searches with local intent, such as “dentist near me.”</p>
+      <p>Google Search and Maps draw on more than a website. A business profile, public information and reviews also matter. Clear services and accurate contact details help people assess relevance but cannot guarantee a position.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="how-local-seo-works">
+      <h2 id="how-local-seo-works">How Local SEO Works</h2>
+      <p>Google identifies <a href="https://support.google.com/business/answer/7091?hl=en">relevance, distance and prominence</a> as the main local ranking factors. A website check can inform only part of this picture.</p>
+      <div class="lsc-two-col">
+        <div><h3>Relevance</h3><p>How closely a business matches the search. Specific services, accurate categories and clear details help explain its offer.</p></div>
+        <div><h3>Distance</h3><p>How close the business is to the search context. A page audit cannot know each searcher’s location.</p></div>
+        <div><h3>Prominence</h3><p>How established a business appears from web information, reviews and public mentions. No single page signal captures it.</p></div>
+        <div><h3>A broader local presence</h3><p>A website, Google Business Profile and accurate public details work together. Website changes alone do not determine rankings.</p></div>
       </div>
+    </section>
 
-    </div>
+    <section class="lsc-section" aria-labelledby="checker-checks">
+      <h2 id="checker-checks">What Does This Local SEO Checker Check?</h2>
+      <p>This free local SEO checker reviews one public webpage for four HTML signals. It does not crawl the site, verify business facts or grade Google eligibility.</p>
+      <ul class="lsc-signal-list">
+        <li><strong>LocalBusiness structured data</strong><span>Parses JSON-LD for supported local business types. Generic Organization markup does not count.</span></li>
+        <li><strong>Phone signal</strong><span>Checks telephone links, business data or number-like text; it cannot verify the number.</span></li>
+        <li><strong>Address signal</strong><span>Checks schema address fields or address-like text. This is not address verification.</span></li>
+        <li><strong>Google Maps signal</strong><span>Checks links and embeds, not ranking or location accuracy.</span></li>
+      </ul>
+      <div class="lsc-callout"><p>This is a website-side local SEO check. It does not directly measure your Google Maps ranking, local pack position or Google Business Profile performance.</p></div>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="free-checker">
+      <h2 id="free-checker">Free Local SEO Checker</h2>
+      <p>Enter a public URL for an immediate score, four findings and a short action plan. No sign-in is needed; the current limit is five attempts per browser, stored locally.</p>
+      <p>This page-level report is not a full audit. Review other site pages and your business profile separately.</p>
+      <h3>What Your Local SEO Report Includes</h3>
+      <p>It summarizes the four signals found on the submitted page, assigns points transparently and suggests manual next steps. No downloadable report or Maps ranking is provided.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-seo-audit-checklist">
+      <h2 id="local-seo-audit-checklist">Local SEO Audit Checklist</h2>
+      <p>Pair these checks with the automated results; a webpage cannot confirm every business detail.</p>
+      <div class="lsc-two-col">
+        <div><h3>Business information and website</h3><ul class="lsc-checklist"><li>Keep the business name consistent.</li><li>Show an accurate public address when appropriate.</li><li>Make a current phone number easy to find.</li><li>Describe real services and areas naturally.</li><li>Use clear titles, headings and contact pages.</li><li>Check HTTPS, mobile usability and indexability.</li><li>Link related service and location pages.</li></ul></div>
+        <div><h3>Structured data and Business Profile</h3><ul class="lsc-checklist"><li>Choose an accurate LocalBusiness subtype.</li><li>Align schema with visible business facts.</li><li>Validate JSON-LD syntax.</li><li>Manually check profile status, category, hours and details.</li><li>Manage reviews and keep photos current.</li><li>This URL cannot check profile completeness.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="small-business">
+      <h2 id="small-business">Local SEO for Small Businesses</h2>
+      <p>Small businesses should first clarify their offer, contact details, website and profile. A dentist can explain treatments, location and booking; a tutor can state lesson formats and service area without publishing a private address.</p>
+      <p>Restaurants, retailers, trainers, real estate teams, doctors, home-service providers and professional firms have different customer questions. Local SEO services for small businesses should improve real service information, not create near-identical city pages.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-vs-seo">
+      <h2 id="local-vs-seo">Local SEO vs SEO</h2>
+      <p>General SEO supports discovery across broader topics and places. Local SEO focuses on searches where the searcher’s location or a named area matters.</p>
+      <table class="lsc-comparison"><thead><tr><th scope="col">Search</th><th scope="col">Likely intent</th><th scope="col">Helpful focus</th></tr></thead><tbody><tr><td>“dentist”</td><td>Broad information or service discovery</td><td>Useful dental service information and strong site foundations</td></tr><tr><td>“dentist near me”</td><td>Find a nearby provider</td><td>Accurate local business details, relevant services and profile information</td></tr><tr><td>“web design”</td><td>Explore a broad service</td><td>Clear capabilities, examples and service information</td></tr><tr><td>“web design company in Hyderabad”</td><td>Find a provider in a named market</td><td>Genuine location relevance and accurate business context</td></tr></tbody></table>
+      <p>Repeating “near me” cannot create proximity. Describe real services and locations for people.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-vs-maps">
+      <h2 id="local-vs-maps">Local SEO vs Google Maps SEO</h2>
+      <p>Local SEO covers a website and broader public presence. Maps visibility also depends on business and location information Google associates with a query.</p>
+      <p>This checker cannot report Maps positions or compare competitors. A map link helps visitors; it does not prove a ranking benefit.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-search-engine-optimization">
+      <h2 id="local-search-engine-optimization">Local Search Engine Optimization</h2>
+      <p>Local search engine optimization helps people discover businesses for searches with geographic intent. It can involve relevant website content, business information, structured data, profile details, genuine reviews and local mentions.</p>
+      <p>These signals work in context: schema cannot replace useful pages, and a map embed cannot establish prominence. Start with accurate facts.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-seo-tools">
+      <h2 id="local-seo-tools">Local SEO Tools</h2>
+      <p>Local SEO tools serve different needs: website audits inspect pages, profile tools manage listings, citation tools compare business details, review tools organize feedback, rank trackers measure visibility, and schema tools create or validate markup.</p>
+      <p>This checker covers website signals only. <a href="/tools/seo-auditor/">Run a broader SEO audit</a>, <a href="/tools/speed-checker/">check website speed</a>, <a href="/tools/sitemap-generator/">generate an XML sitemap</a>, <a href="/tools/meta-tag-generator/">create SEO meta tags</a> or <a href="/tools/schema-generator/">generate JSON-LD</a>.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="schema-local-seo">
+      <h2 id="schema-local-seo">Schema Markup for Local SEO</h2>
+      <p>Structured data makes page information machine-readable. JSON-LD is one format; <a href="https://developers.google.com/search/docs/appearance/structured-data/local-business">LocalBusiness and its more specific subtypes</a> describe businesses when the type fits.</p>
+      <p>Applicable properties may include name, public address, phone, URL, hours, coordinates and sameAs profiles. Publish accurate visible facts only. A schema markup validator can find syntax problems, but valid JSON does not guarantee rankings or rich results.</p>
+      <h3>What Is LocalBusiness Schema?</h3>
+      <p>LocalBusiness describes a business and applicable details. Choose the most specific accurate type; this checker detects JSON-LD types but does not validate compliance.</p>
+      <h3>JSON-LD Local Business Example</h3>
+      <p>Replace these placeholders with accurate visible details; omit anything that does not apply.</p>
+      <pre class="lsc-code"><code>{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Example Business",
+  "url": "https://example.com/",
+  "telephone": "+91-XXXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Example City",
+    "addressCountry": "IN"
+  }
+}</code></pre>
+      <p>Use the <a href="/tools/schema-generator/">JSON-LD generator</a> as a starting point, then verify the type and facts.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="google-business-profile">
+      <h2 id="google-business-profile">Local SEO and Google Business Profile</h2>
+      <p>A website explains services; Google Business Profile presents details in local search. Reviews and public sources add context.</p>
+      <p>Keep eligible profile details, category and hours accurate, and respond to reviews. A profile complements a useful website.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="improve-local-seo">
+      <h2 id="improve-local-seo">How to Improve Local SEO</h2>
+      <ol class="lsc-checklist">
+        <li>Keep business name, address, phone and hours accurate.</li>
+        <li>Maintain an eligible profile with a fitting category.</li>
+        <li>Make contact details easy to find on mobile.</li>
+        <li>Create pages for genuine customer needs.</li>
+        <li>Use accurate LocalBusiness data where appropriate.</li>
+        <li>Improve usability, HTTPS and mobile experience.</li>
+        <li>Earn relevant local mentions through real work.</li>
+        <li>Seek honest reviews without incentives or purchase.</li>
+        <li>Correct outdated or conflicting public details.</li>
+        <li>Measure website and profile performance separately.</li>
+      </ol>
+      <p>Prioritize customer needs. Relevance, distance and prominence also affect local visibility; no single change promises a position.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-seo-india">
+      <h2 id="local-seo-india">Local SEO for India</h2>
+      <p>Indian businesses should describe genuine service areas, public contact details and whether customers visit or receive at-home service. Do not imply a false address.</p>
+      <p>Offer useful local-language information where needed. Keep profile hours, reviews and service pages current. CompaniesBuilder serves Hyderabad businesses and clients across India, without claiming offices in every city.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="when-local-seo-services">
+      <h2 id="when-local-seo-services">When Do You Need Local SEO Services?</h2>
+      <p>Consider professional help for multiple locations, competitive markets, a redesign, inconsistent details, complex service areas or technical and schema work.</p>
+      <p>Ask what is included and how it is measured. Affordable local SEO services should explain limits; no provider can guarantee Maps positions, traffic or revenue.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="small-business-services">
+      <h2 id="small-business-services">Local SEO Services for Small Businesses</h2>
+      <p>Work may cover technical fixes, useful service pages, structured data, profile support, reviews, local mentions and reporting. Scope should fit the business’s locations and customer journey.</p>
+      <p>Confirm audit findings, then prioritize accuracy and usability. CompaniesBuilder offers <a href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">SEO services</a> and <a href="https://companiesbuilder.com/services/web-development-and-designing/">website development</a>.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="how-checker-works">
+      <h2 id="how-checker-works">How the CompaniesBuilder Local SEO Checker Works</h2>
+      <p>Submit one public URL. The checker retrieves its HTML and inspects JSON-LD, phone and address signals, map links and iframes. It adds 25 points per detected signal and suggests follow-up checks; it does not crawl the domain.</p>
+      <p>Number-like text or postal codes may be unrelated. Schema detection is not validation, so confirm findings manually.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="read-audit">
+      <h2 id="read-audit">How to Read Your Local SEO Audit</h2>
+      <p>Each of four detected signals adds 25 points. “Needs attention” prompts review; it does not predict search performance. Some businesses should not publish an address or map.</p>
+      <p>Recommendations address missing signals, but a single page cannot represent your full local presence.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="website-local-seo-checklist">
+      <h2 id="website-local-seo-checklist">Local SEO Checklist for a Website</h2>
+      <div class="lsc-two-col">
+        <div><h3>Technical and on-page checks</h3><ul class="lsc-checklist"><li>Use HTTPS and a consistent canonical.</li><li>Make pages mobile usable and accessible.</li><li>Check crawlability and indexability.</li><li>Write a clear title, description and H1.</li><li>Describe location naturally.</li><li>Link relevant service and contact pages.</li></ul></div>
+        <div><h3>Business details and content</h3><ul class="lsc-checklist"><li>Show accurate name and contact details.</li><li>Explain genuine service areas.</li><li>Use suitable LocalBusiness data.</li><li>Make contact straightforward.</li><li>Link a map when directions help.</li><li>Make each location page useful and distinct.</li></ul></div>
+      </div>
+      <p>Useful location pages explain real services, areas and business details. Swapping city names on thin pages does not help customers.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-seo-mistakes">
+      <h2 id="local-seo-mistakes">Common Local SEO Mistakes</h2>
+      <p>Fix outdated details, invalid or unsuitable schema, stuffed business names, thin city pages and the assumption that a map or sitemap changes rankings.</p>
+      <p>Avoid bought reviews, fake information, doorway pages, hidden text and directory spam. Keep reviews genuine and location content useful.</p>
+      <p>Keep HTTPS, canonicals, crawlability and mobile usability sound. Local optimization is more than adding a city to a title.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="not-check">
+      <h2 id="not-check">What This Local SEO Checker Does Not Check</h2>
+      <p>This checker cannot measure Maps or local pack positions, competitor rankings, city-wide visibility, profile performance, review sentiment, web-wide citations, backlink authority or conversions. It cannot verify detected business facts.</p>
+      <p>Those tasks need other data or manual review. This is not a rank tracker, profile dashboard, citation tool or review monitor.</p>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="more-tools">
+      <h2 id="more-tools">More Free SEO Tools</h2>
+      <p>Explore focused tools for other website checks.</p>
+      <nav class="lsc-tool-links" aria-label="Related SEO tools">
+        <a href="/tools/seo-auditor/">SEO Auditor <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <a href="/tools/speed-checker/">Speed Checker <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <a href="/tools/sitemap-generator/">Sitemap Generator <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <a href="/tools/meta-tag-generator/">Meta Tag Generator <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <a href="/tools/schema-generator/">Schema Generator <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+        <a href="/tools/">Explore all SEO tools <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+      </nav>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="help-local-seo">
+      <div class="lsc-cta">
+        <div><h2 id="help-local-seo">Need Help With Local SEO?</h2><p>CompaniesBuilder can help review local and technical SEO, improve website structure and implement changes that make business information clearer. The work is tailored to your actual locations and services; rankings and leads are never guaranteed.</p></div>
+        <a class="lsc-cta-link" href="https://companiesbuilder.com/services/seo-services-in-hyderabad/">Explore SEO Services</a>
+      </div>
+    </section>
+
+    <section class="lsc-section" aria-labelledby="local-seo-faq">
+      <h2 id="local-seo-faq">Frequently Asked Questions About Local SEO</h2>
+      <div class="lsc-faq">
+        <details><summary>What is local SEO?</summary><p>It improves a business’s online presence for relevant searches with geographic intent.</p></details>
+        <details><summary>What does a local SEO checker do?</summary><p>This one checks a page for local schema, phone, address and Maps signals.</p></details>
+        <details><summary>How can I check my website’s local SEO?</summary><p>Run this check, then review your other pages, profile and contact details.</p></details>
+        <details><summary>Is a local SEO checker free?</summary><p>Yes. No account is required; five attempts are available per browser.</p></details>
+        <details><summary>What should a local SEO audit include?</summary><p>Review business details, website quality, structured data, profiles, reviews and mentions.</p></details>
+        <details><summary>Does schema markup help local SEO?</summary><p>It clarifies page information but does not guarantee rankings or rich results.</p></details>
+        <details><summary>What is LocalBusiness schema?</summary><p>A Schema.org type for accurate, applicable details about a local business.</p></details>
+        <details><summary>How important is Google Business Profile for local SEO?</summary><p>An accurate profile supports local presence and complements a useful website.</p></details>
+        <details><summary>Why is my business not showing in local search?</summary><p>Relevance, distance, prominence, eligibility and competition can all play a part.</p></details>
+        <details><summary>Does this tool check Google Maps rankings?</summary><p>No. It checks website signals, not Maps positions. Visibility depends on relevance, distance, prominence and information Google has about the business.</p></details>
+        <details><summary>How can I improve local SEO for a small business?</summary><p>Keep details accurate, explain services clearly and seek genuine reviews.</p></details>
+        <details><summary>How often should I perform a local SEO audit?</summary><p>Review after major changes and whenever important business details change.</p></details>
+      </div>
+    </section>
   </main>
 
   <script src="/tools/assets/shared.js"></script>
   <script>
     const TOOL_ID = 'local-seo-checker';
+    const localSeoForm = document.getElementById('localSeoForm');
+    const runButton = document.getElementById('runBtn');
+    const resultsArea = document.getElementById('resultsArea');
+    const emptyState = document.getElementById('emptyState');
+    const progressMessage = document.getElementById('spinner');
+    const errorMessage = document.getElementById('checkMessage');
 
-    // On load, check if they are already blocked
-    window.onload = () => {
+    window.addEventListener('load', () => {
       CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
-    };
+    });
 
-    function getScoreClass(score) {
-      if (score >= 90) return 'score-good';
-      if (score >= 50) return 'score-needs-improvement';
-      return 'score-poor';
-    }
-    
-    function formatMetric(valueStr) {
-      if (!valueStr) return 'N/A';
-      return valueStr.replace(/[^0-9.]/g, '') + (valueStr.includes('ms') ? ' ms' : ' s');
+    function setFinding(id, detected, description, review = false) {
+      const state = document.getElementById(id);
+      state.textContent = review ? 'Review' : detected ? 'Detected' : 'Not detected';
+      state.dataset.state = review ? 'review' : detected ? 'detected' : 'missing';
+      const detailId = id.replace('metric', 'detail');
+      document.getElementById(detailId).textContent = description;
     }
 
-    
-    async function runLocalCheck() {
-      const url = document.getElementById('targetUrl').value;
-      if (!url) {
-        alert("Please enter a valid URL.");
+    function addScoreBreakdown(items) {
+      const list = document.getElementById('scoreBreakdown');
+      list.replaceChildren();
+      items.forEach((item) => {
+        const row = document.createElement('li');
+        row.textContent = `${item.label}: ${item.points} of ${item.possiblePoints} points`;
+        list.appendChild(row);
+      });
+    }
+
+    function addActions(items) {
+      const list = document.getElementById('actionPlanList');
+      list.replaceChildren();
+      items.forEach((item) => {
+        const row = document.createElement('li');
+        row.className = 'lsc-action';
+        row.dataset.priority = item.priority || 'Recommended';
+
+        const heading = document.createElement('div');
+        heading.className = 'lsc-action-title';
+        const title = document.createElement('h4');
+        title.textContent = item.title;
+        const priority = document.createElement('span');
+        priority.textContent = item.priority || 'Recommended';
+        heading.append(title, priority);
+
+        const description = document.createElement('p');
+        description.textContent = item.description;
+        const recommendation = document.createElement('p');
+        const label = document.createElement('span');
+        label.className = 'lsc-action-label';
+        label.textContent = 'Suggested next step: ';
+        recommendation.append(label, document.createTextNode(item.recommendation));
+        row.append(heading, description, recommendation);
+        list.appendChild(row);
+      });
+    }
+
+    function showResults(data) {
+      const score = Math.max(0, Math.min(100, Number(data.score) || 0));
+      document.getElementById('scoreValue').textContent = String(score);
+      document.getElementById('scoreRing').style.setProperty('--score', String(score));
+      document.getElementById('scoreRing').setAttribute('aria-label', `Local SEO diagnostic score: ${score} out of 100`);
+      document.getElementById('scoreStatus').textContent = score >= 75 ? 'Most checked signals found' : score >= 50 ? 'Some signals need review' : 'Several signals need review';
+      document.getElementById('checkedUrl').textContent = `Page checked: ${data.checkedUrl}`;
+
+      const schemaTypes = Array.isArray(data.schemaTypes) ? data.schemaTypes.join(', ') : '';
+      setFinding('metricSchema', data.hasSchema, data.hasSchema ? `Detected type${data.schemaTypes.length === 1 ? '' : 's'}: ${schemaTypes}. This is detection, not validation.` : data.schemaParseErrors ? `${data.schemaParseErrors} JSON-LD block${data.schemaParseErrors === 1 ? '' : 's'} could not be parsed; review the markup.` : 'No supported LocalBusiness type was detected in this page’s JSON-LD.', data.schemaParseErrors > 0);
+      const phoneDetails = data.hasPhone ? `Signal found in ${data.phoneEvidence || 'page content'}. The number has not been verified.` : 'No phone signal was detected in the supported page content.';
+      setFinding('metricPhone', data.hasPhone, phoneDetails);
+      setFinding('metricAddress', data.hasAddress, data.hasAddress ? `Address-like signal found in ${data.addressEvidence || 'page content'}. Confirm that the details are accurate.` : 'No supported address signal was detected. Some businesses should not publish a street address.');
+      const mapsDetected = data.mapEmbeds > 0 || data.mapsLinks > 0;
+      setFinding('metricMaps', mapsDetected, mapsDetected ? `Found ${data.mapsLinks} map link${data.mapsLinks === 1 ? '' : 's'} and ${data.mapEmbeds} embed${data.mapEmbeds === 1 ? '' : 's'}. This does not indicate ranking.` : 'No Google Maps link or embed was detected on this page.');
+      addScoreBreakdown(data.scoreBreakdown || []);
+      addActions(Array.isArray(data.actionPlan) ? data.actionPlan : []);
+      emptyState.hidden = true;
+      resultsArea.hidden = false;
+      document.getElementById('resetCheck').hidden = false;
+    }
+
+    localSeoForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      errorMessage.hidden = true;
+      const input = document.getElementById('targetUrl');
+      const rawUrl = input.value.trim();
+      let target;
+      try {
+        target = new URL(rawUrl);
+      } catch {
+        errorMessage.textContent = 'Enter a complete public URL, such as https://example.com/.';
+        errorMessage.hidden = false;
+        input.focus();
+        return;
+      }
+      if (!['http:', 'https:'].includes(target.protocol) || !target.hostname || target.username || target.password) {
+        errorMessage.textContent = 'Enter a complete public HTTP or HTTPS webpage URL.';
+        errorMessage.hidden = false;
+        input.focus();
+        return;
+      }
+      if (CompaniesBuilderTools.getAttempts(TOOL_ID) >= CompaniesBuilderTools.MAX_FREE_ATTEMPTS) {
+        CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
         return;
       }
 
-      const proceed = CompaniesBuilderTools.incrementAndCheckLimit(TOOL_ID, 'runBtn', 'limitBannerContainer');
-      if (!proceed) return;
-
-      const btn = document.getElementById('runBtn');
-      const spinner = document.getElementById('spinner');
-      const resultsArea = document.getElementById('resultsArea');
-      
-      btn.disabled = true;
-      btn.innerText = "Analyzing...";
-      spinner.style.display = "block";
-      resultsArea.style.display = "none";
+      CompaniesBuilderTools.incrementUsage(TOOL_ID);
+      CompaniesBuilderTools.checkLimitAndUpdateUI(TOOL_ID, 'runBtn', 'limitBannerContainer');
+      runButton.disabled = true;
+      runButton.innerHTML = '<i class="bi bi-arrow-repeat" aria-hidden="true"></i> Checking…';
+      progressMessage.hidden = false;
+      resultsArea.hidden = true;
 
       try {
-        const res = await fetch('/tools/api/local-seo?url=' + encodeURIComponent(url));
-        const data = await res.json();
-        
-        if (data.error) throw new Error(data.error);
-        
-        // Update Score
-        const scoreCircle = document.getElementById('scoreCircle');
-        scoreCircle.innerText = data.score;
-        scoreCircle.className = 'score-circle ' + getScoreClass(data.score);
-        
-        // Update Metrics
-        const yesNode = '<span style="color:var(--success-color)"><i class="bi bi-check-circle"></i> Yes</span>';
-        const noNode = '<span style="color:var(--error-color)"><i class="bi bi-x-circle"></i> No</span>';
-        
-        document.getElementById('metricSchema').innerHTML = data.hasSchema ? yesNode : noNode;
-        document.getElementById('metricPhone').innerHTML = data.hasPhone ? yesNode : noNode;
-        document.getElementById('metricMaps').innerHTML = (data.mapEmbeds > 0 || data.gmbLinks > 0) ? yesNode : noNode;
-        
-        // Update Action Plan
-        const list = document.getElementById('actionPlanList');
-        list.innerHTML = '';
-        data.actionPlan.forEach(item => {
-           const li = document.createElement('li');
-           li.style.background = 'rgba(0,0,0,0.2)';
-           li.style.border = '1px solid var(--border-color)';
-           li.style.padding = '1rem';
-           li.style.borderRadius = '8px';
-           li.innerHTML = `
-              <h4 style="margin-bottom: 0.5rem; font-size: 1.1rem;"><i class="bi bi-exclamation-triangle" style="color:var(--warning-color); margin-right: 8px;"></i>${item.title}</h4>
-              <p style="margin-bottom: 0.5rem;">${item.description}</p>
-              <div style="background: rgba(var(--accent-primary-rgb), 0.1); border-left: 4px solid var(--accent-primary); padding: 0.8rem; margin-top: 1rem;">
-                 <strong>AI Recommendation:</strong> ${item.aiFix}
-              </div>
-           `;
-           list.appendChild(li);
-        });
-        
-        spinner.style.display = "none";
-        resultsArea.style.display = "block";
-        
-        if (data.score < 90 && window.showCrossPromotion) {
-            window.showCrossPromotion(document.getElementById('crossPromoArea'));
-        }
-        
-      } catch (err) {
-        spinner.style.display = "none";
-        alert("Error checking local SEO: " + err.message);
+        const response = await fetch(`/tools/api/local-seo?url=${encodeURIComponent(target.toString())}`, { headers: { Accept: 'application/json' } });
+        const data = await response.json();
+        if (!response.ok || data.error) throw new Error(data.error || 'The page could not be checked.');
+        showResults(data);
+      } catch (error) {
+        errorMessage.textContent = error.message || 'The page could not be retrieved. Check that the URL is public and available.';
+        errorMessage.hidden = false;
       } finally {
-        if (CompaniesBuilderTools.getAttempts(TOOL_ID) < CompaniesBuilderTools.MAX_ATTEMPTS) {
-           btn.disabled = false;
-           btn.innerText = "Check Local SEO";
+        progressMessage.hidden = true;
+        const attempts = CompaniesBuilderTools.getAttempts(TOOL_ID);
+        if (attempts < CompaniesBuilderTools.MAX_FREE_ATTEMPTS) {
+          runButton.disabled = false;
+          runButton.innerHTML = '<i class="bi bi-search" aria-hidden="true"></i> Check Local SEO';
+        } else {
+          runButton.disabled = true;
+          runButton.textContent = `Limit Reached (${attempts}/${CompaniesBuilderTools.MAX_FREE_ATTEMPTS})`;
         }
       }
-    }
+    });
 
-
+    document.getElementById('resetCheck').addEventListener('click', () => {
+      resultsArea.hidden = true;
+      emptyState.hidden = false;
+      document.getElementById('targetUrl').focus();
+    });
   </script>
   <!-- FOOTER -->
   <footer class="site-footer py-5">
